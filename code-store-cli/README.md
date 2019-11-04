@@ -24,7 +24,7 @@ $ npm install -g codestore
 The CLI can be accessed through two commands: _**codestore**_ or its shorter version _**cs**_
 {% endhint %}
 
-Once installed, perform a quick  test to ensure that it was installed properly:
+Once installed, perform a quick test to ensure that it was installed properly:
 
 ```bash
 $ codestore -v
@@ -32,7 +32,7 @@ $ codestore -v
 
 ### Usage
 
-In order to use the CLI  you have to authenticate first:
+In order to use the CLI you have to authenticate first:
 
 ```bash
 $ cs login # this command will guide you through the authentication options
@@ -50,6 +50,6 @@ Most of the commands accept some specific arguments which can be provided while 
 * Long format: `$ cs command --argumentName argumentValue`
 * Short format: `$ cs command -a argumentValue`
 
-Use  `$ cs help` to know more about its commands and their arguments.
+Use `$ cs help` to know more about its commands and their arguments.
 {% endhint %}
 

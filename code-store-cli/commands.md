@@ -40,5 +40,3 @@ $ cs pull {name} # Pulls a project from cloud
 $ cs list # Shows a list of projects in cloud
 ```
 
-
-
