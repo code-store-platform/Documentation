@@ -1,7 +1,7 @@
 ---
 description: >-
-  There are two main ways to manage your code.store services: website UI and
-  CLI.
+  The CLI makes it easy to create and configure the service, add a data schema
+  and custom functions as well as deploy the service.
 ---
 
 # code.store CLI
