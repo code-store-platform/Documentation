@@ -4,7 +4,7 @@ description: >-
   and custom functions as well as deploy the service.
 ---
 
-# code.store CLI
+# Overview
 
 ## Overview
 

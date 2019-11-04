@@ -1,10 +1,14 @@
 # Table of contents
 
-* [Initial page](README.md)
-* [code.store CLI](code-store-cli/README.md)
-  * [Commands](code-store-cli/commands.md)
+* [Introduction](README.md)
 
 ## Getting started <a id="getting-started-1"></a>
 
-* [Getting started](getting-started-1/getting-started.md)
+* [Overview](getting-started-1/getting-started.md)
+* [Quick Start](getting-started-1/quick-start.md)
+
+## Code.Store CLI
+
+* [Overview](code.store-cli/code-store-cli.md)
+* [Commands](code.store-cli/commands.md)
 
