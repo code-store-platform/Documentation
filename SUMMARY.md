@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [What makes a re-usable service ?](what-makes-a-re-usable-service.md)
 
 ## Getting started <a id="getting-started-1"></a>
 
