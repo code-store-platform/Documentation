@@ -2,7 +2,7 @@
 
 When starting a new project you should consider what parts of it may be re-used later for other projects or clients, but also how well isolated those parts are from the rest of your project.  
 
-### Let's take some examples. 
+### Let's take some examples
 
 Imagine you won the creation of the next digital platform for a large international hotels chain. You have to develop a B2C site where users can search and book hotel rooms, and manage their check-in and check-outs. 
 
@@ -14,10 +14,10 @@ The first would be the search for available rooms. You might create a service wh
 
 You can then take two paths to your service roadmap : 
 
-* Vertical : you implement everything needed within hospitality industry. Including B2B travelers, travel managers, options to the bookings, cross-sells and up-sells. Pushing automatically unsold rooms on booking.com...
+* Vertical : you implement everything needed within hospitality industry. Including B2B travellers, travel managers, options to the bookings, cross-sells and up-sells. Pushing automatically unsold rooms on booking.com...
 * Horizontal : you want to make the most generic search & book engine, making it usable for hotel rooms, meeting rooms, massage sessions or co-working places. You need then reduce the number of features, making existing ones highly configurable \(book for 20 minutes or for 6 months, book  2 available ressources or 2000...\)
 
-### Wrappers and connecters
+### Wrappers and connectors
 
 The second type of services that are good candidates for reuse are wrappers and connecters. Let's take two examples again : 
 
