@@ -14,6 +14,6 @@
 ## Code.Store CLI
 
 * [Using the Code.Store CLI](code.store-cli/code-store-cli.md)
-* [Commands](code.store-cli/commands.md)
 * [codestore.yml](code.store-cli/codestore.yml.md)
+* [Commands](code.store-cli/commands.md)
 
