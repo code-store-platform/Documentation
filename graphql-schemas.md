@@ -22,11 +22,45 @@ type Product {
     SKU: ID!
     descirption: String!
     price: Float!
-    stock: Int! 
+    stock: Int!
+    category: Category!
 }
 ```
 
 There are 5 built-in scalar types with GraphQL: `Int`, `Float`, `String`, `Boolean` and `ID`. Scalar types, as opposed to object types, point to actual data. The `ID` type resolves to a string, but expects a unique value.
+
+#### Enumerations
+
+Enumeration types allow to define a specific subset of possible values for a type. In the previous example, the `Category` enum type can take a value of `Clothes`, `Shoes` or `Watches` and anything else will result in a validation error.  We need to update our example providing definition of our enumeration category : 
+
+```text
+enum Category {
+  Clothes
+  Shoes
+  Watches
+}
+
+type Product { 
+    title: String! 
+    SKU: ID!
+    descirption: String!
+    price: Float!
+    stock: Int!
+    category: Category!
+}
+```
+
+#### Type modifiers
+
+Modifiers can be used on the type that a field resolves to, by using characters like **`!`** and **`[…]`**. Here’s a breakdown, using the `String` scalar type as an example:
+
+* `String`: nullable string \(the resolved value can be null\)
+* `String!`: Non-nullable string \(if the resolved value is null, an error will be raised\) 
+* `[String]`: Nullable list of nullable string values. The entire value can be null, or specific list elements can be null. 
+* `[String!]`: Nullable list of non-nullable string values. Then entire value can be null, but specific list elements cannot be null. 
+* `[String!]!`: Non-nullable list of non-nullable string values. Nothing can be null, neither the whole value nor the individual items. 
+
+
 
 
 
