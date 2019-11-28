@@ -2,6 +2,8 @@
 
 When starting a new project you should consider what parts of it may be re-used later for other projects or clients, but also how well isolated those parts are from the rest of your project.  
 
+What size should a service be? When developing a service, size shouldn't be the important point. Instead, the important point should be to create loosely coupled services so you have autonomy of development, deployment, and scale, for each service. Of course, when identifying and designing services, you should try to make them as small as possible as long as you don't have too many direct dependencies with other services. More important than the size of the service is the internal cohesion it must have and its independence from other services.
+
 ### Let's take some examples
 
 Imagine you won the creation of the next digital platform for a large international hotels chain. You have to develop a B2C site where users can search and book hotel rooms, and manage their check-in and check-outs. 
