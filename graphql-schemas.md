@@ -60,6 +60,14 @@ Modifiers can be used on the type that a field resolves to, by using characters 
 * `[String!]`: Nullable list of non-nullable string values. Then entire value can be null, but specific list elements cannot be null. 
 * `[String!]!`: Non-nullable list of non-nullable string values. Nothing can be null, neither the whole value nor the individual items. 
 
+### GraphQL resolvers 
+
+The payload of a GraphQL query \(or mutation\) consists of a set of fields. In code.store, each of these fields actually corresponds to exactly one service that’s called a resolver. The sole purpose of a resolver function is to fetch the data for its field.
+
+When code.store receives a query, it will call all the functions for the fields that are specified in the query’s payload. It thus resolves the query and is able to retrieve the correct data for each field. Once all resolvers returned, code.store will package data up in the format that was described by the query and send it back to the client.
+
+![](.gitbook/assets/image.png)
+
 
 
 
