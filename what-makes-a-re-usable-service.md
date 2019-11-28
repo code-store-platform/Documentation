@@ -31,11 +31,11 @@ Some clients may also need for a connecter between 2 applications and find Zappi
 
 A good, re-usable micro-service should be
 
-1. Isolated : your service must being able to work alone, providing a real value for the end user. It should not depend on other services, out of code.store
-2. Configurable : each time you'll use it on a project, you should be able to adapt it's behaviour, without touching your code to concrete needs of your project.
-3. UX friendly : your service will be probably called by a mobile application or a ReactJS web-app, so you should think first about from a usage prospective rather than from your data structure point of view.
-4. Documented : it's important than other members of your organization immediately understand what your service is doing. Do no describe your internal mechanics, but input and output, data structure and provide test data. Do not assume that specific business vocabulary is understood by your audience. Use examples !
-5. Generic : Your service will be re-used 
+1. **Isolated** : your service must being able to work alone, providing a real value for the end user. It should not depend on other services, out of code.store
+2. **Configurable** : each time you'll use it on a project, you should be able to adapt it's behaviour, without touching your code to concrete needs of your project.
+3. **UX friendly** : your service will be probably called by a mobile application or a ReactJS web-app, so you should think first about from a usage prospective rather than from your data structure point of view.
+4. **Documented** : it's important than other members of your organization immediately understand what your service is doing. Do no describe your internal mechanics, but input and output, data structure and provide test data. Do not assume that specific business vocabulary is understood by your audience. Use examples !
+5. **Generic** : Your service will be re-used 
 
 
 

@@ -7,8 +7,8 @@ While GitHub and open source in general, solved the problem of code sharing, the
 On code.store you can : 
 
 * Deploy and host any micros-service on a secure, multi-cloud environment, in any language \(starting with Node.js, other languages are in the roadmap\)
-* Manage GraphQL schemas describing data that your services manipulate
-* Your schemas are automatically hosted and managed, you don't have to think about CRUD operations, imports or exports
+* Manage [GraphQL](https://graphql.org/) schemas describing data that your services manipulate
+* Your schemas are automatically hosted and managed, you don't have to think about [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations, imports or exports
 * We provide you with reliable auto-scaled storage
 * Robust versioning and staging systems for your data and code
 * Discover and reuse any service created by your organization
