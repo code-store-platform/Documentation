@@ -1,6 +1,6 @@
-# GraphQL Schemas
+# GraphQL at a glance
 
-On code.store platform we decided to use GraphQL as a primary way to interact with your services. You'll need to learn GraphQL basics   to create code.store services.
+On code.store platform we decided to use GraphQL as a primary way to interact with your services. You'll need to learn GraphQL basics  to create code.store services \(even if we do support REST, if you really want to be old-school\).
 
 While you'll find all the details on [GraphQL site](https://graphql.org/), we've prepared you a short summary of GraphQL basics here. 
 
@@ -60,7 +60,9 @@ Modifiers can be used on the type that a field resolves to, by using characters 
 * `[String!]`: Nullable list of non-nullable string values. Then entire value can be null, but specific list elements cannot be null. 
 * `[String!]!`: Non-nullable list of non-nullable string values. Nothing can be null, neither the whole value nor the individual items. 
 
-### GraphQL resolvers 
+### GraphQL queries execution
+
+GraphQL doesn’t just specify a way to describe schemas and a query language to retrieve data from those schemas, but an actual execution algorithm for how those queries are transformed into results. This algorithm is quite simple at its core: the query is traversed field by field, executing “resolvers” for each field.
 
 The payload of a GraphQL query \(or mutation\) consists of a set of fields. In code.store, each of these fields actually corresponds to exactly one service that’s called a resolver. The sole purpose of a resolver function is to fetch the data for its field.
 
