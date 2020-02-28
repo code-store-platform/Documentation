@@ -1,67 +1,67 @@
 ---
 description: >-
-  The CLI makes it easy to create and configure the service, add a data schema
-  and custom functions as well as deploy the service.
+  Code.store CLI provides a set of commands that allow you to manage your
+  services and projects. This section contains the installation steps, a typical
+  workflow and a description of main commands.
 ---
 
-# Using the Code.Store CLI
+# Getting started
 
 Generally, code.store CLI provides same features as the UI of the website, i.e. all the actions and the configuration performed on the website can also be performed via CLI and vice versa.
 
-The CLI provides the tools to create/modify/update your local version of the service and keep it up to date with the modifications performed through the website UI. It can also be included in your own CI/CD pipelines in order to build and deploy the service.
-
 ### Installation
 
-Install the CLI globally:
+#### macOS
+
+```bash
+brew tap codestore/brew && brew install codestore
+```
+
+#### Ubuntu 16+
+
+```text
+sudo snap install --classic codestore
+```
+
+#### Windows
+
+```text
+choco install codestore
+```
+
+### Other installation methods
 
 #### NPM
 
+This installation method is not recommended as it does not autoupdate.
+
 ```bash
 npm install -g codestore
-```
-
-#### Homebrew
-
-```bash
-brew tap codestore/codestore
-brew install 
-```
-
-#### Yarn
-
-```bash
-yarn global add codestore
 ```
 
 {% hint style="info" %}
 The CLI can be accessed through two commands: _**codestore**_ or its shorter version _**cs**_
 {% endhint %}
 
-Once installed, perform a quick test to ensure that it was installed properly:
+### Verifying the installation
+
+To verify that the CLI has been correctly installed, use the `codestore --version` command:
 
 ```bash
-codestore -v
+codestore --version
 ```
 
-### Synopsis
+You should see "codestore x.y.z" output.
 
-```bash
-# TODO -> put here the output of the codestore -h
-```
+### Staying up to date
 
-### Usage
+The code.store CLI will keep itself up to date automatically, unless you installed it via `npm install`. In that case use `npm update codestore` in order to upgrade the 
 
-In order to use the CLI you have to authenticate first:
+Continue to read about CLI Commands:
 
-```bash
-cs login # this command will guide you through the authentication options
-```
+{% page-ref page="commands.md" %}
 
-Once authenticated, you can create your first project:
 
-```text
-cs init MyFirstProject
-```
 
 {% hint style="info" %}
 Most of the commands accept some specific arguments which can be provided while invoking the command in a long or short formats:
