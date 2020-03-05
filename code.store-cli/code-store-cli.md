@@ -43,6 +43,15 @@ npm install -g codestore
 The CLI can be accessed through two commands: _**codestore**_ or its shorter version _**cs**_
 {% endhint %}
 
+#### Standalone tarballs
+
+These are available in gz compression:
+
+* macOS
+* Linux \(x64\)
+* Windows \(x64\)
+* Windows \(x86\)
+
 ### Verifying the installation
 
 To verify that the CLI has been correctly installed, use the `codestore --version` command:
