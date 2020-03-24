@@ -52,11 +52,7 @@ To be able to use the CLI you have to login into your code.store account. To do 
 cs auth:login
 ```
 
-By default, `cs login` will try to authenticate through the browser \(it is going to open the default browser in your system\). If you would like to login using email/password, use `--interactive` flag \(or `-i`\):
-
-```bash
-cs login --interactive
-```
+`cs login` will try to authenticate through the browser \(it is going to open the default browser in your system\).
 
 At any time you can check under which user you are being authenticated:
 
@@ -113,7 +109,11 @@ cs context:project --clear
 cs context:service --clear
 ```
 
-### Services
+### \[WIP\] Services
+
+```bash
+$ cs service help
+```
 
 #### List
 
@@ -134,4 +134,20 @@ You can also list services for another project by providing `--project-id` argum
 ```bash
 cs service:list --project-id [project ID]
 ```
+
+### \[WIP\] Projects
+
+In order for your Services to be published, they have to be added to Projects. Projects can be created and managed either by using the web-site or via CLI.
+
+```bash
+$ cs project help
+```
+
+Get a list of all your projects \(you can also use a shorthand alias `cs project:ls`\):
+
+```bash
+cs project:list
+```
+
+
 
