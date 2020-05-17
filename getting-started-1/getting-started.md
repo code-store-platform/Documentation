@@ -4,7 +4,7 @@ description: >-
   powerful reutilization platform with billing capabilities and marketplace.
 ---
 
-# Overview
+# Core concepts
 
 Modern web development is really complex and it's not becoming any easier, quite the opposite. That's why code.store provides the instruments that help digital agencies and software developers concentrate on their main goals: providing value to clients and writing a state-of-the-art code.
 

@@ -1,4 +1,4 @@
-# Introduction
+# What is code.store?
 
 We started code.store from a simple idea : reuse and share live, hosted code among projects and organizations. 
 

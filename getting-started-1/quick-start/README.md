@@ -1,5 +1,12 @@
 # Quick Start
 
+**TODO:**
+
+* create account
+* installation
+* create service
+* test service
+
 In this document you will learn the basics of working with Code.Store platform. In order to build our first Code.Store Service we are going to go through the following steps:
 
 * Create your Code.Store account

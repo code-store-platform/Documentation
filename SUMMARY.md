@@ -1,20 +1,24 @@
 # Table of contents
 
-* [Introduction](README.md)
-* [What makes a re-usable service ?](what-makes-a-re-usable-service.md)
-* [GraphQL at a glance](graphql-schemas.md)
+* [What is code.store?](README.md)
+* [How it works?](how-it-works.md)
+* [Our vision](our-vision.md)
+* [?? What makes a re-usable service ?](what-makes-a-re-usable-service.md)
 
 ## Getting started <a id="getting-started-1"></a>
 
-* [Overview](getting-started-1/getting-started.md)
-* [Service & Project Lifecycle](getting-started-1/service-and-project-lifecycle.md)
+* [Core concepts](getting-started-1/getting-started.md)
+* [GraphQL](getting-started-1/graphql-schemas.md)
 * [Quick Start](getting-started-1/quick-start/README.md)
   * [Quick Start with CLI](getting-started-1/quick-start/quick-start-with-cli.md)
   * [Quick Start with Console](getting-started-1/quick-start/quick-start-with-console.md)
+* [?? Service & Project Lifecycle](getting-started-1/service-and-project-lifecycle.md)
+* [Tutorials](getting-started-1/tutorials.md)
+* [FAQ](getting-started-1/faq.md)
 
-## Code.Store CLI
+## Command Line Interface <a id="cli"></a>
 
-* [Getting started](code.store-cli/code-store-cli.md)
-* [Commands](code.store-cli/commands.md)
-* [codestore.yml](code.store-cli/codestore.yml.md)
+* [Getting started](cli/code-store-cli.md)
+* [Commands](cli/commands.md)
+* [codestore.yml](cli/codestore.yml.md)
 
