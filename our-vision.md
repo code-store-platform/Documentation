@@ -1,8 +1,7 @@
 ---
 description: >-
-  We created code.store with two strong ideas: code should be re-usable, like
-  lego bricks and code should provide developers recurring revenues funding
-  support and maintenance.
+  If you have nothing else to do, you can read this long piece of art about our
+  vision of the future of the world.
 ---
 
 # Our vision

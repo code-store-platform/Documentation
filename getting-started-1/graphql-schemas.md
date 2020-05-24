@@ -1,3 +1,9 @@
+---
+description: >-
+  Yes we created a dedicated page for GraphQL in our documentation be cause it's
+  really core to our platform.
+---
+
 # GraphQL
 
 On code.store platform we decided to use GraphQL as a primary way to interact with your services. You'll need to learn GraphQL basics  to create code.store services \(even if we do support REST, if you really want to be old-school\).

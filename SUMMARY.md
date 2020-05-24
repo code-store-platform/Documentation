@@ -1,9 +1,8 @@
 # Table of contents
 
 * [What is code.store?](README.md)
-* [How it works?](how-it-works.md)
 * [Our vision](our-vision.md)
-* [?? What makes a re-usable service ?](what-makes-a-re-usable-service.md)
+* [How it works?](how-it-works.md)
 
 ## Getting started <a id="getting-started-1"></a>
 
@@ -12,7 +11,6 @@
 * [Quick Start](getting-started-1/quick-start/README.md)
   * [Quick Start with CLI](getting-started-1/quick-start/quick-start-with-cli.md)
   * [Quick Start with Console](getting-started-1/quick-start/quick-start-with-console.md)
-* [?? Service & Project Lifecycle](getting-started-1/service-and-project-lifecycle.md)
 * [Tutorials](getting-started-1/tutorials.md)
 * [FAQ](getting-started-1/faq.md)
 

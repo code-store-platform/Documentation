@@ -12,3 +12,9 @@ Think of it as Netlify for re-usable GraphQL microservices, with a monetization 
 
 **For the good of your company and the planet, we think that reusing code is really important!**
 
+What next ?
+
+{% page-ref page="how-it-works.md" %}
+
+
+

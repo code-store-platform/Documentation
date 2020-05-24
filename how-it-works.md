@@ -1,3 +1,9 @@
+---
+description: >-
+  A short guide explaining the whole code.store on a single page. Don't say
+  thanks ;)
+---
+
 # How it works?
 
 ![Not ideal, but clear way to understand code.store](.gitbook/assets/image%20%283%29.png)
