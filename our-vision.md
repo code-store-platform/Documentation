@@ -48,5 +48,5 @@ There are  too many ways to create software today. We created code.store in a wa
 * H24 support
 * instant re-use
 
-code.store is an opinionated platform, means we made a certain number of choices that may not suite you, but we think to cover majority of use cases where you would need isolated, scalable, re-usable microservices.
+code.store is an opinionated platform, means we made a certain number of choices that may not suit you, but we think to cover majority of use cases where you would need isolated, scalable, re-usable microservices.
 
