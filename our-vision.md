@@ -36,11 +36,18 @@ We bet that by providing a common platform and reducing the software to « bite 
 
 ### Simplicity
 
-There are way too many ways to create software today. If you want to need enterprise-grade scalability and architecture you would easily spend countless hours just to deploy your code. So we created code.store in a way that you can focus only on your code. We take care of everything else : 
+There are  too many ways to create software today. We created code.store in a way that you can focus only on your code, while we take care of the rest : 
 
 * containerization
 * database modeling and management
 * security
 * GDPR
 * performance
-* 
+* continuous integration and deployment
+* automated tests
+* monitoring
+* H24 support
+* instant re-use
+
+code.store is an opinionated platform, means we made a certain number of choices that may not suite you, but we think to cover majority of use cases where you would need isolated, scalable, re-usable microservices.
+
