@@ -14,6 +14,7 @@ A service is the most important concept in code.store. It is basically a stand-a
 * **GraphQL** [**Schema**](getting-started.md#schema-or-graphql-schema) : you start by defining a GraphQL API describing types, queries and mutations of your service
 * **Code** : actual code that will be invoked when your GraphQL API is called. There is a specific structure and naming convention for your files. Don't worry we generate them for you.
 * **Database** : based on your GraphQL schema, there is a database, where you can store any data you'll need. Don't worry, we take care of its creation, updates and whole management including automatic migrations in case of any change in your GraphQL schema.
+* **Description** : used mainly on web UI, when you create a new service you need to explain what functional problem your service solves, how does it solve it and what is its functional domain \(e-commerce, content management, logistics, etc.\). You can also add some free \#tags to help user search for your service.
 
 What makes a perfect code.store service :
 
