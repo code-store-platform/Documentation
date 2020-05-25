@@ -32,7 +32,7 @@ Some examples of what we call service :
 * Promotions code management for an e-commerce site
 * Client view service presenting complete information about a client gathering parts from SAP, Magento and Salesforce.
 
-Each service has only 2 available [environnements](getting-started.md#environment) : dev and demo. 
+Each service has 2  [environnements](getting-started.md#environment) : `private` - used by service [maker](getting-started.md#maker) for his development and tests and `demo`, used by developers to test the service prior to adding it to their [project](getting-started.md#project). 
 
 ### Project
 
