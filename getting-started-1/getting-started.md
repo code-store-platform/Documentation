@@ -1,7 +1,8 @@
 ---
 description: >-
-  code.store is an API-as-a-Service (or Backend-as-a-Service) that provides a
-  powerful reuse platform with billing capabilities and marketplace.
+  This page is all about definitions and vocabulary. Just to make sure we
+  understand each other when we talk about services, databases, projects, and so
+  on.
 ---
 
 # Core concepts
