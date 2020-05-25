@@ -7,8 +7,6 @@ description: >-
 
 # Core concepts
 
-It's important to share a common language, let's see how we name things at code.store :  
-
 ### Service
 
 A service is the most important concept in code.store. It is basically a stand-alone web-service that can be \(re\)used in [projects](getting-started.md#project). What defines a a service : 
