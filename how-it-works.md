@@ -18,7 +18,11 @@ Each time you change your [GraphQL schema](getting-started-1/graphql-schemas.md#
 
 ### Promote your service to demo environment
 
-When you're ready you can push your changes using our [CLI](cli/commands.md) to our platform. code.store will check your code, containerize it and deploy to a dev environment.  You can then promote your service to demo environment. Demo environment is used to let every developer in your organization play with you service and check if it corresponds to the needs of their [project](getting-started-1/getting-started.md#project).
+When you're ready you can push your changes using our [CLI](cli/commands.md) to our platform. code.store will check your code, containerize it and deploy to a dev [environment](getting-started-1/getting-started.md#environment).  You can then promote your service to demo environment. Demo environment is used to let every developer in your [organization](getting-started-1/getting-started.md#organization) play with you [service](getting-started-1/getting-started.md#service) and check if it corresponds to the needs of their [project](getting-started-1/getting-started.md#project).
+
+### Add a service to a project
+
+Once created your service cannot be used per se in a production application or site, you need to add it to a project. Projects represent an application or site where your service is used. Each service can be used in as many projects as you wish. You can use our web UI or CLI to add you service to any of your projects. Every developer in your organization can create projects and add services to them.
 
 
 
