@@ -50,5 +50,5 @@ There are  too many ways to create software today. We created code.store in a wa
 
 code.store is an opinionated platform, means we made a certain number of choices that may not suit you, but we think to cover majority of use cases where you would need isolated, scalable, re-usable microservices.
 
-PS : If you read it all, please tweet about us ! 
+PS : If you read it all, please [tweet](https://www.twitter.com) about us ! 
 
