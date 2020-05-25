@@ -2,7 +2,7 @@
 description: You'll find all the answers you were looking for since you were born.
 ---
 
-# FAQ
+# FAQ \[WIP\]
 
 ## \[WIP\]
 

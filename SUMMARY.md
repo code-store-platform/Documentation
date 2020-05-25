@@ -8,11 +8,11 @@
 
 * [Core concepts](getting-started-1/getting-started.md)
 * [GraphQL](getting-started-1/graphql-schemas.md)
-* [Quick Start](getting-started-1/quick-start/README.md)
-  * [Quick Start with CLI](getting-started-1/quick-start/quick-start-with-cli.md)
-  * [Quick Start with Console](getting-started-1/quick-start/quick-start-with-console.md)
-* [Tutorials](getting-started-1/tutorials.md)
-* [FAQ](getting-started-1/faq.md)
+* [Quick Start \[WIP\]](getting-started-1/quick-start/README.md)
+  * [Quick Start with CLI \[WIP\]](getting-started-1/quick-start/quick-start-with-cli.md)
+  * [Quick Start with Console \[WIP\]](getting-started-1/quick-start/quick-start-with-console.md)
+* [Tutorials \[WIP\]](getting-started-1/tutorials.md)
+* [FAQ \[WIP\]](getting-started-1/faq.md)
 
 ## Command Line Interface <a id="cli"></a>
 

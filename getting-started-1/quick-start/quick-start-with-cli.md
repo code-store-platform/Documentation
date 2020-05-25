@@ -1,4 +1,4 @@
-# Quick Start with CLI
+# Quick Start with CLI \[WIP\]
 
 ### 1. Install the Code.Store CLI
 
