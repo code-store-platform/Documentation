@@ -54,9 +54,9 @@ A project is a concrete app or website, where you re-use your existing services.
 
 Each time you add a service to a project, we create a separate, isolated instance of your [service](getting-started.md#service). Each service re-used in a project will have it's own [environnements](getting-started.md#environment), [databases](getting-started.md#database), logs, and billing. 
 
-#### Service instance \(?\)
+#### Service instance
 
-A service re-used in a [project](getting-started.md#project) is an instance of a [service](getting-started.md#service) you've created.  Each time you add a service to a project, you actually create a service instance. Each instance of a service is isolated, runs its own set of 3 [environnements](getting-started.md#environment) \(dev, stage, production\) and is accessible through its own GraphQL endpoint.
+A service re-used in a [project](getting-started.md#project) is an instance of a [service](getting-started.md#service) you've created.  Each time you add a service to a project, you actually create a service instance. Each instance of a service is isolated, runs its own set of 3 [environnements](getting-started.md#environment) \(dev, stage, production\) and is accessible through its own GraphQL [endpoint](getting-started.md#endpoint).
 
 #### Schema or GraphQL Schema
 
@@ -68,7 +68,9 @@ A schema or [GraphQL schema](graphql-schemas.md) defines and describes your [ser
 
 #### Model
 
-A model is the description of they way your service's database is structured. You cannot directly modify your service model, which is generated based on your GraphQL schema. We generate TypeORM entities in your service files directories here :  `/src/models/`
+A model is the description of they way your service's database is structured. You cannot directly modify your service's model, which is generated based on the GraphQL schema of your service. We generate TypeORM entities in your service files directories here :  `/src/models/`
+
+You can access the structure of your database or model through the web-UI data viewer too. 
 
 #### Database
 
@@ -76,9 +78,9 @@ Each [service](getting-started.md#service) has a managed database related to its
 
 #### Environment
 
-An environnement is an isolated, running copy of your service. Your [service](getting-started.md#service) is automatically shipped with 2 environnements : Dev and Demo. Dev is visible only to you,  service [maker](getting-started.md#maker), while Demo is used to test the service by anyone in your [organization](getting-started.md#organization) willing to use it on their [projects](getting-started.md#project).
+An environnement is an isolated, running copy of your service. Your [service](getting-started.md#service) is automatically shipped with 2 environnements : `private` and `demo`.  `private` is visible only to you,  the service [maker](getting-started.md#maker), while `demo` is used to test the service by anyone in your [organization](getting-started.md#organization) willing to use it on their [projects](getting-started.md#project). It's also demo environment which is used in web-UI service page where users within your [organization](getting-started.md#organization) can use playground to "play" with your service.
 
-As soon as you re-use a [service](getting-started.md#service) in a [project](getting-started.md#project), you create a service instance and 3 environnements for this particular service in this particular [project](getting-started.md#project) : Dev, Stage and Production.  Each environment has it's own [endpoint](getting-started.md#endpoint), [database](getting-started.md#database), logs, etc... Be careful, only Production environnement is suitable to be used, well.... in production, others \(dev, stage, demo\) have strong quotas and limitations and are not scalable.
+As soon as you re-use a [service](getting-started.md#service) in a [project](getting-started.md#project), you create a [service instance](getting-started.md#service-instance) and 3 environnements for this particular service in this particular [project](getting-started.md#project) : `dev`, `stage` and `prod`.  Each environment has it's own [endpoint](getting-started.md#endpoint), [database](getting-started.md#database), logs, etc... Be careful, only `prod` environnement is suitable to be used, well.... in production, others \(`dev`, `stage`, `private`,`demo`\) have strong quotas and limitations and are not scalable.
 
 #### Maker
 
@@ -86,9 +88,15 @@ If you read this documentation, you're a developer. We needed to distinguish dev
 
 #### Client
 
+When you enable billing on your [services](getting-started.md#service-instance), you're prompted to invite a client to your [project](getting-started.md#project). So on code.store, a client is an [organization](getting-started.md#organization) who pays for [services](getting-started.md#service-instance) used in a project.
+
 #### Organization
 
+Basically it's an entity where projects, services and users are attached to. All services you create as a maker are visible to all users within your organization. Each user of code.store is always attached to an organization
+
 #### Endpoint
+
+It's the URL you need to call to connect to your [service](getting-started.md#service) and execute [GraphQL](graphql-schemas.md#what-is-graphql) queries. Basically there is an endpoint for each [environment](getting-started.md#environment) of your [service](getting-started.md#service). There are endpoints used to test a service before using it \(`private` and `demo` [environnements](getting-started.md#environment) attached to each service created by your [organization](getting-started.md#organization)\) and there are 3 endpoints  for each [service-instance](getting-started.md#service-instance) inside each [project](getting-started.md#project) : `dev`, `stage` and `prod`.
 
 
 
