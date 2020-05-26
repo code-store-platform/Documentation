@@ -26,7 +26,7 @@ Once created, your [service](getting-started-1/getting-started.md#service) canno
 
 ### Sell your work to your clients for a monthly fee
 
-For each [service-instance](getting-started-1/getting-started.md#service-instance) in a [project](getting-started-1/getting-started.md#project) you can define a rate-plan, so you can bill your clients monthly per service usage \(price per call\) or as a subscription. The core idea is to bundle together costs of building the service, its maintenance, support and hosting in a single simple fee, your client would pay.
+For each [service-instance](getting-started-1/getting-started.md#service-instance) in a [project](getting-started-1/getting-started.md#project) you can define a rate-plan, so you can bill your clients monthly per service usage \(price per call\) or as a subscription. The core idea is to bundle together costs of building the service, its maintenance, support and hosting in a single simple fee, your client would pay. Up to today you can sell and bill services to your clients only, but we'll be launching a public marketplace as soon as we have on-boarded enough service [makers](getting-started-1/getting-started.md#maker).
 
  
 
