@@ -6,7 +6,7 @@ description: >-
 
 # GraphQL
 
-On code.store platform we decided to use GraphQL as a primary way to interact with your services. You'll need to learn GraphQL basics  to create code.store services \(even if we do support REST, if you really want to be old-school\).
+On **code.store** platform we decided to use GraphQL as a primary way to interact with your services. You'll need to learn GraphQL basics  to create code.store services \(even if we do support REST, if you really want to be old-school\).
 
 While you'll find all the details on [GraphQL site](https://graphql.org/), we've prepared you a short summary of GraphQL basics here. 
 

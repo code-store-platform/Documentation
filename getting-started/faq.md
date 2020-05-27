@@ -34,21 +34,7 @@ You don't ! **code.store** will create and update your [database](core-concepts.
 
 We call a service piece of code running on our platform that can be accessed through a GraphQL API. You can learn more about our [core concepts here](core-concepts.md).
 
-## Where my services are hosted?
+## 🖼️ Where should I host my front-end?
 
-code.store  is cloud agnostic, meaning we can deploy code.store on any cloud provider or even on premises for advanced enterprise clients. Our own infrastructure is hosted on AWS right now. So your services will be hosted on our AWS accounts.
-
-## Where my services are hosted?
-
-code.store  is cloud agnostic, meaning we can deploy code.store on any cloud provider or even on premises for advanced enterprise clients. Our own infrastructure is hosted on AWS right now. So your services will be hosted on our AWS accounts.
-
-## 
-
-
-
-### 
-
-dzdzd
-
-
+We provide a platform to create and host back-end services that can be accessed trough GraphQL API. How those services are consumed are out of our scope, for now. You can hosted your front-end on any AWS S3 Bucket or your favorite static sites hosting platforms. You wish we add static front-end hosting to our features, [ask us here](https://spectrum.chat/code-store)!
 
