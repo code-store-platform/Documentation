@@ -30,9 +30,9 @@ We support [_TypeScript_](https://www.typescriptlang.org/) only for the moment. 
 
 You don't ! **code.store** will create and update your [database](core-concepts.md#database) based on the [GraphQL schema](core-concepts.md#schema-or-graphql-schema) of your [service](core-concepts.md#service). We use PostgreSQL to generate database .
 
-## Where my services are hosted?
+## 🧱 What is a service?
 
-code.store  is cloud agnostic, meaning we can deploy code.store on any cloud provider or even on premises for advanced enterprise clients. Our own infrastructure is hosted on AWS right now. So your services will be hosted on our AWS accounts.
+We call a service piece of code running on our platform that can be accessed through a GraphQL API. You can learn more about our [core concepts here](core-concepts.md).
 
 ## Where my services are hosted?
 
