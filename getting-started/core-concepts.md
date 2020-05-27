@@ -37,19 +37,19 @@ Each service has 2  [environnements](core-concepts.md#environment) : `private` -
 
 ### 🚧 Project
 
-A project is a concrete app or website, where you re-use your existing services. It might be your e-commerce project, or a logistics mobile application or business web-app. Because you pay us only when we help you save money, we bill you only for services that are included in real projects. 
+A project is a concrete app or website, where you re-use your existing services. It might be your e-commerce project, or a logistics mobile application or business web-app. Because you pay us only when we help you save money, we bill you only for [services](core-concepts.md#service-instance) that are included in real projects. 
 
 Each time you add a service to a project, we create a separate, isolated instance of your [service](core-concepts.md#service). Each service re-used in a project will have it's own [environnements](core-concepts.md#environment), [databases](core-concepts.md#database), logs, and billing. 
 
 ### ♻️ Service instance
 
-A service re-used in a [project](core-concepts.md#project) is an instance of a [service](core-concepts.md#service) you've created.  Each time you add a service to a project, you actually create a service instance. Each instance of a service is isolated, runs its own set of 3 [environnements](core-concepts.md#environment) \(dev, stage, production\) and is accessible through its own GraphQL [endpoint](core-concepts.md#endpoint).
+A service re-used in a [project](core-concepts.md#project) is an instance of a [service](core-concepts.md#service) you've created.  Each time you add a service to a project, you actually create a service instance. Each instance of a service is isolated, runs its own set of 3 [environnements](core-concepts.md#environment) \(`dev`, `stage`, `prod`\) and is accessible through its own GraphQL [endpoint](core-concepts.md#endpoint).
 
 ### ⚛ Schema or GraphQL Schema
 
 A schema or [GraphQL schema](graphql-schemas.md) defines and describes your [service](core-concepts.md#service). It uses [GraphQL](https://graphql.org/) [SDL](https://graphql.org/learn/schema/) with some additional decorators. You will have to define 3 main things :
 
-* \*\*\*\*[**Types**](graphql-schemas.md#graphql-types) : it describes objects your service will manipulate \(Product for a cart, Meeting Room for a rooms booking engine or Client for a CRM service\).
+* \*\*\*\*[**Types**](graphql-schemas.md#graphql-types) : it describes objects your service will manipulate \(`Product` for a cart, `Meeting Room` for a rooms booking engine or `Client` for a CRM service\).
 * \*\*\*\*[**Queries**](graphql-schemas.md#graphql-queries-execution) : At its simplest, GraphQL is about asking for specific fields on objects. It's a shorthand syntax where we omit both the query keyword and the query name, but in production apps it's useful to use these to make our code less ambiguous. 
 * **Mutations** : Most discussions of GraphQL focus on data fetching, but any complete data platform needs a way to modify server-side data as well. So mutations offer your API consumers a way to create and update objects manipulated by your service \(ie.: addToCart\(productSKU\)\)
 
@@ -71,11 +71,11 @@ As soon as you re-use a [service](core-concepts.md#service) in a [project](core-
 
 ### 👷‍♀️Maker
 
-If you read this documentation, you're a developer. We needed to distinguish developers who create [services](core-concepts.md#service) from those who use them. It's not a role or hard distinction, you can be both consumer and maker of services within your [organization](core-concepts.md#organization). So to make it clear : we call maker the developer who created a [service](core-concepts.md#service).
+If you read this documentation, you're a developer. We needed to distinguish developers who create [services](core-concepts.md#service) from those who use them in [projects](core-concepts.md#project). It's not a role or hard distinction, you can be both consumer and maker of services within your [organization](core-concepts.md#organization). So to make it clear : we call maker the developer who created a [service](core-concepts.md#service).
 
 ### 🤷‍♂️Client
 
-When you enable billing on your [services](core-concepts.md#service-instance), you're prompted to invite a client to your [project](core-concepts.md#project). So on code.store, a client is an [organization](core-concepts.md#organization) who pays for [services](core-concepts.md#service-instance) used in a project.
+When you enable billing on your [services](core-concepts.md#service-instance), you're prompted to invite a client to your [project](core-concepts.md#project). So on code.store, a client is an [organization](core-concepts.md#organization) who pays for [services](core-concepts.md#service-instance) used in a project. It's absolutely optional to have clients. If you don't sell your services and use them internally, you will not need to deal with clients.
 
 ### 🏢Organization
 
