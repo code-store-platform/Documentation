@@ -1,7 +1,5 @@
 ---
-description: >-
-  A short guide explaining the whole code.store on a single page. Don't say
-  thanks ;)
+description: "A short guide explaining the whole code.store in a single page. Don't say thanks \U0001F44A"
 ---
 
 # How it works?
