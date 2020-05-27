@@ -23,7 +23,7 @@ In the past years, the world of web-development saw several profound changes in 
 * **Headless and decoupled approaches**: with robust and stable frontend frameworks like Angular, React, and Vue, it is now easy to build genuinely decoupled applications. It is important because the strongest barrier to reusability is frontend and UX. With decoupling, we can focus on API reusability.
 * **GraphQL**: it offers a lot of flexibility to frontend developers. Previously, each time an application needed a product listing presented in a slightly different way, we would either have to load all the unnecessary data from a single REST endpoint or ask backend developers to provide a new "lighter" endpoint.
 * **Serverless is widely accepted**: you want to reuse live, running, supported, and functional code. That means you accept that the module/service/lego brick you reuse might run somewhere and you do not care if it handles traffic and provides good SLAs.
-* **Microservices are mainstream**: when you reuse complete and functional "modules" you do microservices. Call them nano/micro/macro/mini services, but your project is a patchwork of small, isolated, and autonomous services glued together by your frontend application.
+* **Microservices are mainstream**: you already do "microservices" without knowing it, when you implement external APIs on your projects like Google Maps, Stripe or Facebook Connect . Call them nano/micro/macro/mini services, but your project is already patchwork of small, isolated, and autonomous services glued together by your frontend application.
 
 ### 💰Revenues
 
@@ -40,7 +40,7 @@ We bet that by providing a common platform and reducing the software to « bite 
 There are too many ways to create software today. We created code.store in a way that you can focus only on your code, while we take care of the rest \(some of the features in the list are still in the roadmap, but we are working hard to deliver them to you as soon as possible\):
 
 * containerization
-* database modelling and management
+* database modeling and management
 * security
 * GDPR
 * performance
