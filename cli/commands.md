@@ -117,13 +117,13 @@ $ cs service help
 
 #### List
 
-The `cs service:list` command that can be shortened to `cs service:ls`, and is used to provide a list of your [services](../getting-started-1/getting-started.md#service) along with information about them.
+The `cs service:list` command that can be shortened to `cs service:ls`, and is used to provide a list of your [services](../getting-started/core-concepts.md#service) along with information about them.
 
 ```bash
 cs service:list
 ```
 
-By default, without any context set, this command will list all [services](../getting-started-1/getting-started.md#service). In case when a [project](../getting-started-1/getting-started.md#project) context is set, it will list only [services](../getting-started-1/getting-started.md#service-instance) inside that project. You can always list all services by adding `-all` option:
+By default, without any context set, this command will list all [services](../getting-started/core-concepts.md#service). In case when a [project](../getting-started/core-concepts.md#project) context is set, it will list only [services](../getting-started/core-concepts.md#service-instance) inside that project. You can always list all services by adding `-all` option:
 
 ```bash
 cs service:list --all
@@ -137,7 +137,7 @@ cs service:list --project-id [project ID]
 
 ### \[WIP\] Projects
 
-In order for your [Services](../getting-started-1/getting-started.md#service) to be published, they have to be added to [Projects](../getting-started-1/getting-started.md#project). Projects can be created and managed either by using the web-site or via CLI.
+In order for your [Services](../getting-started/core-concepts.md#service) to be published, they have to be added to [Projects](../getting-started/core-concepts.md#project). Projects can be created and managed either by using the web-site or via CLI.
 
 ```bash
 $ cs project help

@@ -4,15 +4,15 @@
 * [Our vision](our-vision.md)
 * [How it works?](how-it-works.md)
 
-## Getting started <a id="getting-started-1"></a>
+## Getting started
 
-* [Core concepts](getting-started-1/getting-started.md)
-* [GraphQL](getting-started-1/graphql-schemas.md)
-* [Quick Start \[WIP\]](getting-started-1/quick-start/README.md)
-  * [Quick Start with CLI \[WIP\]](getting-started-1/quick-start/quick-start-with-cli.md)
-  * [Quick Start with Console \[WIP\]](getting-started-1/quick-start/quick-start-with-console.md)
-* [Tutorials \[WIP\]](getting-started-1/tutorials.md)
-* [FAQ \[WIP\]](getting-started-1/faq.md)
+* [Core concepts](getting-started/core-concepts.md)
+* [GraphQL](getting-started/graphql-schemas.md)
+* [Quick Start \[WIP\]](getting-started/quick-start/README.md)
+  * [Quick Start with CLI \[WIP\]](getting-started/quick-start/quick-start-with-cli.md)
+  * [Quick Start with Console \[WIP\]](getting-started/quick-start/quick-start-with-console.md)
+* [Tutorials \[WIP\]](getting-started/tutorials.md)
+* [FAQ \[WIP\]](getting-started/faq.md)
 
 ## Command Line Interface <a id="cli"></a>
 
