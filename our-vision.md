@@ -1,12 +1,10 @@
 ---
-description: >-
-  If you have nothing else to do, you can read this long piece of art about our
-  vision of the future of the world.
+description: "If you have nothing else to do, you can read this long piece of art about our vision of the future of the world \U0001F926‍♀️."
 ---
 
 # Our vision
 
-### Reusability
+### ♻️ Reusability
 
 We created **code.store** because we believe the way software is being built today is not adapted to the pace of the modern world. We think that you should not spend time on problems that have been already solved in the past.
 
@@ -27,7 +25,7 @@ In the past years the world of web-development saw several profound changes in t
 * **Serverless is widely accepted**: you want to reuse live, running, supported, and functional code. That means you accept that the module/service/lego brick you re-use might run somewhere and you do not really care if it handles traffic and provides good SLAs.
 * **Microservices are mainstream**: when you reuse complete and functional "modules" you do microservices. Call them nano/micro/macro/mini services but your project is a patchwork of small, isolated, and autonomous services glued together by your front-end application.
 
-### Revenues
+### 💰Revenues
 
 When independent developers, companies, or digital agencies build software for others they usually bill time they spent on it. It's therefore complicated to re-use components from one project to another, and almost impossible to share funding, specifically when you mix hosting and support. We wanted to change that paradigm by providing a new way for billing projects. 
 
@@ -37,7 +35,7 @@ Nowadays, « Every company is a tech company », but being a software editor is 
 
 We bet that by providing a common platform and reducing the software to « bite » sized, running, live service, we’ll enable re-usability, sharing and, ultimately, billing trough direct sales or marketplace.
 
-### Simplicity
+### 🦄 Simplicity
 
 There are  too many ways to create software today. We created **code.store** in a way that you can focus only on your code, while we take care of the rest \(some of the features in the list are still in the roadmap but we are working hard to deliver them to you as soon as possible\):
 
