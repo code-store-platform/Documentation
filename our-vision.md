@@ -1,5 +1,5 @@
 ---
-description: "If you have nothing else to do, you can read this long piece of art about our vision of the future of the world \U0001F926‍♀️."
+description: "If you have nothing else to do, you can read this long piece of art about our vision of the future of the world \U0001F926‍♀️"
 ---
 
 # Our vision
