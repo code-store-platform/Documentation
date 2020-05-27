@@ -24,11 +24,11 @@ When you add a [service](core-concepts.md#service) in a [project](core-concepts.
 
 ## 🗣️ What programming languages do you support?
 
-We support TypeScript only for the moment. If you need a specific language for your project, drop us a word [here](https://spectrum.chat/code-store).
+We support [_TypeScript_](https://www.typescriptlang.org/) only for the moment. If you need a specific language for your [project](core-concepts.md#project), drop us a word [here](https://spectrum.chat/code-store).
 
 ## 🛢 I need a database for my service, how do I create one?
 
-You don't ! code.store will create and update your database based on the GraphQL schema of your service. We use PostgreSQL to generate database .
+You don't ! **code.store** will create and update your [database](core-concepts.md#database) based on the [GraphQL schema](core-concepts.md#schema-or-graphql-schema) of your [service](core-concepts.md#service). We use PostgreSQL to generate database .
 
 ## Where my services are hosted?
 
