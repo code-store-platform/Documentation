@@ -12,7 +12,7 @@ description: >-
 
 ## 🦄 Who creates services?
 
-You do it. Don't be lazy. Code. 😈
+You do it. Don't be lazy. [Code](https://code.store). 😈
 
 ## 💰How do I monetize my services? 
 
