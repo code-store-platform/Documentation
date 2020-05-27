@@ -24,7 +24,7 @@ When you're ready you can push your changes using our [CLI](cli/commands.md) to 
 
 Once created, your [service](getting-started/core-concepts.md#service) cannot be used per se in a production application or site, you need to add it to a [project](getting-started/core-concepts.md#project). Projects represent applications or sites where your [service](getting-started/core-concepts.md#service) is used. Each service can be used in as many projects as you wish. You can use our web UI or [CLI](cli/commands.md) to add you service to any of your projects. Every developer in your organization can create projects and add services to them. A [service-instance](getting-started/core-concepts.md#service-instance) is created when you add a service to a [project](getting-started/core-concepts.md#project). It's a completely **isolated** version of your service : it has it's own environnements, database, API keys and logs.
 
-### Sell your work to your clients for a monthly fee
+### Sell your work to your clients for a monthly fee, if you want
 
 For each [service-instance](getting-started/core-concepts.md#service-instance) in a [project](getting-started/core-concepts.md#project) you can define a rate-plan, so you can bill your clients monthly per service usage \(price per call\) or as a subscription. The core idea is to bundle together costs of building the service, its maintenance, support and hosting in a single simple fee, your client would pay. Up to today you can sell and bill services to your clients only, but we'll be launching a public marketplace as soon as we have on-boarded enough service [makers](getting-started/core-concepts.md#maker).
 
