@@ -12,7 +12,7 @@
   * [Quick Start with CLI \[WIP\]](getting-started/quick-start/quick-start-with-cli.md)
   * [Quick Start with Console \[WIP\]](getting-started/quick-start/quick-start-with-console.md)
 * [Tutorials \[WIP\]](getting-started/tutorials.md)
-* [FAQ \[WIP\]](getting-started/faq.md)
+* [FAQ](getting-started/faq.md)
 
 ## Command Line Interface <a id="cli"></a>
 

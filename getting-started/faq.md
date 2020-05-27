@@ -4,7 +4,7 @@ description: >-
   42.
 ---
 
-# FAQ \[WIP\]
+# FAQ
 
 ## 🏠 Where my services are hosted?
 
