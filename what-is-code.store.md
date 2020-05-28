@@ -4,7 +4,7 @@ description: 'A single place to build, host, re-use and sell GraphQL APIs servic
 
 # What is code.store?
 
-### **Welcome!**
+### **Welcome!!**
 
 We are happy that you're here! 👋
 
