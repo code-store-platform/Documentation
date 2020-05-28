@@ -1,6 +1,6 @@
 # Table of contents
 
-* [What is code.store?](what-is-code.store.md)
+* [What is code.store?](README.md)
 * [Our vision](our-vision.md)
 * [How it works?](how-it-works.md)
 
