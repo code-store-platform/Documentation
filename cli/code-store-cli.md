@@ -7,8 +7,6 @@ description: >-
 
 # Getting started
 
-Generally, code.store CLI provides same features as the UI of the website, i.e. all the actions and the configuration performed on the website can also be performed via CLI and vice versa.
-
 ### Installation
 
 #### macOS
@@ -60,7 +58,7 @@ To verify that the CLI has been correctly installed, use the `codestore --versio
 codestore --version
 ```
 
-You should see "codestore x.y.z" output.
+You should see "codestore x.y.z darwin-X node-vX.Y.Z" output.
 
 ### Staying up to date
 
@@ -69,8 +67,6 @@ The code.store CLI will keep itself up to date automatically, unless you install
 Continue to read about CLI Commands:
 
 {% page-ref page="commands.md" %}
-
-
 
 {% hint style="info" %}
 Most of the commands accept some specific arguments which can be provided while invoking the command in a long or short formats:
@@ -88,8 +84,6 @@ For each service, the Code.Store CLI is generating a directory structure that re
 ```bash
 # Example of the directory structure of a Service
 ./
-├── codestore.yaml # main configuration file
-├── env.yaml|json # environmental variables
 ├── src/
 │		├── models/ # can be used to override default generated model
 │		│		├── example.model
@@ -103,7 +97,9 @@ For each service, the Code.Store CLI is generating a directory structure that re
 │		│		│		│		└── testExampleFunctionOne.js|ts
 │		│		└── exampleFunctionTwo/
 │		│				└── index.js
-└── .build
+├── .build # temporary directory
+├── package.json
+└── codestore.yaml # main configuration file
 ```
 
 
