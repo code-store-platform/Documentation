@@ -10,7 +10,7 @@
 * [GraphQL](getting-started/graphql-schemas.md)
 * [Quick Start \[WIP\]](getting-started/quick-start/README.md)
   * [Quick Start with CLI \[WIP\]](getting-started/quick-start/quick-start-with-cli.md)
-  * [Quick Start with Console](getting-started/quick-start/quick-start-with-console.md)
+  * [Quick Start with Web Interface](getting-started/quick-start/quick-start-with-web-interface.md)
 * [Tutorials \[WIP\]](getting-started/tutorials.md)
 * [FAQ](getting-started/faq.md)
 
