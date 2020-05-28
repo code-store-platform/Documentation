@@ -1,0 +1,4 @@
+root: ./
+
+structure:
+  readme: what-is-code.store.md
