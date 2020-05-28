@@ -4,7 +4,7 @@ description: "A short guide explaining the whole code.store in a single page. Do
 
 # How it works?
 
-![Not ideal, but clear way to understand code.store](.gitbook/assets/image%20%283%29.png)
+![Schema is not perfect, but represents quite well code.store ](.gitbook/assets/image%20%284%29.png)
 
 ### Create your service & GraphQL Schema
 
