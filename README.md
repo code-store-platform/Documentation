@@ -2,9 +2,9 @@
 description: 'A single place to build, host, re-use and sell GraphQL APIs services.'
 ---
 
-# What is code.store?!
+# What is code.store?
 
-### **Welcome!**
+## **Welcome!**
 
 We are happy that you're here! 👋
 
@@ -14,7 +14,7 @@ So, in short, **code.store** is a backend-as-a-service, a GraphQL schema-first p
 
 **For the good of your company and the planet, we think that reusing code is really important!**
 
-### **Community**
+## **Community**
 
 Like many other great products, code.store is continuously evolving as we are striving to bring more features, improve the existing ones and make sure that the product is as stable as it could be 🤞
 
@@ -22,11 +22,9 @@ That's why if you have ANY suggestions while using code.store, whether it be fea
 
 Create a feature request or chat with us in real-time in our community home here: [https://spectrum.chat/code-store](https://spectrum.chat/code-store)
 
-### What next?
+## What next?
 
 A good to place to start would be to read about [Our Vision](our-vision.md), [How it works?](how-it-works.md) and of course, our [Core concepts](getting-started/core-concepts.md).
 
 **Enjoy the reading and don't hesitate to** [**contact us**](https://spectrum.chat/code-store)**!**
-
-
 
