@@ -18,5 +18,4 @@
 
 * [Getting started](cli/code-store-cli.md)
 * [Commands](cli/commands.md)
-* [codestore.yml \[WIP\]](cli/codestore.yml.md)
 
