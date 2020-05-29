@@ -1,8 +1,7 @@
 ---
 description: >-
-  This page is all about definitions and vocabulary. Just to make sure we
-  understand each other when we talk about services, databases, projects, and so
-  on.
+  This page is all about definitions and vocabulary to get you on board as fast
+  as possible.
 ---
 
 # Core concepts
