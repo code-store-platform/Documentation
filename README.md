@@ -1,3 +1,9 @@
+---
+description: >-
+  Do we really need a page description here ? No ! Will we add one anyway ? Sure
+  !
+---
+
 # What is code.store?
 
 ## **Welcome!**
