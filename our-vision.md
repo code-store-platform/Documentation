@@ -18,7 +18,7 @@ Today it's time to build software in a new way: re-using small building blocks s
 
 **So why it would be different with code.store?**
 
-In the past years, the world of web-development saw several profound changes in the way we build software that makes out code.store idea reasonable:
+In the past years, the world of web-development saw several profound changes in the way we build software that makes out **code.store** idea reasonable:
 
 * **Headless and decoupled approaches**: with robust and stable frontend frameworks like Angular, React, and Vue, it is now easy to build genuinely decoupled applications. It is important because the strongest barrier to reusability is frontend and UX. With decoupling, we can focus on API reusability.
 * **GraphQL**: it offers a lot of flexibility to frontend developers. Previously, each time an application needed a product listing presented in a slightly different way, we would either have to load all the unnecessary data from a single REST endpoint or ask backend developers to provide a new "lighter" endpoint.

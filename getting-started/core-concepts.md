@@ -15,7 +15,7 @@ Service is the most crucial concept in code.store. It is a stand-alone web-servi
 * **Database**: based on your GraphQL schema, there is a [database](/@code-store/s/docs/getting-started/core-concepts#database) where you can store your data. We take care of its creation, updates and whole management including automatic migrations in case of any change in your [GraphQL schema](/@code-store/s/docs/getting-started/core-concepts#schema-or-graphql-schema).
 * **Documentation**: when you create a new service you need to explain what functional problem your service solves, how does it solve it and what is its functional domain \(e-commerce, content management, logistics, etc.\). You can also add some free \#tags to help users search for your service.
 
-What makes a perfect code.store service :
+What makes a perfect **code.store** service :
 
 * **Independent**: it does not rely on anything else to function \(no external APIs or services or software is required to use it\).
 * **Isolated**: by all means, it should avoid communication with external systems \(except for connectors\)
