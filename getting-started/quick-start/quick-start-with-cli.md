@@ -30,11 +30,14 @@ cs service:create
 
 ![Creating your first service](../../.gitbook/assets/service-create.gif)
 
-You can check the contents of your new service directory by running `ls -lh ./` Lets take a couple of minutes and study the contents of the directory closer.
+You can check the contents of your new service directory by running `ls -lh ./` Lets take a couple of minutes and study the contents of the directory closer:
 
-First of all, we have a package.json file with some basic NPM packages, service name and version. Feel free and add any NPM packages you like, we are going to install them for you during the deployment of the service.
-
-Next file is codestore.yaml which contains your service ID and will contain more configuration options later.
+* package.json – it is a standard NPM configuration file. Feel free and add any NPM packages you like, we are going to install them for you during the deployment of the service;
+* codestore.yaml – contains your service ID and will contain more configuration options in later versions;
+* src – this is where all of the source code lives
+  * schema.graphql – one of the most \(if not _the_ most\) important files. It contains a GraphQL schema of your service;
+  * models – contains generated TypeORM entities;
+  * resolvers – contains resolvers that define how the data is returned as well as some additional business logic.
 
 ### Describe your data model
 
