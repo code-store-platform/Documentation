@@ -1,20 +1,20 @@
 ---
-description: >-
-  Yes we created a dedicated page for GraphQL in our documentation be cause it's
-  really core to our platform.
+description: A quick guide to get you onboard with GraphQL
 ---
 
-# GraphQL
+# GraphQL \[WIP\]
 
-On **code.store** platform we decided to use GraphQL as a primary way to interact with your services. You'll need to learn GraphQL basics  to create code.store services \(even if we do support REST, if you really want to be old-school\).
+When you create a service on **code.store**, it is accessible via a unique API endpoint and you'll need to use GraphQL in order to interact with this endpoint.
 
-While you'll find all the details on [GraphQL site](https://graphql.org/), we've prepared you a short summary of GraphQL basics here. 
+While you'll find all the details on [GraphQL site](https://graphql.org/), we've prepared you a short summary of GraphQL basics here.
 
 ### What is GraphQL ?
 
-GraphQL is an API standard that provides a more efficient, powerful and flexible alternative to REST. It was developed and open-sourced by Facebook but now many companies, including us support and rely of GraphQL. We do think it will become worldwide API standard very soon.
+You can think of GraphQL as of SQL but for API \(it is a very loose and far-fetched analogy, but it should deliver the message\).
 
-code.store GraphQL service is created by defining types and fields on those types, then providing micro-services for each field on each type.
+GraphQL is an API standard that provides a more efficient, powerful and flexible alternative to REST. It was developed and open-sourced by Facebook but now many companies, including us, support and rely on GraphQL. We do think it will become worldwide API standard very soon.
+
+**code.store** GraphQL service is created by defining types and fields on those types, then providing resolvers for those types.
 
 ### GraphQL types
 

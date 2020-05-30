@@ -7,7 +7,7 @@
 ## Getting started
 
 * [Core concepts](getting-started/core-concepts.md)
-* [GraphQL](getting-started/graphql-schemas.md)
+* [GraphQL \[WIP\]](getting-started/graphql-schemas.md)
 * [Quick Start \[WIP\]](getting-started/quick-start/README.md)
   * [Quick Start with CLI \[WIP\]](getting-started/quick-start/quick-start-with-cli.md)
   * [Quick Start with Web Interface](getting-started/quick-start/quick-start-with-web-interface.md)
