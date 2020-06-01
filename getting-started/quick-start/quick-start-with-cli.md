@@ -1,6 +1,10 @@
+---
+description: "\U0001F5A5"
+---
+
 # Quick Start with CLI \[WIP\]
 
-This guide will introduce some basic code.store concepts like services and schema generation using CLI. The goal of this quick start is to get you up and running fast, so lets not waste any time and start!🚀 
+This guide will introduce some basic code.store concepts like services and schema generation using CLI. The goal of this quick start is to get you up and running fast, so let's not waste any time and start!
 
 ### Create code.store account
 
@@ -41,11 +45,7 @@ You can check the contents of your new service directory by running `ls -lh ./` 
 
 ### Describe your data model
 
-### 4. Add business logic
+### Add business logic
 
-### 5. Write tests
-
-### 6. Deployment to Code.Store.Cloud
-
-### 7. Generate a Client and access your Service
+### Deploy to code.store
 
