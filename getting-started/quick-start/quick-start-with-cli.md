@@ -34,14 +34,48 @@ cs service:create
 
 ![Creating your first service](../../.gitbook/assets/service-create.gif)
 
-You can check the contents of your new service directory by running `ls -lh ./` Lets take a couple of minutes and study the contents of the directory closer:
+### The anatomy of a service
 
-* package.json – it is a standard NPM configuration file. Feel free and add any NPM packages you like, we are going to install them for you during the deployment of the service;
-* codestore.yaml – contains your service ID and will contain more configuration options in later versions;
-* src – this is where all of the source code lives
-  * schema.graphql – one of the most \(if not _the_ most\) important files. It contains a GraphQL schema of your service;
-  * models – contains generated TypeORM entities;
-  * resolvers – contains resolvers that define how the data is returned as well as some additional business logic.
+You can check the contents of your new service directory by running `ls -lh ./` 
+
+```bash
+# Example of the directory structure of a Service
+./
+├── src/
+│		├── models/ # contains generated TypeORM entities
+│		├── resolvers/
+│		│		├── mutations/
+│		│				└── mutationExample.js|ts
+│		│		├── queries/
+│		│				└── queryExample.js|ts
+│		└── schema.graphql # GraphQL definition of your service's API
+├── .build # temporary directory
+├── package.json # standard NPM configuration file
+└── codestore.yaml # main configuration file
+```
+
+Let's get into the details of each file and directory.
+
+Root directory contains two files and one folder:
+
+* `package.json` – it is a standard NPM configuration file. Feel free and add any NPM packages you like, we are going to install them for you during the deployment of the service;
+* `codestore.yaml` – contains your service ID and will contain more configuration options in later versions;
+* `src/` – this is where all the source code lives.
+
+Let's dive into `src/` directory:
+
+* `schema.graphql` – one of the most \(if not the most\) important files. It contains a GraphQL schema of your service;
+* `models/` – this directory contains generated TypeORM entities. We automatically generate TypeScript classes for your database tables, that's why you should not edit the files in this directory \(even if you will, they will be re-generated automatically\);
+* `resolvers/` – this is where your business logic lives. Resolvers serve two purposes: connect your GraphQL objects to data in the database and is a place where you implement any additional business logic.
+
+Here is a structure of the `resolvers/` directory:
+
+* `mutations/` – 
+* `queries/` – 
+
+TODO:
+
+* resolvers chains
 
 ### Describe your data model
 
