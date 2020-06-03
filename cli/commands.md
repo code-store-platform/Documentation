@@ -1,3 +1,9 @@
+---
+description: >-
+  Did you ever played Command & Conquer ? No ? Continue, comrade... and you will
+  find yourself on the floor, with Kukov!
+---
+
 # Commands
 
 To download and install CLI, [follow the instructions here](code-store-cli.md).
