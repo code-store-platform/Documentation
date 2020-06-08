@@ -52,7 +52,7 @@ COMMANDS
   auth:whoami  Displays currently logged in user
 ```
 
-To be able to use the CLI you have to login into your code.store account. To do that use the following command:
+To be able to use the CLI you have to login into your **code.store** account. To do that use the following command:
 
 ```bash
 cs auth:login

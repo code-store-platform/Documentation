@@ -45,6 +45,7 @@ These are available in gz compression:
 * Linux \(x64\)
 * Windows \(x64\)
 * Windows \(x86\)
+* PalmOS \(kidding\)
 
 ### Verifying the installation
 
