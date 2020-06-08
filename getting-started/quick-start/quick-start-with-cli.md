@@ -113,7 +113,7 @@ We can finally write something more or less meaningful! For the sake of simplici
 First of all we should modify our `schema.graphql` file:
 
 ```graphql
-# API schema for a simple Blog-post storage
+# API schema for a simple Blog-post service
 
 type Post {
     id: ID!
@@ -135,7 +135,7 @@ type Query {
 ```
 
 {% hint style="info" %}
-Every GraphQL schema has query type and may or may not have a mutation type. Read more about [GraphQL in our quick start guide here](../graphql-schemas.md), or in the official [GraphQL documentation](https://graphql.org/learn/schema/#object-types-and-fields).
+Every GraphQL schema has a _query_ type and may or may not have a _mutation_ type. Read more about [GraphQL in our quick start guide here](../graphql-schemas.md), or in the official [GraphQL documentation](https://graphql.org/learn/schema/#object-types-and-fields).
 {% endhint %}
 
 * add resolvers
