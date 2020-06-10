@@ -1,7 +1,7 @@
 ---
 description: >-
-  Did you ever played Command & Conquer ? No ? Continue, comrade... and you will
-  find yourself on the floor, with Kukov!
+  Did you ever play Command & Conquer? No? Continue, comrade... and you will
+  find yourself on the floor, with Kukov! ☭
 ---
 
 # Commands
