@@ -78,7 +78,7 @@ type Query {
 }
 ```
 
-It is a very basic schema of an API that has a single _Query_ called _helloWorld_ \(which doesn't accept arguments\) and which returns a single output of type String.
+It is a very basic schema of an API that has a single `Query` called `helloWorld` \(which doesn't accept arguments\) and which returns a single output of type `string`.
 
 {% hint style="info" %}
 If you are not comfortable with GraphQL syntax, we are inviting you to read [our GraphQL quick-start guide first.](../graphql-schemas.md)
