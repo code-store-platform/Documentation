@@ -194,3 +194,75 @@ Few things have changed here:
 
 As soon as we deploy the application with cs push we can test it again and see it's returning an empty array as we haven't created anything yet 🤦🏽‍♀️
 
+OK, let's add a bloody mutation then.
+
+First of all, we should modify the schema by adding the mutations:
+
+```graphql
+# schema.graphql
+
+# API schema for a simple Blog-post service
+
+type Post {
+    id: ID!
+    createdAt: String!
+    title: String!
+    body: String!
+    author: Author!
+}
+
+type Author {
+    id: ID!
+    name: String!
+}
+
+type Query {
+    allPosts: [Post]
+}
+
+type Mutation {
+    createAuthor(name: String!): Author
+    createPost(title: String!, body: String!, authorId: ID!): Post
+}
+```
+
+This is what has changed, we added a type Mutation to our GraphQL schema containing two mutations: createAuthor and createPost. Now we can implement them in our resolvers. Let's create a createAuthor resolver first:
+
+```typescript
+// src/resolvers/mutations/createAuthor.ts
+import { getRepository } from 'typeorm';
+import { Author } from '../../entities/Author';
+
+export default async (parent, args, context, info) => {
+    // preparing the author object
+    const author = new Author();
+    author.name = 'FirstAuthor';
+    
+    // saving our first author entity
+    const authorRepository = getRepository(Author);
+    await authorRepository.save(author);    
+    
+    return author;
+}
+```
+
+Let's also add a mutation to create a post:
+
+```typescript
+// src/resolvers/mutations/createPost.ts
+import { getRepository } from 'typeorm';
+import { Post } from '../../entities/Post';
+
+export default async (parent, args, context, info) => {
+    // preparing the post object
+    const post = new Post();
+    post.title = 'Our first blog post';
+    
+    // saving our first psot entity
+    const repository = getRepository(Post);
+    await repository.save(post);    
+    
+    return post;
+}
+```
+
