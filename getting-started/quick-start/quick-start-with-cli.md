@@ -140,6 +140,8 @@ Every GraphQL schema has a _query_ type and may or may not have a _mutation_ typ
 We have added two types and two queries in the schema and we can now go on and add the resolvers. Let's begin with the query allPosts: create a file `src/resolvers/queries/allPosts.ts` and initialize it with the following code:
 
 ```typescript
+// src/resolvers/queries/allPosts.ts
+
 export default async (parent, args, context, info) => {
     return [
         {
@@ -164,21 +166,31 @@ Thus, all _queries_ should be placed into `src/resolvers/queries/{queryName}.ts`
 
 Here we go, this is our first test resolver which is not yet connected to anything but which already can return the data! You can deploy and test the application by running `cs push.`
 
-Until now we were not using any database at all and it is the time to create one. The cool thing is that code.store generates the database automatically based on the GraphQL schema you provided! CONTINUE.
+Until now we were not using any database at all and it is the time to create one. The cool thing is that **code.store** generates the database automatically based on the GraphQL schema you provided! Let's modify our resolver to add some database queries:
 
-* add resolvers
-* add mutation
-* generate & push
+```typescript
+// src/resolvers/queries/allPosts.ts
+import { getRepository } from 'typeorm';
+import { Post } from '../../entities/Post';
 
-### Deploy to code.store
+export default async (parent, args, context, info) => {
+    const postRepository = getRepository(Post);
+    
+    return postRepository.find();
+}
+```
 
-Here is a structure of the `resolvers/` directory:
+{% hint style="info" %}
+For every type in your GraphQL schema, **code.store** performs two operations:
 
-* `mutations/` – 
-* `queries/` – 
-* `resolvers.js` – 
+* it generates database migrations \(using [TypeORM](https://typeorm.io/)\)
+* it generates [TypeORM entities](https://typeorm.io/#/entities) which it stores in `src/entities/{TypeName}.ts`
+{% endhint %}
 
-TODO:
+Few things have changed here:
 
-* resolvers chains
+* we are importing [TypeORM Repository](https://typeorm.io/#/working-with-repository) and our generated Post entity
+* we are initializing the repository and performing a [find query](https://typeorm.io/#/find-options) for our Post entity
+
+As soon as we deploy the application with cs push we can test it again and see it's returning an empty array as we haven't created anything yet 🤦🏽‍♀️
 
