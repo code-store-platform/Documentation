@@ -12,7 +12,7 @@ If you haven't done this already, then click on this link.
 
 ### Install the code.store CLI
 
-We invite you to follow this guide and install our command line interface:
+We invite you to follow this guide and install our command-line interface:
 
 {% page-ref page="../../cli/code-store-cli.md" %}
 
