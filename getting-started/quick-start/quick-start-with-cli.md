@@ -101,7 +101,7 @@ export default async (parent, args, context, info) => {
 ```
 
 {% hint style="info" %}
-When starting the service, code.store loads all files from `src/resolvers/mutations` and `src/resolvers/queries` directories and passes them to the GraphQL server. The filename of the resolver must be equal to the name of _query_ or a _mutation_. Each query and mutation in the `schema.graphql` must have a corresponding _resolver_ in the filesystem.
+When starting the service, code.store loads all files from `src/resolvers/mutations` and `src/resolvers/queries` directories and passes them to the GraphQL server. The filename of the resolver must be equal to the name of _query_ or a _mutation_. Each query and mutation in the `schema.graphql` file must have a corresponding _resolver_ in the filesystem.
 {% endhint %}
 
 This should give you a basic understanding of how GraphQL schema and resolvers work together and let's write something more meaningful in the next chapter.
@@ -130,13 +130,41 @@ type Author {
 
 type Query {
     allPosts: [Post]
-    findPost(id: ID!): Post
 }
 ```
 
 {% hint style="info" %}
 Every GraphQL schema has a _query_ type and may or may not have a _mutation_ type. Read more about [GraphQL in our quick start guide here](../graphql-schemas.md), or in the official [GraphQL documentation](https://graphql.org/learn/schema/#object-types-and-fields).
 {% endhint %}
+
+We have added two types and two queries in the schema and we can now go on and add the resolvers. Let's begin with the query allPosts: create a file `src/resolvers/queries/allPosts.ts` and initialize it with the following code:
+
+```typescript
+export default async (parent, args, context, info) => {
+    return [
+        {
+            id: 1,
+            createdAt: '2020-06-30',
+            title: 'Test post',
+            body: 'Test body',
+            author: {
+                id: 1,
+                name: 'Test author'
+            }
+        }
+    ];
+}
+```
+
+{% hint style="info" %}
+Each GraphQL _query_ or _mutation_ must be mapped to a resolver. In order to find a resolver for a _query_/_mutation_, **code.store** is using a file structure mapping to find a corresponding resolver.
+
+Thus, all _queries_ should be placed into `src/resolvers/queries/{queryName}.ts` files, all _mutations_ into `src/resolvers/mutations/{mutationName}.ts`. For example, resolver for a _mutation_ `createUser` should be placed into `src/resolvers/mutations/createUser.ts` file.
+{% endhint %}
+
+Here we go, this is our first test resolver which is not yet connected to anything but which already can return the data! You can deploy and test the application by running `cs push.`
+
+Until now we were not using any database at all and it is the time to create one. The cool thing is that code.store generates the database automatically based on the GraphQL schema you provided! CONTINUE.
 
 * add resolvers
 * add mutation
