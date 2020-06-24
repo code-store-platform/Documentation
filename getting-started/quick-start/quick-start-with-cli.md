@@ -49,7 +49,6 @@ You can check the contents of your new service directory by running `ls -lh ./`
 │		│		├── queries/
 │		│				└── queryExample.js|ts
 │		└── schema.graphql # GraphQL definition of your service's API
-├── .build # temporary directory
 ├── package.json # standard NPM configuration file
 └── codestore.yaml # main configuration file
 ```
