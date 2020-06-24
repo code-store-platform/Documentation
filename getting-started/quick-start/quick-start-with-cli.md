@@ -42,7 +42,7 @@ You can check the contents of your new service directory by running `ls -lh ./`
 # Example of the directory structure of a Service
 ./
 ├── src/
-│		├── models/ # contains generated TypeORM entities
+│		├── data/ # contains generated TypeORM entities
 │		├── resolvers/
 │		│		├── mutations/
 │		│				└── mutationExample.js|ts
