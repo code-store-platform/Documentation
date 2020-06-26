@@ -91,7 +91,7 @@ curl https://api.code.store/{service_id}/{environment_id}/graphql?{helloWorld}
 
 Hopefully, we should get "Hello, World!" message in our terminal 🤞
 
-Let's take a look at the resolver \(business logic\) for this query which is located at the file `src/resolvers/queries/helloWorld.ts`:
+Let's take a look at the resolver \(business logic\) for this query which is located in the file `src/resolvers/queries/helloWorld.ts`:
 
 ```typescript
 export default async (parent, args, context, info) => {
@@ -100,7 +100,7 @@ export default async (parent, args, context, info) => {
 ```
 
 {% hint style="info" %}
-When starting the service, code.store loads all files from `src/resolvers/mutations` and `src/resolvers/queries` directories and passes them to the GraphQL server. The filename of the resolver must be equal to the name of _query_ or a _mutation_. Each query and mutation in the `schema.graphql` file must have a corresponding _resolver_ in the filesystem.
+When starting the service, code.store loads all files from `src/resolvers/mutations` and `src/resolvers/queries` directories and passes them to the GraphQL server. The filename of the resolver must be equal to the name of _a query_ or _a_ _mutation_. Each query and mutation in the `schema.graphql` file must have a corresponding _resolver_ in the filesystem.
 {% endhint %}
 
 This should give you a basic understanding of how GraphQL schema and resolvers work together and let's write something more meaningful in the next chapter.
@@ -109,9 +109,11 @@ This should give you a basic understanding of how GraphQL schema and resolvers w
 
 We can finally write something more or less meaningful! For the sake of simplicity, we decided to implement a well-beaten example of a Blog-post.
 
-First of all we should modify our `schema.graphql` file:
+First of all, we should modify our `schema.graphql` file:
 
 ```graphql
+# schema.graphql
+
 # API schema for a simple Blog-post service
 
 type Post {
@@ -157,18 +159,24 @@ export default async (parent, args, context, info) => {
 }
 ```
 
-{% hint style="info" %}
+{% hint style="warning" %}
 Each GraphQL _query_ or _mutation_ must be mapped to a resolver. In order to find a resolver for a _query_/_mutation_, **code.store** is using a file structure mapping to find a corresponding resolver.
 
-Thus, all _queries_ should be placed into `src/resolvers/queries/{queryName}.ts` files, all _mutations_ into `src/resolvers/mutations/{mutationName}.ts`. For example, resolver for a _mutation_ `createUser` should be placed into `src/resolvers/mutations/createUser.ts` file.
+The rules are simple:
+
+* all _queries_ should be placed into `src/resolvers/queries/{queryName}.ts` files, 
+* all _mutations_ into `src/resolvers/mutations/{mutationName}.ts` 
+
+For example, resolver for a _mutation_ `createUser` should be placed into `src/resolvers/mutations/createUser.ts` file.
 {% endhint %}
 
 Here we go, this is our first test resolver which is not yet connected to anything but which already can return the data! You can deploy and test the application by running `cs push.`
 
-Until now we were not using any database at all and it is the time to create one. The cool thing is that **code.store** generates the database automatically based on the GraphQL schema you provided! Let's modify our resolver to add some database queries:
+Until now we were not using any database at all and the time has come to ~~grab a beer~~ create one. The cool thing is that **code.store** generates the database automatically based on the GraphQL schema you provided! Let's modify our resolver and add some database queries:
 
 ```typescript
 // src/resolvers/queries/allPosts.ts
+
 import { getRepository } from 'typeorm';
 import { Post } from '../../entities/Post';
 
@@ -191,11 +199,9 @@ Few things have changed here:
 * we are importing [TypeORM Repository](https://typeorm.io/#/working-with-repository) and our generated Post entity
 * we are initializing the repository and performing a [find query](https://typeorm.io/#/find-options) for our Post entity
 
-As soon as we deploy the application with cs push we can test it again and see it's returning an empty array as we haven't created anything yet 🤦🏽‍♀️
+As soon as we deploy the application with cs push we can test it again and see that it's returning an empty array as we haven't created anything yet 🤦🏽‍♀️Time to add the first mutation.
 
-OK, let's add a bloody mutation then.
-
-First of all, we should modify the schema by adding the mutations:
+First of all, we should modify the schema by adding those mutations:
 
 ```graphql
 # schema.graphql
@@ -264,6 +270,14 @@ export default async (parent, args, context, info) => {
     return post;
 }
 ```
+
+### Finalizing
+
+TODO:
+
+* show how to parse arguments in resolver
+* explain a bit more about generators
+* run service locally?
 
 ### Conclusion
 
