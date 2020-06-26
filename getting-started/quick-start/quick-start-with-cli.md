@@ -1,5 +1,5 @@
 ---
-description: "\U0001F5A5"
+description: "\U0001F5A5\U0001F914⌨️\U0001F44F\U0001F680"
 ---
 
 # Quick Start with CLI \[WIP\]
