@@ -80,7 +80,7 @@ type Query {
 It is a very basic schema of an API that has a single `Query` called `helloWorld` \(which doesn't accept arguments\) and which returns a single output of type `string`.
 
 {% hint style="info" %}
-If you are not comfortable with GraphQL syntax, we are inviting you to read [our GraphQL quick-start guide first.](../graphql-schemas.md)
+If you are not comfortable with GraphQL syntax, we are inviting you to read [our GraphQL quick-start guide first](../graphql-schemas.md) and if you want to go deeper into that rabbit-hole 🐰then the official GraphQL documentation [https://graphql.org/learn/](https://graphql.org/learn/).
 {% endhint %}
 
 We can test this query by running the following curl command in your terminal:
