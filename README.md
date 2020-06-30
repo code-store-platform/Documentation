@@ -16,7 +16,7 @@ Like many other great products, **code.store** is continuously evolving as we ar
 
 That's why if you have ANY suggestions while using **code.store**, whether it be feature requests, suggestions on how to improve our documentation, or just some questions, we are here for you!
 
-Create a feature request or chat with us in real-time in our community home here: [https://spectrum.chat/code-store](https://spectrum.chat/code-store)
+Create a feature request or chat with us in real-time in our community home here: [https://spectrum.chat/code-store](https://spectrum.chat/code-store).
 
 ## What next?
 
