@@ -138,7 +138,7 @@ type Query {
 Every GraphQL schema has a _query_ type and may or may not have a _mutation_ type. Read more about [GraphQL in our quick start guide here](../graphql-schemas.md), or in the official [GraphQL documentation](https://graphql.org/learn/schema/#object-types-and-fields).
 {% endhint %}
 
-We have added two types and two queries in the schema and we can now go on and add the resolvers. Let's begin with the query allPosts: create a file `src/resolvers/queries/allPosts.ts` and initialize it with the following code:
+We have added two types and two queries in the schema and we can now go on and add the resolvers. Let's begin with the query `allPosts`: create a file `src/resolvers/queries/allPosts.ts` and initialize it with the following code:
 
 ```typescript
 // src/resolvers/queries/allPosts.ts
