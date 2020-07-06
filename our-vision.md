@@ -51,7 +51,7 @@ We bet that by providing a common platform and reducing the software to « bite 
 There are too many ways to create software today. We created code.store in a way that you can focus only on your code, while we take care of the rest \(some of the features in the list are still in the roadmap, but we are working hard to deliver them to you as soon as possible\):
 
 * containerization
-* database modeling and management
+* database modelling and management
 * security
 * GDPR
 * performance
