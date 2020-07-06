@@ -33,9 +33,9 @@ Use **`cs help command`** to know more about the specific command and its argume
 
 #### Global and Local workflows
 
-CLI commands of code.store can be invoked from anywhere in your system, even if you don't have a copy of a service locally, this is what we call a **global workflow.** The advantage of this workflow is that you can quickly get status of your services without cloning them, or by invoking CLI commands from the outside of your working directory. The disadvantage is that it requires you to pass more arguments to every CLI command.
+CLI commands of code.store can be invoked from anywhere in your system, even if you don't have a copy of a service locally, this is what we call a **global workflow.** The advantage of this workflow is that you can quickly get the status of your services without cloning them, or by invoking CLI commands from the outside of your working directory. The disadvantage is that it requires you to pass more arguments to every CLI command.
 
-Another way of working with CLI is to call it from the local copy of the service, in that case our CLI will automatically deduct the context \(service, project, etc\).
+Another way of working with CLI is to call it from the local copy of the service, in that case, our CLI will automatically deduct the context \(service, project, etc\).
 
 ### Authentication
 
