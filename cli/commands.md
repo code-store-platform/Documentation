@@ -89,7 +89,7 @@ COMMANDS
   context:service  Manage global service context
 ```
 
-In order to simplify the developer experience and reduce a number of arguments you are passing to the CLI, it is possible to set the _context,_ i.e. the _service_ or a _project_:
+In order to simplify the developer experience and reduce the number of arguments you are passing to the CLI, it is possible to set the _context,_ i.e. the _service_ or a _project_:
 
 ```bash
 cs context:project [project-id]
