@@ -273,13 +273,9 @@ export default async (parent, args, context, info) => {
 
 ### Finalizing
 
-TODO:
+WIP
 
-* show how to parse arguments in resolver
-* explain a bit more about generators
-* run service locally?
-
-### Conclusion
+* **Conclusion**
 
 Not sure if it was quick 😉 but we hope that after this guide you have a good understanding of how code.store works. Feel free to check the rest of the documentation and contact us in the community chat if you will have any questions!
 
