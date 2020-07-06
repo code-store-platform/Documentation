@@ -10,7 +10,7 @@ description: >-
 
 Service is the most crucial concept in code.store. It is a stand-alone web-service that can be \(re\)used in [projects](core-concepts.md#project). What defines a service:‌
 
-* **GraphQL** [**Schema**](/@code-store/s/docs/getting-started/core-concepts#schema-or-graphql-schema): you start by defining a GraphQL API describing types, queries and mutations of your service
+* **GraphQL** [**Schema**](core-concepts.md#schema-or-graphql-schema): you start by defining a GraphQL API describing types, queries and mutations of your service
 * **Code**: actual code that is invoked when your GraphQL API is called. There is a specific structure and naming convention for your files which we describe in our Quick Start guide.
 * **Database**: based on your GraphQL schema, there is a [database](core-concepts.md#database) where you can store your data. We take care of its creation, updates and whole management including automatic migrations in case of any change in your [GraphQL schema](core-concepts.md#schema-or-graphql-schema).
 * **Documentation**: when you create a new service you need to explain what functional problem your service solves, how does it solve it and what is its functional domain \(e-commerce, content management, logistics, etc.\). You can also add some free \#tags to help users search for your service.
