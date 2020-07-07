@@ -21,12 +21,6 @@ brew tap code-store-platform/brew && brew install codestore
 sudo snap install --classic codestore
 ```
 
-#### Windows
-
-```text
-choco install codestore
-```
-
 ### Other installation methods
 
 #### NPM
@@ -45,7 +39,7 @@ These are available in gz compression:
 * Linux \(x64\)
 * Windows \(x64\)
 * Windows \(x86\)
-* PalmOS \(kidding\)
+* PalmOS \(just kidding\)
 
 ### Verifying the installation
 
