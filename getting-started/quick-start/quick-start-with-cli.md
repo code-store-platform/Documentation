@@ -32,8 +32,6 @@ This command is going to launch your default browser and ask for your login deta
 cs service:create
 ```
 
-![Creating your first service](../../.gitbook/assets/service-create.gif)
-
 ### The anatomy of a service
 
 You can check the contents of your new service directory by running `ls -lh ./` 
