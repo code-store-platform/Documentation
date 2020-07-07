@@ -12,7 +12,7 @@ description: >-
 #### macOS
 
 ```bash
-brew tap codestore/brew && brew install codestore
+brew tap code-store-platform/brew && brew install codestore
 ```
 
 #### Ubuntu 16+
