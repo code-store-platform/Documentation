@@ -8,16 +8,12 @@ description: >-
 
 To download and install CLI, [follow the instructions here](code-store-cli.md).
 
-{% hint style="info" %}
-You can invoke code.store CLI either by using the full **`codestore`** command, or by using the short version **`cs`**.
-{% endhint %}
-
 ### Synopsis
 
-To get a list of all commands, call `cs help`:
+To get a list of all commands, call `codestore help`:
 
 ```bash
-cs help
+codestore help
 ```
 
 ### Basic usage
@@ -25,10 +21,10 @@ cs help
 {% hint style="info" %}
 Most of the commands accept some specific arguments which can be provided while invoking the command in a long or short formats:
 
-* Long format: **`cs command --argumentName argumentValue`**
-* Short format: **`cs command -a argumentValue`**
+* Long format: **`codestore command --argumentName argumentValue`**
+* Short format: **`codestore command -a argumentValue`**
 
-Use **`cs help command`** to know more about the specific command and its arguments.
+Use **`codestore help command`** to know more about the specific command and its arguments.
 {% endhint %}
 
 #### Global and Local workflows
@@ -40,11 +36,11 @@ Another way of working with CLI is to call it from the local copy of the service
 ### Authentication
 
 ```bash
-$ cs help auth
+$ codestore help auth
 Authenticate at code.store platform
 
 USAGE
-  $ cs auth:COMMAND
+  $ codestore auth:COMMAND
 
 COMMANDS
   auth:login   Authenticate at code.store platform
@@ -55,29 +51,29 @@ COMMANDS
 To be able to use the CLI you have to login into your **code.store** account. To do that use the following command:
 
 ```bash
-cs auth:login
+codestore auth:login
 ```
 
-`cs login` will try to authenticate through the browser \(it is going to open the default browser in your system\).
+`codestore login` will try to authenticate through the browser \(it is going to open the default browser in your system\).
 
 At any time you can check under which user you are being authenticated:
 
 ```bash
-cs auth:whoami
+codestore auth:whoami
 ```
 
 In order to finish your session and logout use the following command:
 
 ```bash
-cs auth:logout
+codestore auth:logout
 ```
 
-You can also use short aliases of the above commands: `cs login`, `cs whoami` and `cs logout`.
+You can also use short aliases of the above commands: `codestore login`, `codestore whoami` and `codestore logout`.
 
 ### Switching the context
 
 ```bash
-$ cs context help                                                                                                                                            537ms  Wed Mar 11 18:12:23 2020
+$ codestore context help                                                                                                                                            537ms  Wed Mar 11 18:12:23 2020
 Manage global Project and Service contexts
 
 USAGE
@@ -92,8 +88,8 @@ COMMANDS
 In order to simplify the developer experience and reduce the number of arguments you are passing to the CLI, it is possible to set the _context,_ i.e. the _service_ or a _project_:
 
 ```bash
-cs context:project [project-id]
-cs context:service [service-id]
+codestore context:project [project-id]
+codestore context:service [service-id]
 ```
 
 After setting the context, you no longer have to pass the arguments `--project-id` or `--service-id` when invoking the commands from the outside of your project directory.
@@ -105,40 +101,40 @@ Note, that the context of the working directory will always take precedence over
 Get the information about the currently set context:
 
 ```bash
-cs context:list
+codestore context:list
 ```
 
 To clear the context use `--clear` flag:
 
 ```bash
-cs context:project --clear
-cs context:service --clear
+codestore context:project --clear
+codestore context:service --clear
 ```
 
 ### \[WIP\] Services
 
 ```bash
-$ cs service help
+$ codestore service help
 ```
 
 #### List
 
-The `cs service:list` command that can be shortened to `cs service:ls`, and is used to provide a list of your [services](../getting-started/core-concepts.md#service) along with information about them.
+The `codestore service:list` command that can be shortened to `codestore service:ls`, and is used to provide a list of your [services](../getting-started/core-concepts.md#service) along with information about them.
 
 ```bash
-cs service:list
+codestore service:list
 ```
 
 By default, without any context set, this command will list all [services](../getting-started/core-concepts.md#service). In case when a [project](../getting-started/core-concepts.md#project) context is set, it will list only [services](../getting-started/core-concepts.md#service-instance) inside that project. You can always list all services by adding `-all` option:
 
 ```bash
-cs service:list --all
+codestore service:list --all
 ```
 
 You can also list services for another project by providing `--project-id` argument:
 
 ```bash
-cs service:list --project-id [project ID]
+codestore service:list --project-id [project ID]
 ```
 
 ### \[WIP\] Projects
@@ -146,13 +142,13 @@ cs service:list --project-id [project ID]
 In order for your [Services](../getting-started/core-concepts.md#service) to be published, they have to be added to [Projects](../getting-started/core-concepts.md#project). Projects can be created and managed either by using the web-site or via CLI.
 
 ```bash
-$ cs project help
+$ codestore project help
 ```
 
-Get a list of all your projects \(you can also use a shorthand alias `cs project:ls`\):
+Get a list of all your projects \(you can also use a shorthand alias `codestore project:ls`\):
 
 ```bash
-cs project:list
+codestore project:list
 ```
 
 
