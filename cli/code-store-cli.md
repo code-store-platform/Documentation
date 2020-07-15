@@ -51,9 +51,22 @@ codestore --version
 
 You should see "codestore x.y.z darwin-X node-vX.Y.Z" output.
 
+{% hint style="info" %}
+The CLI can be accessed through two commands: _**codestore**_ or its shorter version _**cs**_
+{% endhint %}
+
 ### Staying up to date
 
 The **code.store** CLI will keep itself up to date automatically, unless you installed it via `npm install`. In that case use `npm update codestore` in order to upgrade the package to the latest version.
+
+{% hint style="info" %}
+Most of the commands accept some specific arguments which can be provided while invoking the command in a long or short formats:
+
+* Long format: **`cs command --argumentName argumentValue`**
+* Short format: **`cs command -a argumentValue`**
+
+Use **`cs help`** to know more about its commands and their arguments.
+{% endhint %}
 
 ### Service directory structure
 

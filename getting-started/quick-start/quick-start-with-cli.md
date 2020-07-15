@@ -23,13 +23,13 @@ Once you have your account and the CLI is installed, we can finally do some inte
 In order to work with the CLI, you have to connect it with your account by launching the following command:
 
 ```bash
-codestore login
+cs login
 ```
 
 This command is going to launch your default browser and ask for your login details. Once you are authenticated, we can go on and create a new [service](../core-concepts.md#service).
 
 ```bash
-codestore service:create
+cs service:create
 ```
 
 ### The anatomy of a service
@@ -169,7 +169,7 @@ The rules are simple:
 For example, resolver for a _mutation_ `createUser` should be placed into `src/resolvers/mutations/createUser.ts` file.
 {% endhint %}
 
-Here we go, this is our first test resolver which is not yet connected to anything but which already can return the data! You can deploy and test the application by running `codestore push.`
+Here we go, this is our first test resolver which is not yet connected to anything but which already can return the data! You can deploy and test the application by running `cs push.`
 
 Until now we were not using any database at all and the time has come to ~~grab a beer~~ create one. The cool thing is that **code.store** generates the database automatically based on the GraphQL schema you provided! Let's modify our resolver and add some database queries:
 
@@ -198,7 +198,7 @@ Few things have changed here:
 * we are importing [TypeORM Repository](https://typeorm.io/#/working-with-repository) and our generated Post entity
 * we are initializing the repository and performing a [find query](https://typeorm.io/#/find-options) for our Post entity
 
-As soon as we deploy the application with `codestore push` , we can test it again and see that it's returning an empty array as we haven't created anything yet 🤦🏽‍♀️. Time to add the first mutation.
+As soon as we deploy the application with `cs push` , we can test it again and see that it's returning an empty array as we haven't created anything yet 🤦🏽‍♀️. Time to add the first mutation.
 
 First of all, we should modify the schema by adding those mutations:
 

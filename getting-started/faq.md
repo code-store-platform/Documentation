@@ -14,7 +14,7 @@ Services of all other plans are currently hosted on our AWS infrastructure \(Fra
 
 ## 🦄 Who creates services?
 
-You do it. Don't be lazy. [Code](https://code.store). 😈
+You do it. Don't be lazy. [Code](https://code.store) 😈
 
 ## 💰How do I monetize my services?
 
