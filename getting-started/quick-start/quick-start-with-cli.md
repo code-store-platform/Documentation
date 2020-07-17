@@ -43,9 +43,8 @@ You can check the contents of your new service directory by running `ls -lh ./`
 │		├── data/ # contains generated TypeORM entities
 │		├── resolvers/ # contains GraphQL resolvers 
 │		│		├── mutations/ # mutations as used to create new objects  
-│		│				└── mutationExample.js|ts
 │		│		├── queries/ # queries are used to retrieve objects
-│		│				└── queryExample.js|ts
+│		│				└── helloWorld.ts
 │		└── schema.graphql # GraphQL definition of your service's API
 ├── package.json # standard NPM configuration file
 └── codestore.yaml # main configuration file
@@ -85,7 +84,11 @@ If you are not comfortable with GraphQL syntax, we are inviting you to read [our
 We can test this query by running the following curl command in your terminal:
 
 ```bash
-curl https://api.code.store/{service_id}/{environment_id}/graphql?{helloWorld}
+curl \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{ "query": "{ helloWorld }" }' \
+  https://api.code.store/{project_id}/{environment_id}/{service_id}/graphql
 ```
 
 Hopefully, we should get "Hello, World!" message in our terminal 🤞
