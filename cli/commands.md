@@ -23,7 +23,7 @@ cs help
 ### Basic usage
 
 {% hint style="info" %}
-Most of the commands accept some specific arguments which can be provided while invoking the command in a long or short formats:
+Most of the commands accept some specific arguments which can be provided while invoking the command in a long or short format:
 
 * Long format: **`cs command --argumentName argumentValue`**
 * Short format: **`cs command -a argumentValue`**
