@@ -9,6 +9,10 @@ description: >-
 
 ### Installation
 
+{% hint style="success" %}
+We are iteratiing really fast in order to bring the best user experience and some great features to our product, that's why please check for updates in our CLI! 
+{% endhint %}
+
 #### macOS
 
 ```bash
@@ -25,7 +29,7 @@ sudo snap install --classic codestore
 
 #### NPM
 
-This installation method is not recommended as it does not autoupdate.
+This installation method is not recommended as it does not auto-update.
 
 ```bash
 npm install -g codestore
@@ -33,7 +37,7 @@ npm install -g codestore
 
 #### Standalone tarballs
 
-These are available in gz compression:
+These are available in gzip compression:
 
 * [macOS](https://s3.code.store/codestore-darwin-x64.tar.gz)
 * [Linux \(x64\)](https://code.store/codestore-linux-x64.tar.gz)
