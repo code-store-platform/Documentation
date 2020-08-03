@@ -172,7 +172,11 @@ The rules are simple:
 For example, resolver for a _mutation_ `createUser` should be placed into `src/resolvers/mutations/createUser.ts` file.
 {% endhint %}
 
-Here we go, this is our first test resolver which is not yet connected to anything but which already can return the data! You can deploy and test the application by running `cs push.`
+Here we go, this is our first test resolver which is not yet connected to anything but which already can return the data! One last step before running the deployment command - we have to remove `src/resolvers/queries/helloWorld.ts` or simply rename it to `helloWorld.ts_`. And that's it, you can now deploy and test the application by running `cs push.`
+
+{% hint style="warning" %}
+GraphQL queries and mutations in your `schema.graphql` should match 1-to-1 the queries and migrations in the file system, i.e. if you have a query _"test"_ in a schema and you don't have in the file system, the service will throw an error. The same in the opposite order, if you have a resolver in the file system but not in schema.
+{% endhint %}
 
 Until now we were not using any database at all and the time has come to ~~grab a beer~~ create one. The cool thing is that **code.store** generates the database automatically based on the GraphQL schema you provided! Let's modify our resolver and add some database queries:
 
