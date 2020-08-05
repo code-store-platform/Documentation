@@ -197,7 +197,7 @@ export default async (parent, args, context, info) => {
 For every type in your GraphQL schema, **code.store** performs two operations:
 
 * it generates database migrations \(using [TypeORM](https://typeorm.io/)\)
-* it generates [TypeORM entities](https://typeorm.io/#/entities) which it stores in `src/entities/{TypeName}.ts`
+* it generates [TypeORM entities](https://typeorm.io/#/entities) which it stores in `src/data/entities/{TypeName}.ts`
 {% endhint %}
 
 Few things have changed here:
