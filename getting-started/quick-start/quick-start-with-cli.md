@@ -183,11 +183,10 @@ Until now we were not using any database at all and the time has come to ~~grab 
 ```typescript
 // src/resolvers/queries/allPosts.ts
 
-import { getRepository } from 'typeorm';
 import Post from '../../data/entities/Post';
 
 export default async (parent, args, context, info) => {
-    const postRepository = getRepository(Post);
+    const postRepository = context.db.connection.getRepository(Post);
     
     return postRepository.find();
 }
@@ -241,8 +240,7 @@ This is what has changed, we added a type Mutation to our GraphQL schema contain
 
 ```typescript
 // src/resolvers/mutations/createAuthor.ts
-import { getRepository } from 'typeorm';
-import { Author } from '../../entities/Author';
+import { Author } from '../../data/entities/Author';
 
 export default async (parent, args, context, info) => {
     // preparing the author object
@@ -250,7 +248,7 @@ export default async (parent, args, context, info) => {
     author.name = 'FirstAuthor';
     
     // saving our first author entity
-    const authorRepository = getRepository(Author);
+    const authorRepository = context.db.connection.getRepository(Author);
     await authorRepository.save(author);    
     
     return author;
@@ -262,7 +260,7 @@ Let's also add a mutation to create a post:
 ```typescript
 // src/resolvers/mutations/createPost.ts
 import { getRepository } from 'typeorm';
-import { Post } from '../../entities/Post';
+import { Post } from '../../data/entities/Post';
 
 export default async (parent, args, context, info) => {
     // preparing the post object
@@ -270,7 +268,7 @@ export default async (parent, args, context, info) => {
     post.title = 'Our first blog post';
     
     // saving our first psot entity
-    const repository = getRepository(Post);
+    const repository = context.db.connection.getRepository(Post);
     await repository.save(post);    
     
     return post;
