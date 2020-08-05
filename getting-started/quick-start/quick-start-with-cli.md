@@ -184,7 +184,7 @@ Until now we were not using any database at all and the time has come to ~~grab 
 // src/resolvers/queries/allPosts.ts
 
 import { getRepository } from 'typeorm';
-import { Post } from '../../data/entities/Post';
+import Post from '../../data/entities/Post';
 
 export default async (parent, args, context, info) => {
     const postRepository = getRepository(Post);
