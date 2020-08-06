@@ -240,7 +240,7 @@ This is what has changed, we added a type Mutation to our GraphQL schema contain
 
 ```typescript
 // src/resolvers/mutations/createAuthor.ts
-import { Author } from '../../data/entities/Author';
+import Author from '../../data/entities/Author';
 
 export default async (parent, args, context, info) => {
     // preparing the author object
@@ -259,15 +259,14 @@ Let's also add a mutation to create a post:
 
 ```typescript
 // src/resolvers/mutations/createPost.ts
-import { getRepository } from 'typeorm';
-import { Post } from '../../data/entities/Post';
+import Post from '../../data/entities/Post';
 
 export default async (parent, args, context, info) => {
     // preparing the post object
     const post = new Post();
     post.title = 'Our first blog post';
     
-    // saving our first psot entity
+    // saving our first post entity
     const repository = context.db.connection.getRepository(Post);
     await repository.save(post);    
     
