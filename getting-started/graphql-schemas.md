@@ -76,7 +76,17 @@ When **code.store** receives a query, it will call all the functions for the fie
 
 ![](../.gitbook/assets/image.png)
 
+### Queries to retrieve data & mutations to push data
 
+Queries as mutations are the methods or functions of your API. Both have arguments and can return scalars or objects. The difference between the two?
 
+Use queries to query data **from** your API. With query, you do not modify your model \(even if you can, you should not\).
 
+Use mutations to **update** or **create** things **in** your service model. Mutations are also methods or functions of your API and can accept arguments. Use them to modify your model.
+
+A mutation can contain multiple fields, just like a query. There's one important distinction between queries and mutations, other than the name:
+
+While query fields are executed in parallel, mutation fields run in series, one after the other.
+
+This means that if we send two `incrementCredits` mutations in one request, the first is guaranteed to finish before the second begins, ensuring that we don't end up with a race condition with ourselves.
 
