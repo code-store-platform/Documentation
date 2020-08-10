@@ -55,7 +55,7 @@ Let's get into the details of each file and directory.
 
 Root directory contains two files and one folder:
 
-* `package.json` – it is a standard NPM configuration file. Feel free and add any NPM packages you like, we are going to install them for you during the deployment of the service;
+* `package.json` – it is a standard NPM configuration file. Feel free and add any NPM packages you like using `npm install {packageName}`;
 * `codestore.yaml` – contains your service ID and will contain more configuration options in later versions;
 * `src/` – this is where all the source code lives.
 
@@ -96,10 +96,23 @@ Hopefully, we should get "Hello, World!" message in our terminal 🤞
 Let's take a look at the resolver \(business logic\) for this query which is located in the file `src/resolvers/queries/helloWorld.ts`:
 
 ```typescript
-export default async (parent, args, context, info) => {
-    return 'Hello, World!';
-};
+// src/resolvers/queries/helloWorld.ts
+
+import { logger, Resolver } from 'codestore-utils';
+
+const resolver: Resolver = async (parent, args, context, info) => {
+  logger.log('This is a helloWorld resolver!', 'helloWorld');
+  return 'Hello, World!';
+}
+
+export default resolver;
 ```
+
+This is a basic code which does few things:
+
+* we are importing a logger module which is going to output messages to the local console or to our cloud log storage;
+* we are importing a Resolver, which is an Interface for a function type; it is not a necessary step but it is a useful one if you want to see type hints in your IDE;
+* if your code editor cannot find 'codestore-utils' then simply run `npm install` in the service directory root.
 
 {% hint style="info" %}
 When starting the service, code.store loads all files from `src/resolvers/mutations` and `src/resolvers/queries` directories and passes them to the GraphQL server. The filename of the resolver must be equal to the name of _a query_ or _a_ _mutation_. Each query and mutation in the`schema.graphql` file must have a corresponding _resolver_ in the filesystem.
@@ -107,9 +120,69 @@ When starting the service, code.store loads all files from `src/resolvers/mutati
 
 This should give you a basic understanding of how GraphQL schema and resolvers work together and let's write something more meaningful in the next chapter.
 
+### Local development
+
+{% hint style="warning" %}
+The local development workflow is still in early beta and we are working hard to bring you the most stable and comfortable local development experience. If you notice any issues, please ping us in our [community](https://spectrum.chat/code-store). 
+{% endhint %}
+
+Local development comes in handy if you don't want to launch `cs push` after each modification and then wait until it finishes.
+
+In order to use local development workflow:
+
+* install PostgreSQL database locally; you can do it quite easily either [https://postgresapp.com/](https://postgresapp.com/) or via [Docker](https://hub.docker.com/_/postgres);
+* configure your local settings in codestore.yaml:
+
+```yaml
+# ./codestore.yaml
+
+localConfiguration:
+ database:
+   port: 5432
+   database: my-local-database
+   password: my-secure-password
+   username: my-db-username
+   host: localhost
+ application:
+   port: 3000
+```
+
+* launch a local development server by running `cs dev`
+* `cs dev` will try to run npm install to make sure that the dependencies of your service are installed but you can also launch it manually if you wish.
+
+After launching cs dev you should see the following output:
+
+```bash
+$ cs dev
+✔ Installing dependencies
+✔ Compiling code
+2020-08-10T16:12:18.250Z Starting development server
+2020-08-10T16:12:18.251Z [bootstrap] Start bootstrapping the application
+2020-08-10T16:12:18.251Z [DatabaseConnector] Connecting to database
+2020-08-10T16:12:18.279Z [DatabaseConnector] Successfully connected to database my-local-database
+2020-08-10T16:12:18.279Z [DatabaseConnector] Running migrations
+2020-08-10T16:12:18.289Z [DatabaseConnector] Loaded entities:
+2020-08-10T16:12:18.735Z [GraphqlLoader] Loaded queries: helloWorld
+2020-08-10T16:12:18.749Z [bootstrap] Server is running on http://localhost:3000
+2020-08-10T16:12:18.749Z [bootstrap] Graphql is available on http://localhost:3000/graphql
+2020-08-10T16:12:47.130Z [helloWorld] query executes
+```
+
+Voila ! Let's try and test our local server:
+
+```bash
+curl \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{ "query": "{ helloWorld }" }' \
+  http://localhost:3000/graphql
+```
+
+You should get a "Hello, World!" message if everything works properly 🤞
+
 ### Blog-post example
 
-We can finally write something more or less meaningful! For the sake of simplicity, we decided to implement a well-beaten example of a Blog-post.
+We can finally write something more or less meaningful! For the sake of simplicity, we decided to implement a well-beaten example of a Blog-post. We are going to be using the local development server during this example, so make sure that you have a Postgresql database ready. 
 
 First of all, we should modify our `schema.graphql` file:
 
@@ -123,12 +196,7 @@ type Post {
     createdAt: String!
     title: String!
     body: String!
-    author: Author!
-}
-
-type Author {
-    id: ID!
-    name: String!
+    authorName: String!
 }
 
 type Query {
@@ -145,20 +213,23 @@ We have added two types and two queries in the schema and we can now go on and a
 ```typescript
 // src/resolvers/queries/allPosts.ts
 
-export default async (parent, args, context, info) => {
+import { logger, Resolver } from 'codestore-utils';
+
+const resolver: Resolver = async (parent, args, context, info) => {
+    logger.log('This is a allPosts resolver!', 'allPosts');
     return [
         {
             id: 1,
             createdAt: '2020-06-30',
             title: 'Test post',
             body: 'Test body',
-            author: {
-                id: 1,
-                name: 'Test author'
-            }
+            authorName: 'Test author',
         }
     ];
 }
+
+export default resolver;
+
 ```
 
 {% hint style="warning" %}
@@ -172,24 +243,39 @@ The rules are simple:
 For example, resolver for a _mutation_ `createUser` should be placed into `src/resolvers/mutations/createUser.ts` file.
 {% endhint %}
 
-Here we go, this is our first test resolver which is not yet connected to anything but which already can return the data! One last step before running the deployment command - we have to remove `src/resolvers/queries/helloWorld.ts` or simply rename it to `helloWorld.ts_`. And that's it, you can now deploy and test the application by running `cs push.`
+Here we go, this is our first test resolver which is not yet connected to anything but which already can return the data! One last step before running the deployment command - we have to remove `src/resolvers/queries/helloWorld.ts` or simply rename it to `helloWorld.ts_`. And that's it, you can now run your application locally via `cs dev` and test it via CURL: 
+
+```bash
+curl \
+          -X POST \
+          -H "Content-Type: application/json" \
+          --data '{ "query": "{ allPosts { id title authorName } }" }' \
+          http://localhost:3000/graphql
+
+{"data":{"allPosts":[{"id":"1","title":"Test post","authorName":"Test author"}]}}
+```
 
 {% hint style="warning" %}
 GraphQL queries and mutations in your `schema.graphql` should match 1-to-1 the queries and migrations in the file system, i.e. if you have a query _"test"_ in a schema and you don't have in the file system, the service will throw an error. The same in the opposite order, if you have a resolver in the file system but not in schema.
 {% endhint %}
 
-Until now we were not using any database at all and the time has come to ~~grab a beer~~ create one. The cool thing is that **code.store** generates the database automatically based on the GraphQL schema you provided! Let's modify our resolver and add some database queries:
+Until now we were not using any database at all and the time has come to ~~grab a beer~~ create one. The cool thing is that **code.store** generates the database automatically based on the GraphQL schema you provided! In order to generate the entities locally, we should run `cs generate` command.  As soon as it finishes the generation, let's modify our resolver and add some database queries:
 
 ```typescript
 // src/resolvers/queries/allPosts.ts
 
+import { logger, Resolver } from 'codestore-utils';
 import Post from '../../data/entities/Post';
 
-export default async (parent, args, context, info) => {
+const resolver: Resolver = async (parent, args, context, info) => {
+    logger.log('This is a allPosts resolver!', 'allPosts');
     const postRepository = context.db.connection.getRepository(Post);
     
     return postRepository.find();
 }
+
+export default resolver;
+
 ```
 
 {% hint style="info" %}
@@ -204,9 +290,21 @@ Few things have changed here:
 * we are importing [TypeORM Repository](https://typeorm.io/#/working-with-repository) and our generated Post entity
 * we are initializing the repository and performing a [find query](https://typeorm.io/#/find-options) for our Post entity
 
-As soon as we deploy the application with `cs push` , we can test it again and see that it's returning an empty array as we haven't created anything yet 🤦🏽‍♀️. Time to add the first mutation.
+As soon as we run the application with `cs dev` , we can test it again and see that it's returning an empty array as we haven't created anything yet 🤦🏽‍♀️. 
 
-First of all, we should modify the schema by adding those mutations:
+```bash
+curl \
+          -X POST \
+          -H "Content-Type: application/json" \
+          --data '{ "query": "{ allPosts { id title authorName } }" }' \
+          http://localhost:3000/graphql
+
+{"data":{"allPosts":[]}}
+```
+
+Time to add the first mutation.
+
+First of all, modify your schema.graphql to look like following:
 
 ```graphql
 # schema.graphql
@@ -218,12 +316,7 @@ type Post {
     createdAt: String!
     title: String!
     body: String!
-    author: Author!
-}
-
-type Author {
-    id: ID!
-    name: String!
+    authorName: String!
 }
 
 type Query {
@@ -231,54 +324,96 @@ type Query {
 }
 
 type Mutation {
-    createAuthor(name: String!): Author
-    createPost(title: String!, body: String!, authorId: ID!): Post
+    createPost(title: String!, body: String!, authorName: String!): Post
 }
 ```
 
-This is what has changed, we added a type Mutation to our GraphQL schema containing two mutations: `createAuthor` and `createPost`. Now we can implement them in our resolvers. Let's create a `createAuthor` resolver first:
-
-```typescript
-// src/resolvers/mutations/createAuthor.ts
-import Author from '../../data/entities/Author';
-
-export default async (parent, args, context, info) => {
-    // preparing the author object
-    const author = new Author();
-    author.name = 'FirstAuthor';
-    
-    // saving our first author entity
-    const authorRepository = context.db.connection.getRepository(Author);
-    await authorRepository.save(author);    
-    
-    return author;
-}
-```
-
-Let's also add a mutation to create a post:
+This is what has changed, we added a type Mutation to our GraphQL schema containing a mutation  `createPost`. Now we can implement our resolver:
 
 ```typescript
 // src/resolvers/mutations/createPost.ts
+import { logger, Resolver } from 'codestore-utils';
 import Post from '../../data/entities/Post';
 
-export default async (parent, args, context, info) => {
-    // preparing the post object
+const resolver: Resolver = async (parent, args, context, info) => {
+    logger.log('creating a new Post', 'createPost');
+    
     const post = new Post();
-    post.title = 'Our first blog post';
-    
-    // saving our first post entity
+    post.title = args.title;
+    post.authorName = args.authorName;
+
+    logger.log(post, 'createPost');
+
+    // getting a database connection
     const repository = context.db.connection.getRepository(Post);
-    await repository.save(post);    
     
-    return post;
+    // // saving our first post entity
+    return await repository.save(post);
+}
+
+export default resolver;
+```
+
+Now launch cs dev and run some queries \(we are going to be using a [http](https://httpie.org/) command which is similar to cURL but provides a better output\):
+
+```bash
+# Create a couple of new posts
+$ http POST http://localhost:3000/graphql \
+  query='mutation CreatePost($title: String!, $body: String!, $authorName: String!) { createPost(title: $title, body: $body, authorName: $authorName) { id title authorName } }' \ 
+  variables='{"title":"First post","body":"This is our first blog-post","authorName":"Test Author"}' \
+  -b
+
+{
+    "data": {
+        "createPost": {
+            "authorName": "Test Author",
+            "id": "1",
+            "title": "First post"
+        }
+    }
+}
+
+$ http POST http://localhost:3000/graphql \
+  query='mutation CreatePost($title: String!, $body: String!, $authorName: String!) { createPost(title: $title, body: $body, authorName: $authorName) { id title authorName } }' \
+  variables='{"title":"Second post","body":"This is our second blog-post","authorName":"Test Author"}' \
+  -b
+  
+{
+    "data": {
+        "createPost": {
+            "authorName": "Test Author",
+            "id": "7",
+            "title": "Second post"
+        }
+    }
+}
+
+# Let's retrieve the posts now
+$ http POST http://localhost:3000/graphql \
+  query='{ allPosts { id title authorName } }' -b
+{
+    "data": {
+        "allPosts": [
+            {
+                "authorName": "Test Author",
+                "id": "1",
+                "title": "First post"
+            },
+            {
+                "authorName": "Test Author",
+                "id": "2",
+                "title": "Second post"
+            }
+        ]
+    }
 }
 ```
 
 ### Finalizing
 
-WIP
+So now we have a working service on our local machine and it would be great to have it deployed somewhere in the cloud. Let's do exactly that and deploy the service to the private environment by running `cs push` command. As soon as finished, you can launch the queries in your private environment! 
 
-* **Conclusion**
+### **Conclusion**
 
 Not sure if it was quick 😉 but we hope that after this guide you have a good understanding of how code.store works. Feel free to check the rest of the documentation and contact us in the community chat if you will have any questions!
 
