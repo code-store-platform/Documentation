@@ -79,9 +79,11 @@ USAGE
 
 COMMANDS
   service:create    Create new service
-  service:delete    Remove service
+  service:delete    Remove a service
+  service:dev       Launch your service locally
   service:generate  Generate entities and migrations
-  service:list      List your services
+  service:list      List services in your organization
+  service:logs      Print the logs for your services
   service:promote   Promotes service from private env to demo
   service:pull      Download an existing service
   service:push      Push local changes to Private environment
@@ -92,7 +94,7 @@ COMMANDS
 The `cs service:list` command that can be shortened to `cs service:ls`, and is used to provide a list of your [services](../getting-started/core-concepts.md#service) along with information about them.
 
 ```bash
-cs service:list
+cs service:list # or cs service:ls
 ```
 
 #### Create
@@ -111,12 +113,20 @@ Deletes the service. Deletes it for real, so please make sure that you are sure 
 $ cs service:delete
 ```
 
+#### Dev
+
+Launches a service locally. Requires PostgreSQL and configuration in codestore.yaml.
+
+```bash
+$ cs service:dev # or cs dev
+```
+
 #### Generate
 
 Generates the entity models and database migrations for your GraphQL types and puts them into `src/entities`.
 
 ```bash
-$ cs service:generate
+$ cs service:generate # or cs generate
 ```
 
 {% hint style="warning" %}
