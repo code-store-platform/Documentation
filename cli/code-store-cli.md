@@ -10,19 +10,13 @@ description: >-
 ### Installation
 
 {% hint style="success" %}
-We are iteratiing really fast in order to bring the best user experience and some great features to our product, that's why please check for updates in our CLI! 
+We are iterating really fast in order to bring the best user experience and some great features to our product, that's why please check for updates in our CLI! 
 {% endhint %}
 
 #### macOS
 
 ```bash
 brew tap code-store-platform/brew && brew install codestore
-```
-
-#### Ubuntu 16+
-
-```text
-sudo snap install --classic codestore
 ```
 
 ### Other installation methods
