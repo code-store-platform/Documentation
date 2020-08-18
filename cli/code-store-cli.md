@@ -74,7 +74,7 @@ For each service, the **code.store** CLI is generating a directory structure tha
 # Example of the directory structure of a Service
 ./
 ├── src/
-│		├── models/ # contains generated TypeORM entities
+│		├── data/ # contains generated TypeORM entities
 │		├── resolvers/
 │		│		├── mutations/
 │		│				└── mutationExample.js|ts
