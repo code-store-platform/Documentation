@@ -2,7 +2,7 @@
 description: "\U0001F5A5\U0001F914⌨️\U0001F44F\U0001F680"
 ---
 
-# Quick Start with CLI \[WIP\]
+# Quick Start with CLI
 
 This guide will introduce some basic **code.store** concepts like services and schema generation using CLI. The goal of this quick start is to get you up and running fast, so let's not waste any time and start!
 

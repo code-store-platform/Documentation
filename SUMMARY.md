@@ -9,7 +9,7 @@
 * [Core concepts](getting-started/core-concepts.md)
 * [GraphQL \[WIP\]](getting-started/graphql-schemas.md)
 * [Quick Start](getting-started/quick-start/README.md)
-  * [Quick Start with CLI \[WIP\]](getting-started/quick-start/quick-start-with-cli.md)
+  * [Quick Start with CLI](getting-started/quick-start/quick-start-with-cli.md)
   * [Quick Start with Web Interface](getting-started/quick-start/quick-start-with-web-interface.md)
 * [Tutorials \[WIP\]](getting-started/tutorials/README.md)
   * [Hello World](getting-started/tutorials/hello-world.md)
