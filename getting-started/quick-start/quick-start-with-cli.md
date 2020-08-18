@@ -23,13 +23,13 @@ Once you have your account and the CLI is installed, we can finally do some inte
 In order to work with the CLI, you have to connect it with your account by launching the following command:
 
 ```bash
-cs login
+codestore login
 ```
 
 This command is going to launch your default browser and ask for your login details. Once you are authenticated, we can go on and create a new [service](../core-concepts.md#service).
 
 ```bash
-cs service:create
+codestore service:create
 ```
 
 ### The anatomy of a service
@@ -126,7 +126,7 @@ This should give you a basic understanding of how GraphQL schema and resolvers w
 The local development workflow is still in early beta and we are working hard to bring you the most stable and comfortable local development experience. If you notice any issues, please ping us in our [community](https://spectrum.chat/code-store). 
 {% endhint %}
 
-Local development comes in handy if you don't want to launch `cs push` after each modification and then wait until it finishes.
+Local development comes in handy if you don't want to launch `codestore push` after each modification and then wait until it finishes.
 
 In order to use local development workflow:
 
@@ -147,13 +147,13 @@ localConfiguration:
    port: 3000
 ```
 
-* launch a local development server by running `cs dev`
-* `cs dev` will try to run npm install to make sure that the dependencies of your service are installed but you can also launch it manually if you wish.
+* launch a local development server by running `codestore dev`
+* `codestore dev` will try to run "npm install" to make sure that the dependencies of your service are installed but you can also launch it manually if you wish.
 
-After launching cs dev you should see the following output:
+After launching `codestore dev` you should see the following output:
 
 ```bash
-$ cs dev
+$ codestore dev
 ✔ Installing dependencies
 ✔ Compiling code
 2020-08-10T16:12:18.250Z Starting development server
@@ -165,7 +165,6 @@ $ cs dev
 2020-08-10T16:12:18.735Z [GraphqlLoader] Loaded queries: helloWorld
 2020-08-10T16:12:18.749Z [bootstrap] Server is running on http://localhost:3000
 2020-08-10T16:12:18.749Z [bootstrap] Graphql is available on http://localhost:3000/graphql
-2020-08-10T16:12:47.130Z [helloWorld] query executes
 ```
 
 Voila ! Let's try and test our local server:
@@ -182,12 +181,12 @@ You should get a "Hello, World!" message if everything works properly 🤞
 
 ### Blog-post example
 
-We can finally write something more or less meaningful! For the sake of simplicity, we decided to implement a well-beaten example of a Blog-post. We are going to be using the local development server during this example, so make sure that you have a Postgresql database ready. 
+We can finally write something more or less meaningful! For the sake of simplicity, we decided to implement a well-beaten example of a Blog-post. We are going to be using the local development server during this example, so make sure that you have a PostgreSQL database ready. 
 
 First of all, we should modify our `schema.graphql` file:
 
 ```graphql
-# schema.graphql
+# src/schema.graphql
 
 # API schema for a simple Blog-post service
 
@@ -243,23 +242,21 @@ The rules are simple:
 For example, resolver for a _mutation_ `createUser` should be placed into `src/resolvers/mutations/createUser.ts` file.
 {% endhint %}
 
-Here we go, this is our first test resolver which is not yet connected to anything but which already can return the data! One last step before running the deployment command - we have to remove `src/resolvers/queries/helloWorld.ts` or simply rename it to `helloWorld.ts_`. And that's it, you can now run your application locally via `cs dev` and test it via CURL: 
+Here we go, this is our first test resolver which is not yet connected to anything but which already can return the data! One last step before running the deployment command - we have to remove `src/resolvers/queries/helloWorld.ts` or simply rename it to `helloWorld.ts_`. And that's it, you can now run your application locally via `codestore dev` and test it via CURL: 
 
 ```bash
 curl \
-          -X POST \
-          -H "Content-Type: application/json" \
-          --data '{ "query": "{ allPosts { id title authorName } }" }' \
-          http://localhost:3000/graphql
-
-{"data":{"allPosts":[{"id":"1","title":"Test post","authorName":"Test author"}]}}
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{ "query": "{ allPosts { id title authorName } }" }' \
+  http://localhost:3000/graphql
 ```
 
 {% hint style="warning" %}
 GraphQL queries and mutations in your `schema.graphql` should match 1-to-1 the queries and migrations in the file system, i.e. if you have a query _"test"_ in a schema and you don't have in the file system, the service will throw an error. The same in the opposite order, if you have a resolver in the file system but not in schema.
 {% endhint %}
 
-Until now we were not using any database at all and the time has come to ~~grab a beer~~ create one. The cool thing is that **code.store** generates the database automatically based on the GraphQL schema you provided! In order to generate the entities locally, we should run `cs generate` command.  As soon as it finishes the generation, let's modify our resolver and add some database queries:
+Until now we were not using any database at all and the time has come to ~~grab a beer~~ create one. The cool thing is that **code.store** generates the database automatically based on the GraphQL schema you provided! In order to generate the entities locally, we should run `codestore generate` command.  As soon as it finishes the generation, let's modify our resolver and add some database queries:
 
 ```typescript
 // src/resolvers/queries/allPosts.ts
@@ -290,16 +287,14 @@ Few things have changed here:
 * we are importing [TypeORM Repository](https://typeorm.io/#/working-with-repository) and our generated Post entity
 * we are initializing the repository and performing a [find query](https://typeorm.io/#/find-options) for our Post entity
 
-As soon as we run the application with `cs dev` , we can test it again and see that it's returning an empty array as we haven't created anything yet 🤦🏽‍♀️. 
+As soon as we run the application with `codestore dev` , we can test it again and see that it's returning an empty array as we haven't created anything yet 🤦🏽‍♀️. 
 
 ```bash
 curl \
-          -X POST \
-          -H "Content-Type: application/json" \
-          --data '{ "query": "{ allPosts { id title authorName } }" }' \
-          http://localhost:3000/graphql
-
-{"data":{"allPosts":[]}}
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{ "query": "{ allPosts { id title authorName } }" }' \
+  http://localhost:3000/graphql
 ```
 
 Time to add the first mutation.
@@ -307,7 +302,7 @@ Time to add the first mutation.
 First of all, modify your schema.graphql to look like following:
 
 ```graphql
-# schema.graphql
+# src/schema.graphql
 
 # API schema for a simple Blog-post service
 
@@ -341,28 +336,31 @@ const resolver: Resolver = async (parent, args, context, info) => {
     const post = new Post();
     post.title = args.title;
     post.authorName = args.authorName;
+    post.body = args.body;
+    post.createdAt = new Date().toISOString();
 
     logger.log(post, 'createPost');
 
-    // getting a database connection
+    // Getting a database connection
     const repository = context.db.connection.getRepository(Post);
     
-    // // saving our first post entity
+    // Saving our first post entity
     return await repository.save(post);
 }
 
 export default resolver;
 ```
 
-Now launch cs dev and run some queries \(we are going to be using a [http](https://httpie.org/) command which is similar to cURL but provides a better output\):
+Now launch `codestore dev` again and run some queries \(we are going to be using a [http](https://httpie.org/) command which is similar to cURL but provides a better output\):
 
 ```bash
 # Create a couple of new posts
 $ http POST http://localhost:3000/graphql \
-  query='mutation CreatePost($title: String!, $body: String!, $authorName: String!) { createPost(title: $title, body: $body, authorName: $authorName) { id title authorName } }' \ 
+  query='mutation CreatePost($title: String!, $body: String!, $authorName: String!) { createPost(title: $title, body: $body, authorName: $authorName) { id title authorName } }' \
   variables='{"title":"First post","body":"This is our first blog-post","authorName":"Test Author"}' \
   -b
 
+# And you will get output like this, meaning post successfully created
 {
     "data": {
         "createPost": {
@@ -373,11 +371,14 @@ $ http POST http://localhost:3000/graphql \
     }
 }
 
+
+# Create another one
 $ http POST http://localhost:3000/graphql \
   query='mutation CreatePost($title: String!, $body: String!, $authorName: String!) { createPost(title: $title, body: $body, authorName: $authorName) { id title authorName } }' \
   variables='{"title":"Second post","body":"This is our second blog-post","authorName":"Test Author"}' \
   -b
-  
+
+# Output  
 {
     "data": {
         "createPost": {
@@ -388,9 +389,12 @@ $ http POST http://localhost:3000/graphql \
     }
 }
 
+
 # Let's retrieve the posts now
 $ http POST http://localhost:3000/graphql \
   query='{ allPosts { id title authorName } }' -b
+  
+# All posts that we created for now
 {
     "data": {
         "allPosts": [
@@ -411,7 +415,7 @@ $ http POST http://localhost:3000/graphql \
 
 ### Finalizing
 
-So now we have a working service on our local machine and it would be great to have it deployed somewhere in the cloud. Let's do exactly that and deploy the service to the private environment by running `cs push` command. As soon as finished, you can launch the queries in your private environment! 
+So now we have a working service on our local machine and it would be great to have it deployed somewhere in the cloud. Let's do exactly that and deploy the service to the private environment by running `codestore push` command. As soon as finished, you can launch the queries in your private environment! 
 
 ### **Conclusion**
 
