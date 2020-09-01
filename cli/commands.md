@@ -79,22 +79,26 @@ USAGE
 
 COMMANDS
   service:create    Create new service
-  service:delete    Remove a service
   service:dev       Launch your service locally
   service:generate  Generate entities and migrations
+  service:info      Displays detailed information about a service
   service:list      List services in your organization
   service:logs      Print the logs for your services
   service:promote   Promotes service from private env to demo
   service:pull      Download an existing service
   service:push      Push local changes to Private environment
+  service:remove    Remove a service
 ```
 
 #### List
 
-The `cs service:list` command that can be shortened to `cs service:ls`, and is used to provide a list of your [services](../getting-started/core-concepts.md#service) along with information about them.
+The `cs service:list` command that can be shortened to `cs service:ls`, and is used to provide a list of your [services](../getting-started/core-concepts.md#service)  along with their status.
 
 ```bash
-cs service:list # or cs service:ls
+$ cs service:list # or cs service:ls
+Service ID         Name                Status
+amazing-service-1  Amazing service #1  ACTIVE
+amazing-service-2  Amazing service #2  ACTIVE
 ```
 
 #### Create
@@ -103,6 +107,18 @@ Create a new service by calling `cs service:create` which will display a wizard 
 
 ```bash
 $ cs service:create
+```
+
+#### Info
+
+Displays more detailed information about the service:
+
+```bash
+$ cs service:info
+         Private                     Demo
+version  0.0.3                       0.0.2
+deployed 8/31/2020, 10:01:44 PM      8/31/2020, 2:48:30 PM
+url      ...                         ...
 ```
 
 #### Delete
@@ -282,14 +298,15 @@ In order to manage services inside your project, you can use `cs project:service
 $ cs project:service --help
 Manage services inside your project
 
-USAGE
+USAGE 
   $ codestore project:service:COMMAND
-
-COMMANDS
-  project:service:add      Adds and existing service to your project
-  project:service:list     Lists services in your project
-  project:service:promote  Promotes service inside the project between Development, Stating and Production environments
-  project:service:remove   Exclude service from project. This is a potentially destructive operation that might result in a loss of data.
+  
+COMMANDS 
+  project:service:add Adds and existing service to your project
+  project:service:info Displays detailed information about project's service
+  project:service:list Lists services in your project
+  project:service:promote Promotes service inside the project between Development, Stating and Production environments
+  project:service:remove Exclude service from project. This is a potentially destructive operation that might result in a loss of data.
 ```
 
 #### Add
@@ -326,6 +343,14 @@ ARGUMENTS
 
 ALIASES
   $ codestore project:service:ls
+```
+
+#### Info
+
+Displays detailed information about project's service, in a similar way to `cs service:info`.
+
+```bash
+cs project:service:info {PROJECT} {SERVICE}
 ```
 
 #### Promote
