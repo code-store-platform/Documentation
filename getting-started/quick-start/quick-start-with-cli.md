@@ -48,12 +48,11 @@ You can check the contents of your new service directory by running `ls -lh ./`
 │		└── schema.graphql # GraphQL definition of your service's API
 ├── package.json # standard NPM configuration file
 └── codestore.yaml # main configuration file
-└── tsconfig.json # Typescript configuration file
 ```
 
 Let's get into the details of each file and directory.
 
-Root directory contains two files and one folder:
+The root directory contains two files and one folder:
 
 * `package.json` – it is a standard NPM configuration file. Feel free and add any NPM packages you like using `npm install {packageName}`;
 * `codestore.yaml` – contains your service ID and will contain more configuration options in later versions;
@@ -179,6 +178,10 @@ curl \
 
 You should get a "Hello, World!" message if everything works properly 🤞
 
+{% hint style="info" %}
+We are using lots of `curl` commands to query the web-services in this Quick Start, however, you can also GraphQL Playground by clicking on the link of the service, i.e. http://localhost:3000/graphql for the local environment, or https://api.code.store/{service URL hash}/graphql for remote environments.
+{% endhint %}
+
 ### Blog-post example
 
 We can finally write something more or less meaningful! For the sake of simplicity, we decided to implement a well-beaten example of a Blog-post. We are going to be using the local development server during this example, so make sure that you have a PostgreSQL database ready. 
@@ -253,7 +256,7 @@ curl \
 ```
 
 {% hint style="warning" %}
-GraphQL queries and mutations in your `schema.graphql` should match 1-to-1 the queries and migrations in the file system, i.e. if you have a query _"test"_ in a schema and you don't have in the file system, the service will throw an error. The same in the opposite order, if you have a resolver in the file system but not in schema.
+GraphQL queries and mutations in your `schema.graphql` should match 1-to-1 the queries and migrations in the file system, i.e. if you have a query _"test"_ in a schema and you don't have in the file system, the service will throw an error. The same in the opposite order, if you have a resolver in the file system but not in the schema.
 {% endhint %}
 
 Until now we were not using any database at all and the time has come to ~~grab a beer~~ create one. The cool thing is that **code.store** generates the database automatically based on the GraphQL schema you provided! In order to generate the entities locally, we should run `codestore generate` command.  As soon as it finishes the generation, let's modify our resolver and add some database queries:
@@ -299,7 +302,7 @@ curl \
 
 Time to add the first mutation.
 
-First of all, modify your schema.graphql to look like following:
+First of all, modify your schema.graphql to look like the following:
 
 ```graphql
 # src/schema.graphql
