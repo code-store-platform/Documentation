@@ -8,7 +8,7 @@ This guide will introduce some basic **code.store** concepts like services and s
 
 ### Create code.store account
 
-If you haven't done this already, then click on this link.
+If you haven't done this already, then [click on this link](https://app.code.store/).
 
 ### Install the code.store CLI
 
