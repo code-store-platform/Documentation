@@ -87,7 +87,7 @@ curl \
   -X POST \
   -H "Content-Type: application/json" \
   --data '{ "query": "{ helloWorld }" }' \
-  https://api.code.store/0/private/{service_id}/graphql
+  https://api.code.store/{service_url_hash}/graphql
 ```
 
 Hopefully, we should get "Hello, World!" message in our terminal 🤞
