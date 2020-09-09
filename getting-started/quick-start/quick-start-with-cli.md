@@ -39,15 +39,18 @@ You can check the contents of your new service directory by running `ls -lh ./`
 ```bash
 # Example of the directory structure of a Service
 ./
-├── src/
-│		├── data/ # contains generated TypeORM entities
-│		├── resolvers/ # contains GraphQL resolvers 
-│		│		├── mutations/ # mutations as used to create new objects  
-│		│		├── queries/ # queries are used to retrieve objects
-│		│				└── helloWorld.ts
-│		└── schema.graphql # GraphQL definition of your service's API
+├── codestore.yaml # main configuration file
 ├── package.json # standard NPM configuration file
-└── codestore.yaml # main configuration file
+└── src
+    ├── data # contains generated TypeORM entities
+    │   ├── entities
+    │   └── migrations
+    ├── resolvers # contains GraphQL resolvers 
+    │   ├── mutations # mutations as used to create new objects  
+    │   ├── queries # queries are used to retrieve objects
+    │   │   └── helloWorld.ts
+    │   └── resolvers.ts
+    └── schema.graphql # GraphQL definition of your service's API
 ```
 
 Let's get into the details of each file and directory.
@@ -90,7 +93,7 @@ curl \
   https://api.code.store/{service_url_hash}/graphql
 ```
 
-Hopefully, we should get "Hello, World!" message in our terminal 🤞
+Hopefully, we should get "Hello, World!" response \(something looking like that `{"data":{"helloWorld":"Hello, World!"}}`\) in our terminal 🤞
 
 Let's take a look at the resolver \(business logic\) for this query which is located in the file `src/resolvers/queries/helloWorld.ts`:
 
