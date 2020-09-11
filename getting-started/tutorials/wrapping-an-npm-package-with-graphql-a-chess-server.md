@@ -148,5 +148,26 @@ cs generate
 
 As we started to work with stored objects, we need to setup a local database. You can just install postgre, if you don't know [check our quick tutorial](how-to-setup-a-local-database.md).
 
+So now we have a schema with one query: `load` and one type: `Game`. We've setup a local database. We can try to run our chess service locally.  You need to go to the root directory of your service and execute `cs dev` command:
 
+```graphql
+cs dev
+2020-09-11T10:02:54.416Z [NPM] Installing dependencies
+2020-09-11T10:02:58.832Z [TypeScript] Compiling typescript code
+2020-09-11T10:03:08.122Z [GraphQL] Validating schema
+2020-09-11T10:03:08.146Z [GraphQL] Validating queries and mutations
+ ›   Error: Error: helloWorld queries are not defined in schema
+```
+
+Oops! We've removed `helloWorld` query from our schema and replaced it with load query, but we forgot resolvers. Basically, for each query \(mutation or query\) there is one TypeScript file in `/src/resolvers/queries` folder. By default, when you create a new service, we create a `helloWorld` query resolver, so you'll find `helloWorld.ts` file there. Our loader will try to match available resolvers to the ones in the schema, and that's why we got the previous error.
+
+Let's simply rename `helloWorld.ts` to `load.ts` 
+
+```graphql
+mv helloWorld.ts load.ts
+```
+
+Step 3: Include an NPM package
+
+So now we need to add chess.js NPM package to our service. 
 
