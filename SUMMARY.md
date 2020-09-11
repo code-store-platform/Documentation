@@ -12,7 +12,7 @@
   * [Quick Start with CLI](getting-started/quick-start/quick-start-with-cli.md)
   * [Quick Start with Web Interface](getting-started/quick-start/quick-start-with-web-interface.md)
 * [Tutorials \[WIP\]](getting-started/tutorials/README.md)
-  * [How to setup a local database](getting-started/tutorials/how-to-setup-a-local-database.md)
+  * [How to setup a local database with your service](getting-started/tutorials/how-to-setup-a-local-database.md)
   * [Hello World](getting-started/tutorials/hello-world.md)
   * [Database manipulations](getting-started/tutorials/database-manipulations.md)
   * [Versioning & promotion](getting-started/tutorials/versioning-and-promotion.md)

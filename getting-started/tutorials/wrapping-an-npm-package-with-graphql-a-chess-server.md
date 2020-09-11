@@ -146,5 +146,7 @@ cs generate
 
 ```
 
-As we started to work with stored objects, we need to setup a local database 
+As we started to work with stored objects, we need to setup a local database. You can just install postgre, if you don't know [check our quick tutorial](how-to-setup-a-local-database.md).
+
+
 
