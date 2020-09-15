@@ -192,7 +192,69 @@ To control that everything is ok, check the `package.json` file, it should look 
 }
 ```
 
+## Step 4: Create a game and store it in a database with a mutation
 
+So it's time to write our first mutation and use chess.js at the same time! First, let's edit the `schema.graphql` file in `/src` folder. As you remember we've added a Game type and a query load. Now time to add a mutation. Mutations are specific kind of queries that can modify the service's database state: 
 
+```graphql
+type Game {
+    id: ID!                     #Game's unique identifier
+    createdAt: String!          #Game's creation date
+    fen: String                 #Game's FEN representation 
+    ascii: String               #ASCII art representation of the board
+    turn: String!               #Current turn of the game, may be B or W
+}
+
+type Query {
+    load(gameId: ID!): Game     #Loads an existing game by it's ID and returns a Game object
+}
+
+type Mutation {
+    createGame: Game!           #Creates a new game and returns a Game object
+}
+```
+
+We need now create a mutation TypeScript file named `createGame.ts` in `/src/resolvers/mutations`
+
+```typescript
+import { logger, Resolver } from 'codestore-utils';
+import Chess from 'chess.js'
+import Game from '../../data/entities/Game';
+
+const resolver: Resolver = async (parent, args, context, info) => {
+  logger.log('This is a createGame mutation!', 'createGame');
+  const chess = new Chess.Chess()
+  let game = new Game()
  
+  game.createdAt = Date.now().toString()
+  game.ascii = chess.ascii()
+  game.fen = chess.fen()
+  game.turn = chess.turn()
+  
+  const repository = context.db.connection.getRepository(Game)
+  await repository.save(game);   
+  
+  return game
+}
+
+export default resolver;
+```
+
+Let's analyze what's inside. First, we need to include `chess.js` package, the one we installed trough npm install command:
+
+```typescript
+import Chess from 'chess.js'
+```
+
+Then, we also need to import the Game TypeOrm entity, so we can access the storage object: 
+
+```typescript
+import Game from '../../data/entities/Game';
+```
+
+Then we simply create a `chess` object and a new `Game` entity and fill Game's entity fields. Then we create a TypeOrm repository connection, save the Game object, and return it. 
+
+{% hint style="info" %}
+When a TypeOrm object has an ID field, it will be automatically created and filled in the returned object.
+{% endhint %}
 
