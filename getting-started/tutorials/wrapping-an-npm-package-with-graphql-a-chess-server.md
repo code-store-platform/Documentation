@@ -167,7 +167,32 @@ Let's simply rename `helloWorld.ts` to `load.ts`
 mv helloWorld.ts load.ts
 ```
 
-Step 3: Include an NPM package
+## Step 3: Include an NPM package
 
-So now we need to add chess.js NPM package to our service. 
+So now we need to add `chess.js` NPM package to our service, execute the following command in the root directory of your service:
+
+```graphql
+npm install chess.js
+```
+
+To control that everything is ok, check the `package.json` file, it should look like that:
+
+```yaml
+{
+  "name": "chess-server",
+  "version": "1.0.0",
+  "author": "code.store",
+  "scripts": {},
+  "dependencies": {
+    "chess.js": "^0.11.0",
+    "codestore-utils": "^1.3.4",
+    "pg": "^8.2.1",
+    "typeorm": "^0.2.24"
+  }
+}
+```
+
+
+
+ 
 
