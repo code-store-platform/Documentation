@@ -133,7 +133,7 @@ type Query {
 }
 ```
 
-  You can notice here that there is no `!` mark after the `Game`, which means our query may return `null` \(in case of the wrong `ID` for example\). Save your schema.graphql file, return to your favorite CLI, and run cs generate again. Yeehaa! You should get something like that : 
+You can notice here that there is no `!` mark after the `Game`, which means our query may return `null` \(in case of the wrong `ID` for example\). Save your schema.graphql file, return to your favorite CLI, and run cs generate again. Yeehaa! You should get something like that : 
 
 ```graphql
 cs generate
@@ -252,9 +252,13 @@ Then, we also need to import the Game TypeOrm entity, so we can access the stora
 import Game from '../../data/entities/Game';
 ```
 
-Then we simply create a `chess` object and a new `Game` entity and fill Game's entity fields. Then we create a TypeOrm repository connection, save the Game object, and return it. 
+Then, we simply create a `chess` object and a new `Game` entity and fill Game's entity fields. Then we create a TypeOrm repository connection, save the Game object, and return it. 
 
 {% hint style="info" %}
 When a TypeOrm object has an ID field, it will be automatically created and filled in the returned object.
 {% endhint %}
+
+Let's test our service locally, by running from the service root folder cs dev command. You should see something like that : 
+
+
 
