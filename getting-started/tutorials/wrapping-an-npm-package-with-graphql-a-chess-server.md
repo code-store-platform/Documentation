@@ -258,7 +258,7 @@ Then, we simply create a `chess` object and a new `Game` entity and fill Game's 
 When a TypeOrm object has an ID field, it will be automatically created and filled in the returned object.
 {% endhint %}
 
-Let's test our service locally, by running from the service root folder cs dev command. You should see something like that : 
+Let's test our service locally, by running from the service root folder `cs dev` command. You should see something like that : 
 
 
 
