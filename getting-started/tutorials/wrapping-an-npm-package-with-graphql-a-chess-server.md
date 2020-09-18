@@ -260,5 +260,26 @@ When a TypeOrm object has an ID field, it will be automatically created and fill
 
 Let's test our service locally, by running from the service root folder `cs dev` command. You should see something like that : 
 
+```typescript
+cs dev
+2020-09-18T12:44:19.286Z [NPM] Installing dependencies
+2020-09-18T12:44:23.395Z [TypeScript] Compiling typescript code
+2020-09-18T12:44:23.398Z /Users/maximetopolov/CLI-Demo/chess-server/src/rest is not available
+2020-09-18T12:44:32.886Z [GraphQL] Validating schema
+2020-09-18T12:44:32.914Z [GraphQL] Validating queries and mutations
+2020-09-18T12:44:36.159Z [INFO] Starting development server
+2020-09-18T12:44:36.159Z [Bootstrap] Start bootstrapping the application
+2020-09-18T12:44:36.160Z [Database] Connecting to database
+2020-09-18T12:44:36.309Z [Database] Successfully connected
+2020-09-18T12:44:36.454Z [Database] Migrations ran
+2020-09-18T12:44:36.456Z [GqlLoader] Loaded queries: load
+2020-09-18T12:44:36.456Z [GqlLoader] Loaded mutations: createGame
+2020-09-18T12:44:36.472Z [RestLoader] Loading rest handlers
+2020-09-18T12:44:36.472Z [RestLoader] No REST handlers available
+2020-09-18T12:44:36.478Z [Bootstrap] Graphql is available on: http://localhost:3000/graphql
+```
+
+You can play with your service by loading in your browser the API endpoint : `http://localhost:3000/graphql`
+
 
 
