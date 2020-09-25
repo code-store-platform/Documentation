@@ -64,7 +64,7 @@ The root directory contains two files and one folder:
 Let's dive into the `src/` directory:
 
 * `schema.graphql` – one of the most \(if not the most\) important files. It contains a [GraphQL](../core-concepts.md#schema-or-graphql-schema) schema of your service;
-* `data/` – this directory contains generated TypeORM entities. We automatically generate TypeScript classes for your database tables, that's why you should not edit the files in this directory \(even if you will, they will be re-generated automatically\);
+* `data/` – this directory contains generated TypeORM entities. We automatically generate TypeScript classes for your database tables, that's why **you should not edit the files in this directory** \(even if you will, they will be re-generated automatically\);
 * `resolvers/` – this is where your business logic lives. Resolvers serve two purposes: connect your GraphQL objects to data in the database and is a place where you implement any additional business logic.
 
 ### Basic API schema and resolver
