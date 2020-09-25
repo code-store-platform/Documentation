@@ -34,9 +34,9 @@ npm install -g codestore
 These are available in gzip compression:
 
 * [macOS](https://s3.code.store/codestore-darwin-x64.tar.gz)
-* [Linux \(x64\)](https://code.store/codestore-linux-x64.tar.gz)
-* [Windows \(x64\)](https://code.store/codestore-win32-x64.tar.gz)
-* [Windows \(x86\)](https://code.store/codestore-win32-x86.tar.gz)
+* [Linux \(x64\)](https://s3.code.store/codestore-linux-x64.tar.gz)
+* [Windows \(x64\)](https://s3.code.store/codestore-win32-x64.tar.gz)
+* [Windows \(x86\)](https://s3.code.store/codestore-win32-x86.tar.gz)
 * PalmOS \(just kidding\)
 
 ### Verifying the installation
