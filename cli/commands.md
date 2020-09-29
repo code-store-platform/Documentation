@@ -80,7 +80,6 @@ USAGE
 COMMANDS
   service:create    Create new service
   service:dev       Launch your service locally
-  service:generate  Generate entities and migrations
   service:info      Displays detailed information about a service
   service:list      List services in your organization
   service:logs      Print the logs for your services
@@ -139,14 +138,8 @@ $ cs service:dev # or cs dev
 
 #### Generate
 
-Generates the entity models and database migrations for your GraphQL types and puts them into `src/entities`.
-
-```bash
-$ cs service:generate # or cs generate
-```
-
 {% hint style="warning" %}
-Entity and database generation functionalities are still in alpha version. We are iterating fast to bring the best features as soon as possible. We would be happy to hear from you about what do you think about it in our community chat here: [https://spectrum.chat/code-store](https://spectrum.chat/code-store) 
+This command has been moved to **`cs generate:models`**
 {% endhint %}
 
 #### List
@@ -393,5 +386,85 @@ OPTIONS
   --project-id=project-id  (required) ID of the project
 ```
 
+### Generate
 
+This group of commands generate scaffolding \(templates\) of some important files.
+
+```bash
+$ cs generate
+Generates scaffolding (templates) of some important files
+
+USAGE
+  $ codestore generate:COMMAND
+
+COMMANDS
+  generate:handler   Generates auth.handler or context.handler
+  generate:models    Generates database entities and migrations
+  generate:resolver  Generates a GraphQL resolver
+  generate:rest      Generates a REST API handler
+```
+
+#### Handler
+
+Generates **`auth`** and **`context`** handlers.
+
+```bash
+$ cs generate:handler --help
+Generates auth.handler or context.handler
+
+USAGE
+  $ codestore generate:handler
+
+OPTIONS
+  -f, --force                     Force overwrite file if it already exists
+  -t, --handlerType=context|auth  Handler type, can be one of: context, auth.
+```
+
+Read more about the usage of those handlers in our [dedicated tutorial here](../getting-started/tutorials/authentication.md).
+
+#### Models
+
+Generates the entity models and database migrations for your GraphQL types and puts them into `src/entities`.
+
+```bash
+$ cs generate:models
+```
+
+{% hint style="warning" %}
+Entity and database generation functionalities are still in alpha version. We are iterating fast to bring the best features as soon as possible. We would be happy to hear from you about what do you think about it in our community chat here: [https://spectrum.chat/code-store](https://spectrum.chat/code-store) 
+{% endhint %}
+
+#### Resolver
+
+Generate a template of a GraphQL resolver:
+
+```bash
+$ cs generate:resolver --help                                                                                              12.18.3
+Generates a GraphQL resolver
+
+USAGE
+  $ codestore generate:resolver
+
+OPTIONS
+  -f, --force                        Force overwrite file if it already exists
+  -n, --name=name                    Resolver name
+  -t, --resolverType=query|mutation  Resolver type, one of: 'query' or 'mutation'
+```
+
+#### REST
+
+Generates a template of a REST API endpoint handler:
+
+```bash
+$ cs generate:rest --help                                                                                            3s   12.18.3
+Generates a REST API handler
+
+USAGE
+  $ codestore generate:rest
+
+OPTIONS
+  -f, --force                       Force overwrite file if it already exists
+  -m, --method=get|post|put|delete  HTTP method, one of: get, post, put, delete
+  -n, --name=name                   REST endpoint name
+```
 
