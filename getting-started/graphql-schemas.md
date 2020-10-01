@@ -2,7 +2,7 @@
 description: A quick guide to get you onboard with GraphQL
 ---
 
-# GraphQL \[WIP\]
+# GraphQL
 
 When you create a service on **code.store**, it is accessible via a unique API endpoint and you'll need to use GraphQL in order to interact with this endpoint.
 

@@ -7,11 +7,11 @@
 ## Getting started
 
 * [Core concepts](getting-started/core-concepts.md)
-* [GraphQL \[WIP\]](getting-started/graphql-schemas.md)
+* [GraphQL](getting-started/graphql-schemas.md)
 * [Quick Start](getting-started/quick-start/README.md)
   * [Quick Start with CLI](getting-started/quick-start/quick-start-with-cli.md)
   * [Quick Start with Web Interface](getting-started/quick-start/quick-start-with-web-interface.md)
-* [Tutorials \[WIP\]](getting-started/tutorials/README.md)
+* [Tutorials](getting-started/tutorials/README.md)
   * [How to setup a local database with your service](getting-started/tutorials/how-to-setup-a-local-database.md)
   * [Hello World](getting-started/tutorials/hello-world.md)
   * [Database manipulations](getting-started/tutorials/database-manipulations.md)
