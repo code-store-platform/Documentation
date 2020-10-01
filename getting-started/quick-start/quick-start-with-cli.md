@@ -361,61 +361,50 @@ Now launch `codestore dev` again and run some queries \(we are going to be using
 
 ```bash
 # Create a couple of new posts
-$ http POST http://localhost:3000/graphql \
-  query='mutation CreatePost($title: String!, $body: String!, $authorName: String!) { createPost(title: $title, body: $body, authorName: $authorName) { id title authorName } }' \
-  variables='{"title":"First post","body":"This is our first blog-post","authorName":"Test Author"}' \
-  -b
+$ curl 'http://localhost:3000/graphql' \
+    -X POST \
+    -H 'Content-Type: application/json' \
+    --data '{"query":"mutation createPost($title:String!, $body:String!, $authorName:String!) { createPost(title:$title, body:$body, authorName:$authorName) { id title body authorName } }","variables":{"title":"Our First Article","body":"Body","authorName":"Arthur Conan Doyle"}}'
 
 # And you will get output like this, meaning post successfully created
-{
-    "data": {
-        "createPost": {
-            "authorName": "Test Author",
-            "id": "1",
-            "title": "First post"
-        }
-    }
-}
-
+{"data":{"createPost":{"id":"1","title":"Our First Article","body":"Body","authorName":"Arthur Conan Doyle"}}}
 
 # Create another one
-$ http POST http://localhost:3000/graphql \
-  query='mutation CreatePost($title: String!, $body: String!, $authorName: String!) { createPost(title: $title, body: $body, authorName: $authorName) { id title authorName } }' \
-  variables='{"title":"Second post","body":"This is our second blog-post","authorName":"Test Author"}' \
-  -b
+$ curl 'http://localhost:3000/graphql' \
+    -X POST \
+    -H 'Content-Type: application/json' \
+    --data '{"query":"mutation createPost($title:String!, $body:String!, $authorName:String!) { createPost(title:$title, body:$body, authorName:$authorName) { id title body authorName } }","variables":{"title":"Our Second Article","body":"Body","authorName":"Arthur Conan Doyle"}}'
 
 # Output  
-{
-    "data": {
-        "createPost": {
-            "authorName": "Test Author",
-            "id": "7",
-            "title": "Second post"
-        }
-    }
-}
+{"data":{"createPost":{"id":"2","title":"Our Second Article","body":"Body","authorName":"Arthur Conan Doyle"}}}
 
 
 # Let's retrieve the posts now
-$ http POST http://localhost:3000/graphql \
-  query='{ allPosts { id title authorName } }' -b
+$ curl \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{ "query": "{ allPosts { id title authorName } }" }' \
+  http://localhost:3000/graphql
   
 # All posts that we created for now
+{"data":{"allPosts":[{"id":"1","title":"Our First Article","authorName":"Arthur Conan Doyle"},{"id":"2","title":"Our Second Article","authorName":"Arthur Conan Doyle"}]}}
+
+# Or if we format the JSON for more readability
 {
-    "data": {
-        "allPosts": [
-            {
-                "authorName": "Test Author",
-                "id": "1",
-                "title": "First post"
-            },
-            {
-                "authorName": "Test Author",
-                "id": "2",
-                "title": "Second post"
-            }
-        ]
-    }
+  "data": {
+    "allPosts": [
+      {
+        "id": "1",
+        "title": "Our First Article",
+        "authorName": "Arthur Conan Doyle"
+      },
+      {
+        "id": "2",
+        "title": "Our Second Article",
+        "authorName": "Arthur Conan Doyle"
+      }
+    ]
+  }
 }
 ```
 
