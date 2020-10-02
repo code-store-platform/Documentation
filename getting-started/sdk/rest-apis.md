@@ -30,7 +30,31 @@ const handler: Handler = async (event, context) => {
 export default handler;
 ```
 
-You can now run cs dev and send some test requests to your REST endpoint.
+An _event_ argument is an object which contains the following properties:
 
-As you can see, the concept is very simple but is very powerful at the same time ,as it allows you to create custom REST endpoints which could be used for integration with OAuth provides, Stripe or other payment systems which require callbacks!
+```typescript
+interface HandlerEvent {
+    params: {
+        query: {
+            [key: string]: string;
+        };
+    };
+    body: {
+        [key: string]: string;
+    };
+    headers: {
+        [key: string]: string;
+    };
+}
+```
+
+The _context_ argument contains the database connection property which you can use with your TypeORM entities:
+
+```typescript
+context.db.connection.getRepository(...);
+```
+
+You can now run **`cs dev`** and send some test requests to your REST endpoint.
+
+As you can see, the concept is very simple but is very powerful at the same time, as it allows you to create custom REST endpoints which could be used for integration with OAuth provides, Stripe or other payment systems which require callbacks!
 
