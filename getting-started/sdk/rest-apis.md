@@ -8,7 +8,7 @@ description: >-
 
 At the moment, code.store's SDK supports a simple file-system-based routing of REST API endpoints. We are exposing the **`http://{your service url}/rest/{endpoint}`** route, where **`{endpoint}`** is getting routed to the file **`./src/rest/{http method}.{endpoint}.ts`**. 
 
-![](../../.gitbook/assets/untitled-2020-09-22-1039-2-.png)
+![](../../.gitbook/assets/untitled-2020-09-22-1039-3-.png)
 
 For example:
 
