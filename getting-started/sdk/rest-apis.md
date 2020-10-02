@@ -48,6 +48,28 @@ interface HandlerEvent {
 }
 ```
 
+The next POST request **`curl -X POST 'http://localhost:3000/rest/helloWorld?hello=world' --data '{ "test": "object" }' -H "Content-Type: application/json"`** will result in the following _event_ object:
+
+```javascript
+{
+  "params": {
+    "query": {
+      "hello": "world"
+    }
+  },
+  "body": {
+    "test": "object"
+  },
+  "headers": {
+    "host": "localhost:3000",
+    "user-agent": "curl/7.64.1",
+    "accept": "*/*",
+    "content-type": "application/json",
+    "content-length": "20"
+  }
+}
+```
+
 The _context_ argument contains the database connection property which you can use with your TypeORM entities:
 
 ```typescript
