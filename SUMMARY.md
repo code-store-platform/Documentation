@@ -18,6 +18,7 @@
   * [Versioning & promotion](getting-started/tutorials/versioning-and-promotion.md)
   * [Wrapping an NPM package with GraphQL: a chess server](getting-started/tutorials/wrapping-an-npm-package-with-graphql-a-chess-server.md)
   * [Basic authentication](getting-started/tutorials/authentication.md)
+* [SDK](getting-started/sdk.md)
 * [FAQ](getting-started/faq.md)
 
 ## Command Line Interface <a id="cli"></a>
