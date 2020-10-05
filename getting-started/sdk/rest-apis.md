@@ -30,7 +30,9 @@ const handler: Handler = async (event, context) => {
 export default handler;
 ```
 
-An _event_ argument is an object which contains the following properties:
+You can now run **`cs dev`** and send some test requests to your REST endpoint.
+
+Let's pass a few minutes on the arguments of the handler: _event_  is an object which contains the following properties:
 
 ```typescript
 interface HandlerEvent {
@@ -75,8 +77,6 @@ The _context_ argument contains the database connection property which you can u
 ```typescript
 context.db.connection.getRepository(...);
 ```
-
-You can now run **`cs dev`** and send some test requests to your REST endpoint.
 
 As you can see, the concept is very simple but is very powerful at the same time, as it allows you to create custom REST endpoints which could be used for integration with OAuth provides, Stripe or other payment systems which require callbacks!
 
