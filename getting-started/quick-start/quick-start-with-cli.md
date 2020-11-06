@@ -42,10 +42,10 @@ You can check the contents of your new service directory by running `ls -lh ./`
 ├── codestore.yaml # main configuration file
 ├── package.json # standard NPM configuration file
 └── src
-    ├── data # contains generated TypeORM entities
+    ├── data # TypeORM entities
     │   ├── entities
     │   └── migrations
-    ├── resolvers # contains GraphQL resolvers 
+    ├── resolvers # GraphQL resolvers 
     │   ├── mutations # mutations as used to create new objects  
     │   ├── queries # queries are used to retrieve objects
     │   │   └── helloWorld.ts
@@ -64,7 +64,7 @@ The root directory contains two files and one folder:
 Let's dive into the `src/` directory:
 
 * `schema.graphql` – one of the most \(if not the most\) important files. It contains a [GraphQL](../core-concepts.md#schema-or-graphql-schema) schema of your service;
-* `data/` – this directory contains generated TypeORM entities. We automatically generate TypeScript classes for your database tables, that's why **you should not edit the files in this directory** \(even if you will, they will be re-generated automatically\);
+* `data/` – this directory contains TypeORM entities. You can automatically generate TypeScript classes for your database tables using **`cs generate:models -p src/data`** command;
 * `resolvers/` – this is where your business logic lives. Resolvers serve two purposes: connect your GraphQL objects to data in the database and is a place where you implement any additional business logic.
 
 ### Basic API schema and resolver
@@ -262,7 +262,7 @@ curl \
 GraphQL queries and mutations in your `schema.graphql` should match 1-to-1 the queries and migrations in the file system, i.e. if you have a query _"test"_ in a schema and you don't have in the file system, the service will throw an error. The same in the opposite order, if you have a resolver in the file system but not in the schema.
 {% endhint %}
 
-Until now we were not using any database at all and the time has come to ~~grab a beer~~ create one. The cool thing is that **code.store** generates the database automatically based on the GraphQL schema you provided! In order to generate the entities locally, we should run `codestore generate` command.  As soon as it finishes the generation, let's modify our resolver and add some database queries:
+Until now we were not using any database at all and the time has come to ~~grab a beer~~ create one. The cool thing is that **code.store** can generate the database automatically based on the GraphQL schema you provided! In order to generate the entities locally, we should run **`codestore generate:models -p src/data`** command which will generate the entities based on your schema.  As soon as it finishes the generation, let's modify our resolver and add some database queries:
 
 ```typescript
 // src/resolvers/queries/allPosts.ts
