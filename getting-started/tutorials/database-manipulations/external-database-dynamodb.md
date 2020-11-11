@@ -1,0 +1,2 @@
+# External database: DynamoDB
+

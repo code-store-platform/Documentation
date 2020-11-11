@@ -4,7 +4,7 @@ description: >-
   database.
 ---
 
-# How to setup a local database with your service
+# Setup a local database with your service
 
 You know that we care about your time, so we created a local launcher for your services. But you also know that your services have a local database to store your objects.  Let's setup a local Postgre database.
 

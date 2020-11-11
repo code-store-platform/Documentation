@@ -146,7 +146,7 @@ cs generate
 
 ```
 
-As we started to work with stored objects, we need to setup a local database. You can just install postgre, if you don't know [check our quick tutorial](how-to-setup-a-local-database.md).
+As we started to work with stored objects, we need to setup a local database. You can just install postgre, if you don't know [check our quick tutorial](../recipes/how-to-setup-a-local-database.md).
 
 So now we have a schema with one query: `load` and one type: `Game`. We've setup a local database. We can try to run our chess service locally.  You need to go to the root directory of your service and execute `cs dev` command:
 
