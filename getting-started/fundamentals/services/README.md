@@ -147,9 +147,15 @@ Below is as an example of successful execution **cs dev** command
 
 ## Service update
 
-### Update private environment
+### Create a new version
 
-After changes have been made to your service code - we can roll updates to the [**private** environment](../environments.md). To publish updates you have to use **cs push** command,
+Each service from time to time has to roll our a new updates. After changes have been made to your service code - we can roll updates to the [**private** environment](../environments.md). To publish a new version you have to use **cs push** command.
+
+{% hint style="info" %}
+If you roll a new updates and don't update your version at your **packgaje.json**, we will automatically increment the path version \(x.y.**Z**\). We recommend follow [**semver**](https://semver.org/) standard and update your service version each time, when you push updates. 
+{% endhint %}
+
+Displayed service version will taken from **package.json** file.
 
 Following our environments concept, by default, the service will be updated on the **private** environment.
 
@@ -168,7 +174,7 @@ As you can see, on the backstage we compiling your code using tsc, and validatin
 
 In general, working with the **cs push** command can be thought of as a git command with validation and pre-compilation of your code. In the future, we will provide access to your code through the GIT repository, but at the moment, you need to take care of this by yourself.
 
-### Promote service to demo environment
+### Promote new version to demo environment
 
 ## Handlers
 

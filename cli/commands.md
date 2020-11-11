@@ -420,7 +420,7 @@ OPTIONS
   -t, --handlerType=context|auth  Handler type, can be one of: context, auth.
 ```
 
-Read more about the usage of those handlers in our [dedicated tutorial here](../getting-started/tutorials/authentication.md).
+Read more about the usage of those handlers in our [dedicated tutorial here](../getting-started/recipes/authentication.md).
 
 #### Models
 

@@ -4,7 +4,7 @@ description: "\U0001F44B Take my hand, stranger. We'll go through code.store par
 
 # Tutorials
 
-{% page-ref page="authentication.md" %}
+{% page-ref page="../recipes/authentication.md" %}
 
 {% page-ref page="how-to-setup-a-local-database.md" %}
 
