@@ -105,11 +105,11 @@ Let's dive into the `src/` directory:
 * `resolvers/` – this is where your business logic lives. 
 * `resolvers/query`  and`resolvers/mutation`  – resolvers and mutations serve two purposes: connect your GraphQL objects to data in the database and is a place where you implement any additional business logic. 
 
-Most of the things for working with the database, such as migrations, typeorm entities, can be generated using the generator built into the CLI. The principles of models and migrations generation can be found in  [**Generation**](../generation.md) section.
+Most of the things for working with the database, such as migrations, typeorm entities, can be generated using the generator built into the CLI. The principles of models and migrations generation can be found in  [**Generation**](../generation/) section.
 
 ## Local development
 
-To simplify the local launch of the service - available simple command: **cs dev .**After execution this command on the backstage will be installed all dependencies \(npm i\), compiled typescript code \(tsc\), validating GraphQL schema, queries and mutations and applied [**middlewares**](middlewares.md).
+To simplify the local launch of the service - available simple command: **cs dev .**After execution this command on the backstage will be installed all dependencies \(npm i\), compiled typescript code \(tsc\), validating GraphQL schema, queries and mutations and applied [**middlewares**]().
 
 Note, if the service uses a database, you need to provide the credentials \(login, password, database, port, host\) for the database object in the [**services.yaml**](configuration-1.md) file. Here an example of local configuration of services.yaml:
 
@@ -147,6 +147,8 @@ Below is as an example of successful execution **cs dev** command
 
 ## Service update
 
+### Update private environment
+
 After changes have been made to your service code - we can roll updates to the [**private** environment](../environments.md). To publish updates you have to use **cs push** command,
 
 Following our environments concept, by default, the service will be updated on the **private** environment.
@@ -165,4 +167,14 @@ Using the **cs push** command - you publish your changes. When executing this co
 As you can see, on the backstage we compiling your code using tsc, and validating the schema, so you can be sure that changes you made is valid. If something went wrong - you will see error message and pushing will be interrupted.
 
 In general, working with the **cs push** command can be thought of as a git command with validation and pre-compilation of your code. In the future, we will provide access to your code through the GIT repository, but at the moment, you need to take care of this by yourself.
+
+### Promote service to demo environment
+
+## Handlers
+
+{% hint style="info" %}
+You can generate your handlers using **cs generate:handler** command
+{% endhint %}
+
+
 
