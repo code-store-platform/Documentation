@@ -26,7 +26,7 @@ In order to work with the CLI, you have to connect it with your account by launc
 codestore login
 ```
 
-This command is going to launch your default browser and ask for your login details. Once you are authenticated, we can go on and create a new [service](../core-concepts.md#service).
+This command is going to launch your default browser and ask for your login details. Once you are authenticated, we can go on and create a new [service](core-concepts.md#service).
 
 ```bash
 codestore service:create
@@ -63,7 +63,7 @@ The root directory contains two files and one folder:
 
 Let's dive into the `src/` directory:
 
-* `schema.graphql` – one of the most \(if not the most\) important files. It contains a [GraphQL](../core-concepts.md#schema-or-graphql-schema) schema of your service;
+* `schema.graphql` – one of the most \(if not the most\) important files. It contains a [GraphQL](core-concepts.md#schema-or-graphql-schema) schema of your service;
 * `data/` – this directory contains TypeORM entities. You can automatically generate TypeScript classes for your database tables using **`cs generate:models -p src/data`** command;
 * `resolvers/` – this is where your business logic lives. Resolvers serve two purposes: connect your GraphQL objects to data in the database and is a place where you implement any additional business logic.
 
@@ -80,7 +80,7 @@ type Query {
 It is a very basic schema of an API that has a single `Query` called `helloWorld` \(which doesn't accept arguments\) and which returns a single output of type `string`.
 
 {% hint style="info" %}
-If you are not comfortable with GraphQL syntax, we are inviting you to read [our GraphQL quick-start guide first](../graphql-schemas.md) and if you want to go deeper into that rabbit-hole 🐰then the official GraphQL documentation [https://graphql.org/learn/](https://graphql.org/learn/).
+If you are not comfortable with GraphQL syntax, we are inviting you to read [our GraphQL quick-start guide first](../recipes/graphql-schemas.md) and if you want to go deeper into that rabbit-hole 🐰then the official GraphQL documentation [https://graphql.org/learn/](https://graphql.org/learn/).
 {% endhint %}
 
 We can test this query by running the following curl command in your terminal:
@@ -210,7 +210,7 @@ type Query {
 ```
 
 {% hint style="info" %}
-Every GraphQL schema has a _query_ type and may or may not have a _mutation_ type. Read more about [GraphQL in our quick start guide here](../graphql-schemas.md), or in the official [GraphQL documentation](https://graphql.org/learn/schema/#object-types-and-fields).
+Every GraphQL schema has a _query_ type and may or may not have a _mutation_ type. Read more about [GraphQL in our quick start guide here](../recipes/graphql-schemas.md), or in the official [GraphQL documentation](https://graphql.org/learn/schema/#object-types-and-fields).
 {% endhint %}
 
 We have added two types and two queries in the schema and we can now go on and add the resolvers. Let's begin with the query `allPosts`: create a file `src/resolvers/queries/allPosts.ts` and initialize it with the following code:

@@ -18,9 +18,9 @@ You do it. Don't be lazy. [Code](https://code.store) 😈
 
 ## 💰How do I monetize my services?
 
-There is no public marketplace yet. When you build new projects for your clients, you can create some part of those [projects](core-concepts.md#project) as reusable [services](core-concepts.md#service). Then you can sell them to your clients with a subscription or pay-per-use rate plan.
+There is no public marketplace yet. When you build new projects for your clients, you can create some part of those [projects](quick-start/core-concepts.md#project) as reusable [services](quick-start/core-concepts.md#service). Then you can sell them to your clients with a subscription or pay-per-use rate plan.
 
-When you add a [service](core-concepts.md#service) in a [project](core-concepts.md#project), you can set up a different price for each of your [service-instances](core-concepts.md#service-instance). You can then invite your client to this [project](core-concepts.md#project), providing his billing details. We'll generate the invoice for each client and collect payments for you. Each month you'll receive your combined funds collected from all clients in a single payment from us. Money time!
+When you add a [service](quick-start/core-concepts.md#service) in a [project](quick-start/core-concepts.md#project), you can set up a different price for each of your [service-instances](quick-start/core-concepts.md#service-instance). You can then invite your client to this [project](quick-start/core-concepts.md#project), providing his billing details. We'll generate the invoice for each client and collect payments for you. Each month you'll receive your combined funds collected from all clients in a single payment from us. Money time!
 
 ## 💵 How should I price my services?
 
@@ -33,11 +33,11 @@ You can bundle in a single monthly rate everything:
 
 ## 🗣️ What programming languages do you support?
 
-At the moment we support only [_TypeScript_](https://www.typescriptlang.org/) __\(which is the 2nd most loved programming language in the world 🤘 as per [the 2020 Stack Overflow survey](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved)\). If you need a specific language for your [project](core-concepts.md#project), drop us a word [here](https://spectrum.chat/code-store).
+At the moment we support only [_TypeScript_](https://www.typescriptlang.org/) __\(which is the 2nd most loved programming language in the world 🤘 as per [the 2020 Stack Overflow survey](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved)\). If you need a specific language for your [project](quick-start/core-concepts.md#project), drop us a word [here](https://spectrum.chat/code-store).
 
 ## 🛢 I need a database for my service, how do I create one?
 
-We provide a managed Postgres database for your services, but you don't have to worry about it as **code.store** creates and updates your [database](core-concepts.md#database) based on the [GraphQL schema](core-concepts.md#schema-or-graphql-schema) of your [service](core-concepts.md#service).
+We provide a managed Postgres database for your services, but you don't have to worry about it as **code.store** creates and updates your [database](quick-start/core-concepts.md#database) based on the [GraphQL schema](quick-start/core-concepts.md#schema-or-graphql-schema) of your [service](quick-start/core-concepts.md#service).
 
 ## 🧱 What is a service?
 

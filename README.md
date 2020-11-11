@@ -4,9 +4,9 @@
 
 We are happy that you're here! 👋
 
-So what is **code.store**? It all started with a simple idea: the complexity of the modern world is astonishing and is increasing every day, that's why we should be spending our time and energy on problems that are new and complex to solve and try and reuse everything else. _So_ we decided to create a platform for companies and software engineers to reuse and share live, hosted code among [projects](getting-started/core-concepts.md#project) and [organizations](getting-started/core-concepts.md#organization). We also want to create a public marketplace where every developer and company could sell their API-first [services](getting-started/core-concepts.md#service) on a subscription or pay-per-call rate-plan.
+So what is **code.store**? It all started with a simple idea: the complexity of the modern world is astonishing and is increasing every day, that's why we should be spending our time and energy on problems that are new and complex to solve and try and reuse everything else. _So_ we decided to create a platform for companies and software engineers to reuse and share live, hosted code among [projects](getting-started/quick-start/core-concepts.md#project) and [organizations](getting-started/quick-start/core-concepts.md#organization). We also want to create a public marketplace where every developer and company could sell their API-first [services](getting-started/quick-start/core-concepts.md#service) on a subscription or pay-per-call rate-plan.
 
-So, in short, **code.store** is a backend-as-a-service, a GraphQL schema-first platform where you can build, host, reuse, and bill your [services](getting-started/core-concepts.md#service) so that you could _create_ some truly amazing products!
+So, in short, **code.store** is a backend-as-a-service, a GraphQL schema-first platform where you can build, host, reuse, and bill your [services](getting-started/quick-start/core-concepts.md#service) so that you could _create_ some truly amazing products!
 
 **For the good of your company and the planet, we think that reusing code is** _**very**_ **important!**
 
@@ -20,7 +20,7 @@ Create a feature request or chat with us in real-time in our community home here
 
 ## What next?
 
-A good to place to start would be to read about [Our Vision](our-vision.md), [How it works?](how-it-works.md) and of course, our [Core concepts](getting-started/core-concepts.md).
+A good to place to start would be to read about [Our Vision](our-vision.md), [How it works?](how-it-works.md) and of course, our [Core concepts](getting-started/quick-start/core-concepts.md).
 
 **Enjoy the reading and don't hesitate to** [**contact us**](https://spectrum.chat/code-store)**!**
 

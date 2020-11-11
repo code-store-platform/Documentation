@@ -74,7 +74,7 @@ The payload of a GraphQL query \(or mutation\) consists of a set of fields. In c
 
 When **code.store** receives a query, it will call all the functions for the fields that are specified in the query’s payload. It thus resolves the query and is able to retrieve the correct data for each field. Once all resolvers returned, the server will package data up in the format that was described by the query and send it back to the client.
 
-![](../.gitbook/assets/image.png)
+![](../../.gitbook/assets/image.png)
 
 ### Queries to retrieve data & mutations to push data
 

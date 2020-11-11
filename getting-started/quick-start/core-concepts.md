@@ -48,8 +48,8 @@ A service reused in a [project](core-concepts.md#project) is an instance of a [s
 
 A schema or [GraphQL schema](core-concepts.md#schema-or-graphql-schema) defines and describes your [service](core-concepts.md#service). It uses [GraphQL](https://graphql.org/) [SDL](https://graphql.org/learn/schema/) with some additional directives. You have to define 3 main things:
 
-* [**Types**](graphql-schemas.md#graphql-types): they describe objects your service is manipulating \(Product for a cart, Meeting Room for rooms booking engine or Client for a CRM service\).
-* [**Queries**](graphql-schemas.md#graphql-queries-execution): at its simplest, GraphQL is about asking for specific fields on objects. It's a shorthand syntax where we omit both the query keyword and the query name, but in production apps, it's useful to use these to make our code less ambiguous. 
+* [**Types**](../recipes/graphql-schemas.md#graphql-types): they describe objects your service is manipulating \(Product for a cart, Meeting Room for rooms booking engine or Client for a CRM service\).
+* [**Queries**](../recipes/graphql-schemas.md#graphql-queries-execution): at its simplest, GraphQL is about asking for specific fields on objects. It's a shorthand syntax where we omit both the query keyword and the query name, but in production apps, it's useful to use these to make our code less ambiguous. 
 * **Mutations**: most discussions of GraphQL focus on data fetching, but any complete data platform needs a way to modify server-side data as well. So mutations offer your API consumers a way to create and update objects manipulated by your service \(i.e., addToCart\(productSKU\)\)
 
 ### 📁 Model

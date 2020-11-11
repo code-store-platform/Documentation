@@ -91,7 +91,7 @@ COMMANDS
 
 #### List
 
-The `cs service:list` command that can be shortened to `cs service:ls`, and is used to provide a list of your [services](../getting-started/core-concepts.md#service)  along with their status.
+The `cs service:list` command that can be shortened to `cs service:ls`, and is used to provide a list of your [services](../getting-started/quick-start/core-concepts.md#service)  along with their status.
 
 ```bash
 $ cs service:list # or cs service:ls
@@ -232,7 +232,7 @@ ALIASES
 
 ### Projects
 
-In order for your [Services](../getting-started/core-concepts.md#service) to be published, they have to be added to [Projects](../getting-started/core-concepts.md#project). Projects can be created and managed either by using the web-site or via CLI.
+In order for your [Services](../getting-started/quick-start/core-concepts.md#service) to be published, they have to be added to [Projects](../getting-started/quick-start/core-concepts.md#project). Projects can be created and managed either by using the web-site or via CLI.
 
 ```bash
 $ cs project --help
