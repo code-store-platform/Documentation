@@ -107,7 +107,7 @@ The _context_ argument contains the database connection property which you can u
 context.db.connection.getRepository(...);
 ```
 
-As you can see, the concept is very simple but is very powerful at the same time, as it allows you to create custom REST endpoints which could be used for integration with OAuth provides, Stripe or other payment systems which require callbacks!
+As you can see, the concept is very simple but is very powerful at the same time, as it allows you to create custom REST endpoints, which could be used for integration with OAuth provides, Stripe or other payment systems which require callbacks!
 
 ## Middlewares
 
