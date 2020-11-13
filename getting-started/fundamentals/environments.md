@@ -57,12 +57,12 @@ In a micro-service architecture, deployment approaches are different, but in gen
 We understand how important testing and pre-release preparation for projects and added a **staging** environment. So, each project on the code.store platform includes the following environments: 
 
 * development
-* stagning
+* staging
 * production
 
 **development** and **staging** environments have some limitations in terms of scaling and intended for active development and testing.
 
-**production** environment has specific set of rules for scalability and availability. We guarantee SLA \(Service Level Agreement\) **99.9%** of the services deployed to the **production** environment.
+**production** environment has a specific set of rules for scalability and availability. We guarantee SLA \(Service Level Agreement\) **99.9%** of the services deployed to the **production** environment.
 
 You don't have to worry about creating any environment when creating a new project - the code.store platform does it automatically.
 
