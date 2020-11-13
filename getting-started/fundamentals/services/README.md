@@ -14,7 +14,7 @@ Currently, we are actively working on adding support for different languages and
 
 Using the CLI or web interface - you can _create/edit/update/add to projects/delete_ your services. Below are examples of how this can be done.
 
-When service is created - the platform automatically deploys it to **private** and **demo** environments. For more information on environments, see the [**Environments**](../environments.md) section.
+When service is created - the platform automatically deploys it to **private** and **demo** environments. For more information about environments, see the [**Environments**](../environments.md) section.
 
 **private** environment - created exclusively for you, with the purpose of developing and testing your service, when the **demo** - is a public environment, in the context of your organization \(or marketplace, if you wish to publish your service in mass and make some money on it\)
 
@@ -82,7 +82,7 @@ YOUR_SERVICE_NAME
 
 You can check its performance by following the links that you received when creating the service. These links lead to the GraphQL playground, which is available by default for every new service.
 
-Please note that your service was deployed on two **private** and **demo** environments at once. For more information on environments, see the [**Environments**](../environments.md) **section.**
+Please note that your service was deployed on two **private** and **demo** environments at once. For more information about environments, see the [**Environments**](../environments.md) **section.**
 
 You also receive a _developer key_ for your **private** environment. This key must be used each time when you call your service in a **private** environment, just by adding HEADER **“x-user-authorization”.** In order to restrict access to a service that is under active development, you should use an authorization. The built-in mechanism for accessing and authorizing your services can be found in the [**Access and Authorization**](../access-and-authorization.md) section.
 
@@ -109,7 +109,7 @@ Most of the things for working with the database, such as migrations, typeorm en
 
 ## Local development
 
-To simplify the local launch of the service - available simple command: **cs dev .**After execution this command on the backstage will be installed all dependencies \(npm i\), compiled typescript code \(tsc\), validating GraphQL schema, queries and mutations and applied [**middlewares**]().
+To simplify the local launch of the service - available simple command: **cs dev.** After executing, on the backstage will be installed all dependencies \(npm i\), compiled typescript code \(tsc\), validating GraphQL schema, queries, and mutations, and applied [**middlewares**]().
 
 Note, if the service uses a database, you need to provide the credentials \(login, password, database, port, host\) for the database object in the [**services.yaml**](configuration-1.md) file. Here an example of local configuration of services.yaml:
 
@@ -149,15 +149,15 @@ Below is as an example of successful execution **cs dev** command
 
 ### Create a new version
 
-Each service from time to time has to roll our a new updates. After changes have been made to your service code - we can roll updates to the [**private** environment](../environments.md). To publish a new version you have to use **cs push** command.
+Each service from time to time has to roll our new updates. After changes have been made to your service code - we can roll updates to the [**private** environment](../environments.md). To publish a new version you have to use **cs push** command.
 
 {% hint style="info" %}
-If you roll a new updates and don't update your version at your **packgaje.json**, we will automatically increment the path version \(x.y.**Z**\). We recommend follow [**semver**](https://semver.org/) standard and update your service version each time, when you push updates. 
+If you roll new updates and don't update your version at your **packgaje.json**, we will automatically increment the path version \(x.y.**Z**\). We recommend follow [**SemVer**](https://semver.org/) standard and update your service version each time when you push updates. 
 {% endhint %}
 
-Displayed service version will taken from **package.json** file.
+Displayed service version will take from **package.json** file.
 
-Following our environments concept, by default, the service will be updated on the **private** environment.
+Following our environment concept, by default, the service will be updated on the **private** environment.
 
 Using the **cs push** command - you publish your changes. When executing this command, you will specify release notes, which will serve as information about what exactly changes have been made. Below is as an example of  successful execution **cs push** command:
 
@@ -170,17 +170,36 @@ Using the **cs push** command - you publish your changes. When executing this co
 ✔ Preparing the service code for upload
 ```
 
-As you can see, on the backstage we compiling your code using tsc, and validating the schema, so you can be sure that changes you made is valid. If something went wrong - you will see error message and pushing will be interrupted.
+As you can see, on backstage we compiling your code using tsc, and validating the schema, so you can be sure - changes you made are valid. If something went wrong - you will see an error message and pushing will be interrupted.
 
 In general, working with the **cs push** command can be thought of as a git command with validation and pre-compilation of your code. In the future, we will provide access to your code through the GIT repository, but at the moment, you need to take care of this by yourself.
 
 ### Promote new version to demo environment
 
-## Handlers
+## Validation and compilation
 
-{% hint style="info" %}
-You can generate your handlers using **cs generate:handler** command
-{% endhint %}
+Each time when you push your code using **cs push** command - we compile and validate your code. If you develop your services using local development using **cs dev** command -  you can be sure that everything will be OK. 
+
+Each push of your updates trigger compilation based on **tsc** \(TypeScript compiler\) and GraphQL schema validation.  If something went wrong - you will receive an error message.
+
+## Interfaces
+
+The code.store framework provides the ability to create both REST and GraphQL interfaces.
+
+### REST
+
+REST interfaces - is a simple file-system-based routing of REST API endpoints based on [Express](https://expressjs.com/) framework. How to create REST endpoints, handlers, middlewares described in [**REST**](rest.md) secton.
+
+### GraphQL
+
+[**GraphQL**](../../recipes/graphql-schemas.md) is an API standard that provides a more efficient, powerful, and flexible alternative to REST. We understand it like no one else and provide an opportunity for full-cycle data management of your GraphQL API. With code.store platform you able to: 
+
+* be sure, that you schema and code always valid
+* generate database models \([TypeORM](https://typeorm.io/#/) entities\) based on your GraphQL schema 
+* generate migrations to your PostgreSQL database
+* generate handlers to your queries and mutations
+
+How to use GraphQL described in [**Services - GraphQL**](graphql.md) section. How to generate models, migrations, resolvers... described in [**Generation**](../generation/) section.
 
 
 

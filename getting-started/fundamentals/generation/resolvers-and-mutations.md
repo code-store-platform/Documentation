@@ -1,2 +1,2 @@
-# Resolvers and Mutations
+# Resolvers
 
