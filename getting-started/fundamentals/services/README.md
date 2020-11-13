@@ -157,7 +157,9 @@ If you roll new updates and don't update your version at your **packgaje.json**,
 
 Displayed service version will take from **package.json** file.
 
-Following our environment concept, by default, the service will be updated on the **private** environment.
+Following our [**environment**](../environments.md) concept, by default, the service will be updated on the **private** environment.
+
+### Pushing updates
 
 Using the **cs push** command - you publish your changes. When executing this command, you will specify release notes, which will serve as information about what exactly changes have been made. Below is as an example of  successful execution **cs push** command:
 
@@ -176,6 +178,10 @@ In general, working with the **cs push** command can be thought of as a git comm
 
 ### Promote new version to demo environment
 
+After pushing changes to **private** [**environment**](../environments.md)**,** in order to further distribute a new version of the service to projects, it becomes necessary to publish the changes. To publish changes just execute **cs promote** command. 
+
+Service promotion from private to demo environment will create a new service version. To learn about environments and versioning concepts follow [**Environments**](../environments.md) and [**Versioning**](../versioning.md) sections.
+
 ## Validation and compilation
 
 Each time when you push your code using **cs push** command - we compile and validate your code. If you develop your services using local development using **cs dev** command -  you can be sure that everything will be OK. 
@@ -188,11 +194,11 @@ The code.store framework provides the ability to create both REST and GraphQL in
 
 ### REST
 
-REST interfaces - is a simple file-system-based routing of REST API endpoints based on [Express](https://expressjs.com/) framework. How to create REST endpoints, handlers, middlewares described in [**REST**](rest.md) secton.
+REST interfaces - is a simple file-system-based routing of REST API endpoints based on [Express](https://expressjs.com/) framework. How to create REST endpoints, handlers, middlewares described in [**REST**](rest.md) section.
 
 ### GraphQL
 
-[**GraphQL**](../../recipes/graphql-schemas.md) is an API standard that provides a more efficient, powerful, and flexible alternative to REST. We understand it like no one else and provide an opportunity for full-cycle data management of your GraphQL API. With code.store platform you able to: 
+[**GraphQL**](../../recipes/graphql-schemas.md) is an API standard that provides a more efficient, powerful, and flexible alternative to REST. We understand it like no one else and provides an opportunity for full-cycle data management of your GraphQL API. With code.store platform you able to: 
 
 * be sure, that you schema and code always valid
 * generate database models \([TypeORM](https://typeorm.io/#/) entities\) based on your GraphQL schema 
