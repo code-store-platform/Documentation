@@ -207,5 +207,22 @@ REST interfaces - is a simple file-system-based routing of REST API endpoints ba
 
 How to use GraphQL described in [**Services - GraphQL**](graphql.md) section. How to generate models, migrations, resolvers... described in [**Generation**](../generation/) section.
 
+## Service info
+
+To display information about your service just execute cs service:info command inside service dir. 
+
+Command execution result will be displayed with information about deployed on the demo and private environment service version, deployed date, developer key's and service URL's.
+
+```text
+Service: demo_app	demo
+
+              Private                                                         Demo                                                            
+version       0.0.1                                                           0.0.1                                                           
+deployed      11/12/2020, 10:18:57 AM                                         11/12/2020, 10:18:57 AM                                         
+developer key cff7f0fb-8856-48e7-817b-0d83c696b247                                                                                            
+url           https://api.code.store/a147ac464fd94f4ea9f430e9f28ba933/graphql https://api.code.store/2f8f2cf0d1e046e1b27dc2d14a357f13/graphql 
+
+```
+
 
 

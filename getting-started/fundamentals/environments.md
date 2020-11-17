@@ -20,7 +20,7 @@ When we create a new service, it is automatically deployed in two environments, 
 
 ### Private Environment
 
-Private environment - serves to enable an opportunity to update service and test the changes made in an isolated environment. The API of this service is accessed using a **key** that is generated when the service is created. Access to services, which deployed in this environment, has only the owner \(developer\) of this service. 
+A **private** environment - serves to enable an opportunity to update service and test the changes made in an isolated environment. The API of this service is accessed using a **key** that is generated when the service is created. Access to services, which deployed in this environment, has only the owner \(developer\) of this service. 
 
 ### **Demo environment**
 
