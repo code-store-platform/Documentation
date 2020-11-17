@@ -141,8 +141,6 @@ In this case, service A will obtain a new value of **FOO** variable. In the diag
 
 ![Service A with a new value of FOO variable.](../../.gitbook/assets/secret-inheritance-diagram-env.-var.-service-scope.jpeg)
 
-
-
 {% hint style="info" %}
 Basically, you can do the same with services, which deployed on demo and private environments. But note, that demo and private - is a non-production service environments, and has many limitations, including "per-request availability". To learn more see [**Environments**](environments.md) section.
 {% endhint %}
