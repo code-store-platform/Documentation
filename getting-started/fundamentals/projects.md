@@ -127,17 +127,36 @@ Updated "staging" in project my_project
 
 In the example above, we promote service with ID: **demo\_app**, which already included to project with ID: **my\_project** to the **staging** environment.
 
-![promote to staging ](../../.gitbook/assets/projects-promote-to-staging.jpeg)
+![Promote service to staging](../../.gitbook/assets/projects-promote-to-staging.jpeg)
+
+Using this approach, you can deploy the service to a production environment.
+
+## Update service version
+
+To update service version just re-use `cs project:service:promote` command.
+
+```text
+> cs project:service:promote
+
+ Choose a project you want to promote to
+ Project: my_project	This is my project.
 
 
+ Choose a service which you want to promote
+ Service: demo_app	demo
+
+? Please select the environment development
+
+
+Updated "development" in project my_project
+
+```
 
 {% hint style="info" %}
-YOU 
+Note, after command execution version from the demo environment will be applied.
 {% endhint %}
 
-
-
-
+![Updated version on development environment.](../../.gitbook/assets/projects-update-service-version.jpeg)
 
 ## Exclude service from project
 
