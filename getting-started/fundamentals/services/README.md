@@ -109,9 +109,11 @@ Most of the things for working with the database, such as migrations, typeorm en
 
 ## Local development
 
-To simplify the local launch of the service - available simple command: **cs dev.** After executing, on the backstage will be installed all dependencies \(npm i\), compiled typescript code \(tsc\), validating GraphQL schema, queries, and mutations, and applied [**middlewares**]().
+To simplify the local launch of the service - available simple command: **cs dev.** After executing, on the backstage will be installed all dependencies \(npm i\), compiled typescript code \(tsc\), validating GraphQL schema, queries, and mutations, and applied [middleware](rest.md) functions.
 
-Note, if the service uses a database, you need to provide the credentials \(login, password, database, port, host\) for the database object in the [**services.yaml**](configuration-1.md) file. Here an example of local configuration of services.yaml:
+{% hint style="info" %}
+Note, if the service uses a database, you need to provide the credentials \(login, password, database, port, host\) for the database object in the [**codestore.yaml**](configuration-1.md) file. Here an example of local configuration of codestore.yaml:
+{% endhint %}
 
 ```text
 # ./codestore.yaml
