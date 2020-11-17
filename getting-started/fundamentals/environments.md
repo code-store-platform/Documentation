@@ -18,6 +18,8 @@ In case when we create a new service, we deploy it on its own, isolated environm
 
 When we create a new service, it is automatically deployed in two environments, which called: **private** and **demo**.
 
+![service &quot;A&quot; which deployed on private and demo environment](../../.gitbook/assets/secret-inheritance-diagram-blank-service-1-.jpeg)
+
 ### Private Environment
 
 A **private** environment - serves to enable an opportunity to update service and test the changes made in an isolated environment. The API of this service is accessed using a **key** that is generated when the service is created. Access to services, which deployed in this environment, has only the owner \(developer\) of this service. 
@@ -59,6 +61,8 @@ We understand how important testing and pre-release preparation for projects and
 * development
 * staging
 * production
+
+![project, which includes DEVELOPMENT, STAGNING, PRODUCTION environments with deployed services on it](../../.gitbook/assets/secret-inheritance-diagram-blank-project-1-.jpeg)
 
 **development** and **staging** environments have some limitations in terms of scaling and intended for active development and testing.
 

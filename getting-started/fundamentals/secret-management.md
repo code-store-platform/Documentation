@@ -85,6 +85,8 @@ Let's imagine that we have an empty project with ID: **MY\_PROJECT**, which incl
 
 ![Project without any secret variable, which includes three services: A, B, C](../../.gitbook/assets/secret-inheritance-diagram-blank-project.jpeg)
 
+### Project level variables inheritance
+
 Let’s add variable **FOO** with value **BAR** to project **MY\_PROJECT**, which will be available for each service on each environment inside **MY\_PROJECT** project.
 
 ```text
@@ -102,6 +104,8 @@ FOO BAR   ProjectID: 1
 As you can see, the **Source** of a variable - is a project, where we just added a new variable. From this moment, we can access **FOO** variable from each service, in each environment, which included in our project. In the diagram below, the services that have access to the value of the **FOO** variable are highlighted in green:
 
 ![Services, where available project level FOO variable.](../../.gitbook/assets/secret-inheritance-diagram-variable-available-on-each-service-1-.jpeg)
+
+### Environments level variables inheritance
 
 We may face a case when you need a **different** secret variable value on some service or on the whole environment. This isn't a problem, cause we can just override the value of the variable, using the same `cs secret:add` command, specifying for which environment/or service we should apply it.
 
@@ -123,6 +127,8 @@ In this case, the **Source** displays the current variable source and shows that
 
 ![Services, where available environment level FOO variable with BAR2 value.](../../.gitbook/assets/secret-inheritance-diagram-env.-var.-env-scope.jpeg)
 
+### Service level variable inheritance
+
 In case, when our service requires another secret variable value - we can just override it. To override it - just specify `-s` flag with service ID, let it be service **A** for example, and a new value of **FOO** variable is **BAR3**.
 
 ```text
@@ -142,6 +148,10 @@ In this case, service A will obtain a new value of **FOO** variable. In the diag
 ![Service A with a new value of FOO variable.](../../.gitbook/assets/secret-inheritance-diagram-env.-var.-service-scope.jpeg)
 
 
+
+{% hint style="info" %}
+Basically, you can do the same with services, which deployed on demo and private environments. But note, that demo and private - is a non-production service environments, and has many limitations, including "per-request availability". To learn more see [**Environments**](environments.md) section.
+{% endhint %}
 
 
 
