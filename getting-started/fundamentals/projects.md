@@ -6,7 +6,7 @@
 
 **Projects** serve as an isolated environment for services groups. Any project can contain one or more services, and available within the organization the user belongs to.
 
-In order for the service to be publicly available, it must be included in the **project**, since the code.store platform guarantees high availability and scalability only in a **production** environment.  For more information about environments, see the [**Environments**](environments.md) section.
+In order for the service to be publicly available, it must be included in the **project**, since the code.store platform guarantees high availability and scalability only in a **production** environment. For more information about environments, see the [**Environments**](environments.md) section.
 
 ## Create a new project
 
@@ -112,11 +112,11 @@ To promote service per environments available  `cs project:service:promote` comm
 > cs project:service:promote
 
  Choose a project you want to promote to
- Project: my_project	This is my project.
+ Project: my_project
 
 
  Choose a service which you want to promote
- Service: demo_app	demo
+ Service: demo_app
 
 ? Please select the environment staging
 
@@ -139,11 +139,11 @@ To update service version just re-use `cs project:service:promote` command.
 > cs project:service:promote
 
  Choose a project you want to promote to
- Project: my_project	This is my project.
+ Project: my_project
 
 
  Choose a service which you want to promote
- Service: demo_app	demo
+ Service: demo_app
 
 ? Please select the environment development
 
@@ -153,8 +153,10 @@ Updated "development" in project my_project
 ```
 
 {% hint style="info" %}
-Note, after command execution version from the demo environment will be applied.
+Note, after command execution version from the **demo** environment will be applied.
 {% endhint %}
+
+It is necessary that the service was previously updated on the demo environment. For more information about environments, see the [**Services**](services/) section. About versioning see the [**Versioning**](versioning.md) section.
 
 ![Updated version on development environment.](../../.gitbook/assets/projects-update-service-version.jpeg)
 
