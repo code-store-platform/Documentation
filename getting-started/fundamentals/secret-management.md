@@ -51,15 +51,9 @@ process.env.FOO
 
 ### List service secrets
 
-
-
 ### Update service secret
 
-
-
 ### Remove service secret
-
-
 
 ## Project Service Secrets
 
