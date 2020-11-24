@@ -43,7 +43,9 @@ FOO BAR   Environment: demo, ServiceID: 1
 
 That’s it! Now, variable **FOO** will be available as an environment variable after container reboot. Now, you can access it in your code. 
 
-For example, to access variable using TypeScript use `process`_:_ 
+### Access a new variable in code
+
+For example, to access variable using TypeScript use `process` global variable:
 
 ```text
 process.env.FOO
