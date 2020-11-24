@@ -47,11 +47,11 @@ In future, code.store platform will support different **codestore.yaml** configu
 
 ## Enable/Disable PostgreSQL
 
-By default, PostgreSQL - enabled. To disable PostgreSQL set skipDatabase`: true` of the `serviceConfiguration`object and push changes using **cs push** command. 
+By default, PostgreSQL - enabled. To disable PostgreSQL set `skipDatabase: true` of the `serviceConfiguration`object and push changes using **`cs push`** command. 
 
 ## **Enable/Disable Redis**
 
-By default, Redis - disabled. To enable Redis set `enableRedis: true` of the `serviceConfiguration`object and push changes using **cs push** command. 
+By default, Redis - disabled. To enable Redis set `enableRedis: true` of the `serviceConfiguration`object and push changes using **`cs push`** command. 
 
 ## 
 
