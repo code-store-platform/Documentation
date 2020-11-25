@@ -77,7 +77,29 @@ export default resolver;
 code.store platform simplifies the process of creating GraphQL resolvers and their handlers using flexible configuration and provides an ability to generate it using **cs generate:resolver** command. 
 {% endhint %}
 
+### Context
 
+Each resolver can optionally accept four positional arguments:
+
+`parent` return value of the previous resolver in the resolver chain for this field's parent
+
+`args` an object that contains all GraphQL arguments provided for this field. For example, when executing query: `query{ user(id: "4") }`, the args object passed to the user resolver is `{ "id": "4" }`.
+
+`context` an object shared across all resolvers that are executing for a particular operation and has `ResolverContext` type. 
+
+```graphql
+export interface ResolverContext {
+    db: {
+        connection: Connection;
+    };
+    request: Request;
+    [key: string]: any;
+}
+```
+
+As you can see, context allows to receive database `connection` and provide access to `request` object, which include such objects as `headers`, `method`, `url`...
+
+`info` contains information about the operation's execution state, including the field name, the path to the field from the root, and more.
 
 
 
