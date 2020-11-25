@@ -60,6 +60,18 @@ It's very important to increment service version after making changes to service
 By default, code.store platform will automatically increment path \(x.y.**Z**\) version of your code after each push, if you follow [semver](https://semver.org/) specification. 
 {% endhint %}
 
+## Publish a new service version
+
+After creating a new service version using `cs push` command - changes will be available only on the **private** [environment](environments.md). 
+
+**demo** [environment](environments.md) - is the only place, where developed changes can be published. Changes from demo environment is available for including to the project or public [access](access-and-authorization.md). 
+
+To make a new version available - execute `cs promote` CLI command. This command will deploy changes from **private** to **demo** environment and makes a new version available for update/include into projects. Promoted version to demo environment is marks as `LATEST`
+
+```text
+cs promote
+```
+
 ## Manage service version inside project
 
 When you include a new service to the [project](projects.md) - version from **demo** [environment](environments.md) will be deployed. This allows adhering to the concept of public release of new versions to avoid unexpected system behavior. More information about including services to projects can be found in [Projects](projects.md) section.
