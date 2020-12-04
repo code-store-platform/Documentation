@@ -22,7 +22,6 @@
   * [Access and Authorization](getting-started/fundamentals/access-and-authorization.md)
   * [Secret management](getting-started/fundamentals/secret-management.md)
   * [Data management](getting-started/fundamentals/data-management/README.md)
-    * [Database](getting-started/fundamentals/data-management/database.md)
     * [Import and Export](getting-started/fundamentals/data-management/import-and-export.md)
   * [Generation](getting-started/fundamentals/generation/README.md)
     * [Models](getting-started/fundamentals/generation/models.md)
