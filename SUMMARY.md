@@ -25,6 +25,7 @@
     * [Database](getting-started/fundamentals/data-management/database.md)
     * [Import and Export](getting-started/fundamentals/data-management/import-and-export.md)
   * [Generation](getting-started/fundamentals/generation/README.md)
+    * [Middlewares](getting-started/fundamentals/generation/middlewares.md)
     * [Models](getting-started/fundamentals/generation/models.md)
     * [Handlers](getting-started/fundamentals/generation/handlers.md)
     * [Resolvers](getting-started/fundamentals/generation/resolvers-and-mutations.md)
