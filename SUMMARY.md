@@ -30,6 +30,8 @@
     * [REST](getting-started/fundamentals/generation/rest.md)
     * [Middlewares](getting-started/fundamentals/generation/middlewares.md)
   * [Logging](getting-started/fundamentals/logging.md)
+  * [Microservices](getting-started/fundamentals/microservices/README.md)
+    * [Communication](getting-started/fundamentals/microservices/communication.md)
 * [RECIPES](getting-started/recipes/README.md)
   * [TypeScript](getting-started/recipes/typescript/README.md)
     * [Custom .tslint](getting-started/recipes/typescript/custom-.tslint.md)
