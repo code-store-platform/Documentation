@@ -2,7 +2,7 @@
 
 ## Overview
 
-code.store platform supports GraphQL and allows you to setup your GraphQL API in the quickest way. To make developers life easier code.store platform:
+code.store platform supports GraphQL and allows you to set up your GraphQL API in the quickest way. To make a developer's life easier code.store platform:
 
 * by default runs GraphQL [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
 * provides an opportunity to generate database entities based on `graphql.schema`
@@ -29,7 +29,7 @@ Remote address:
 
 ### Schema
 
-When you create a new service, we code.store platform generating it with default `schema.graphql` file, which contains services GraphQL schema. You can find it in `src` directory of generated project. Generated file contains a simple `helloWorld` query:
+When you create a new service, we code.store platform generating it with default `schema.graphql` file, which contains services GraphQL schema. You can find it in `src` directory of the generated project. Generated file contains a simple `helloWorld` query:
 
 ```graphql
 type Query {
@@ -57,7 +57,7 @@ Please, replace `service_url_hash` on your service URL hash, which can be found 
 
 Each field, query or mutation, which we specify in `schema.graphql` require resolver. A resolver is a function that's responsible for populating the data for a single field in your schema.
 
-Handler for all queries and mutations, which described in `schema.graphql` file, should be placed to `src/resolvers` directory. Each resolver file of your query or mutation should be named the same, as it declared in `graphql.schema` and placed the appropriate directory `src/resolvers/queries` for queries and  `src/resolvers/mutations` for mutations.
+Handler for all queries and mutations, which described in `schema.graphql` file should be placed to `src/resolvers` directory. Each resolver file of your query or mutation should be named the same, as it declared in `graphql.schema` and placed the appropriate directory `src/resolvers/queries` for queries and  `src/resolvers/mutations` for mutations.
 
 For example, in generated service template you can find, that query `helloWorld` in `schema.graphql` have resolver `src/resolvers/queries/helloWorld.ts`
 
@@ -81,9 +81,9 @@ code.store platform simplifies the process of creating GraphQL resolvers and the
 
 Each resolver can optionally accept four positional arguments:
 
-`parent` return value of the previous resolver in the resolver chain for this field's parent
+`parent` returns value of the previous resolver in the resolver chain for this field's parent
 
-`args` an object that contains all GraphQL arguments provided for this field. For example, when executing query: `query{ user(id: "4") }`, the args object passed to the user resolver is `{ "id": "4" }`.
+`args` an object that contains all GraphQL arguments provided for this field. For example, when executing a query: `query{ user(id: "4") }`, the args object passed to the user resolver is `{ "id": "4" }`.
 
 `context` an object shared across all resolvers that are executing for a particular operation and has `ResolverContext` type. 
 
@@ -97,7 +97,7 @@ export interface ResolverContext {
 }
 ```
 
-As you can see, context allows to receive database `connection` and provide access to `request` object, which include such objects as `headers`, `method`, `url`...
+As you can see, context allows receiving database `connection` and provide access to `request` object, which includes such objects as `headers`, `method`, `url`...
 
 `info` contains information about the operation's execution state, including the field name, the path to the field from the root, and more.
 

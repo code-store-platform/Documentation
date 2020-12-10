@@ -19,15 +19,15 @@ This file contains service configuration and used to:
 
 `serviceId` internal code.store's service id
 
-`serviceConfiguration` remote service configuration, which allows and contains next flags:
+`serviceConfiguration` remote service configuration, which allows and contains the following flags:
 
 * `skipDatabase` _\(false by default\)_ boolean flag, allows to enable or disable PostgreSQL database
 * `enableRedis` _\(false by default\)_ boolean flag, allows to enable or disable Redis database 
 
-`localConfiguration` configuration, which allows to run local development service using `cs dev` CLI command and . Local configuration contains service, database \(Redis, PostgreSQL\) configurations which required if databases in `serviceConfiguration` are enabled. `localConfiguration` is contains next properties:
+`localConfiguration` configuration, which allows to run local development service using `cs dev` CLI command and. Local configuration contains service, database \(Redis, PostgreSQL\) configurations which required if databases in `serviceConfiguration` are enabled. `localConfiguration` is contains the following properties:
 
 * `application` 
-  * `port` port where an application will runs
+  * `port` a port where an application will runs
 * `database` PostgreSQL connection config
   * `port`  port, where Postgres server launched, usually it's 5432
   * `username` your Postgres user

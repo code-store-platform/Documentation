@@ -2,7 +2,7 @@
 
 ## Overview
 
-By default, each service has different variables, which depends on environment. For example, database environments, which available on development environment may differ from staging environment, and so on... For more information about environments, see the [**Environments**](../environments.md) section. Depends on service language, environment variables can be accessed in different ways. 
+By default, each service has different variables, which depends on the environment. For example, database environments, which available on the development environment may differ from the staging environment, and so on... For more information about environments, see the [**Environments**](../environments.md) section. Depends on service language, environment variables can be accessed in different ways. 
 
 To access environment variables using **TypeScript** or **JavaScript** language use:
 
@@ -42,7 +42,7 @@ Below, you can find information about available environment variables which code
 
 `REDIS_PORT` Redis connection port  
 
-## Language based environment variables
+## Language-based environment variables
 
 ### TypeScript & JavaScript
 

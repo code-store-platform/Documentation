@@ -71,7 +71,7 @@ Author:		 erlich.bachman@piedpiper.com
 
 ### Clients
 
-There are cases when necessary to provide to the whole project or included in the project services to the client or third party person. code.store platform provides and CLI interface, which allows to manage client's access keys.
+There are cases when it is necessary to provide to the whole project or included in the project services to the client or third party person. code.store platform provides and CLI interface, which allows to manage client's access keys.
 
 Using `cs project:client` CLI command you can `add`, `list` or `remove` client's access keys for your project and project services. 
 
@@ -83,7 +83,7 @@ In the future, the code.store platform will provide the ability to bill your cus
 
 ### Create a new client access key
 
-To create a new client access key just execute `cs project:client:add` command, select required project from the list, and specify client's email
+To create a new client access key just execute `cs project:client:add` command, select the required project from the list and specify client's email
 
 ```text
 > cs project:client:add

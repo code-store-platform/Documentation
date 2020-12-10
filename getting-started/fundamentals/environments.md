@@ -10,7 +10,7 @@ For convenience, we on the code.store platform creates several environments at o
 
 For example, when you creating a new project, we automatically create three environments: **development**, **staging**, **production** \(hereinafter: **Project Environments**\). 
 
-These environments are completely isolated from each other and are separate namespaces in our k8s cluster. When we include a new service in project, we deploy a copy of a container with different databases in all three environments. 
+These environments are completely isolated from each other and are separate namespaces in our k8s cluster. When we include a new service in the project, we deploy a copy of a container with different databases in all three environments. 
 
 In case when we create a new service, we deploy it on its own, isolated environments - **private** and **demo** \(hereinafter: **Service Environments**\)
 

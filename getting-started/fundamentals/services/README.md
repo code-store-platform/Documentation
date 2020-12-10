@@ -40,7 +40,7 @@ First, go to the directory where the folder with the initialization template for
 cd ~
 ```
 
-Then, just execute [service creation command](https://app.gitbook.com/@code-store/s/docs/~/drafts/-MLmAW2NQT_EaWuncaRq/cli/commands#services): 
+Then, just execute the [service creation command](https://app.gitbook.com/@code-store/s/docs/~/drafts/-MLmAW2NQT_EaWuncaRq/cli/commands#services): 
 
 ```text
 cs service:create 
@@ -51,7 +51,7 @@ Using the **cs service: create** command, we initiate the process of creating a 
 * ? Service name: 
 * ? What problem are you solving?: 
 * How do you solve it?: 
-* Select business domain using arrow keys
+* Choose business domain using arrow keys
 * Specify hashtags
 
 After that, you will see the progress of creating a new service, during which we copy the starting project template, build the image, and deploy it to our k8s cluster.
@@ -105,14 +105,14 @@ Let's dive into the `src/` directory:
 * `resolvers/` – this is where your business logic lives. 
 * `resolvers/query`  and`resolvers/mutation`  – resolvers and mutations serve two purposes: connect your GraphQL objects to data in the database and is a place where you implement any additional business logic. 
 
-Most of the things for working with the database, such as migrations, typeorm entities, can be generated using the generator built into the CLI. The principles of models and migrations generation can be found in  [**Generation**](../generation/) section.
+Most of the things for working with the database, such as migrations, Typeorm entities, can be generated using the generator built into the CLI. The principles of models and migrations generation can be found in the [**Generation**](../generation/) section.
 
 ## Local development
 
 To simplify the local launch of the service - available simple command: **cs dev.** After executing, on the backstage will be installed all dependencies \(npm i\), compiled typescript code \(tsc\), validating GraphQL schema, queries, and mutations, and applied [middleware](rest.md) functions.
 
 {% hint style="info" %}
-Note, if the service uses a database, you need to provide the credentials \(login, password, database, port, host\) for the database object in the [**codestore.yaml**](configuration-1.md) file. Here an example of local configuration of codestore.yaml:
+Note, if the service uses a database, you need to provide the credentials \(login, password, database, port, host\) for the database object in the [**codestore.yaml**](configuration-1.md) file. Here an example of the local configuration of codestore.yaml:
 {% endhint %}
 
 ```text
@@ -178,9 +178,9 @@ As you can see, on backstage we compiling your code using tsc, and validating th
 
 In general, working with the **cs push** command can be thought of as a git command with validation and pre-compilation of your code. In the future, we will provide access to your code through the GIT repository, but at the moment, you need to take care of this by yourself.
 
-### Promote new version to demo environment
+### Promote new version to Demo environment
 
-After pushing changes to **private** [**environment**](../environments.md)**,** in order to further distribute a new version of the service to projects, it becomes necessary to publish the changes. To publish changes just execute **cs promote** command. 
+After pushing changes to **Private** [**environment**](../environments.md)**,** in order to further distribute a new version of the service to projects, it becomes necessary to publish the changes. To publish changes just execute **cs promote** command. 
 
 Service promotion from private to demo environment will create a new service version. To learn about environments and versioning concepts follow [**Environments**](../environments.md) and [**Versioning**](../versioning.md) sections.
 
